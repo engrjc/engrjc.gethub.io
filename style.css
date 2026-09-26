@@ -1,11 +1,536 @@
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #07111f;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #06101d;
+    color: #ffffff;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    z-index: 100;
+}
+
+.logo {
     color: white;
+    text-decoration: none;
+
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #168cff;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #168cff;
+}
+
+.nav-button {
+    text-decoration: none;
+    color: white;
+
+    border: 1px solid #168cff;
+    padding: 11px 20px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background: #168cff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #06101d 0%,
+            #071426 45%,
+            #0b2340 100%
+        );
+}
+
+
+/* Blue diagonal transition */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    right: -15%;
+    top: 0;
+
+    width: 55%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 20%,
+            rgba(15, 107, 190, 0.22) 20%,
+            rgba(15, 107, 190, 0.22) 65%,
+            rgba(3, 12, 23, 0.7) 65%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+    width: 55%;
+
+    padding-left: 8%;
+    padding-top: 70px;
+
+    position: relative;
+    z-index: 10;
+}
+
+.eyebrow {
+    color: #168cff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 82px);
+
+    line-height: 0.98;
+
+    margin-bottom: 18px;
+
+    letter-spacing: -2px;
+}
+
+.hero h2 {
+    color: #72b9ff;
+
+    font-size: clamp(20px, 2.5vw, 32px);
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    max-width: 570px;
+
+    color: #aebdce;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+
+    text-decoration: none;
+
+    padding: 15px 24px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.primary {
+    background: #168cff;
+    color: white;
+}
+
+.primary:hover {
+    background: #42a5ff;
+    transform: translateY(-2px);
+}
+
+.secondary {
+    border: 1px solid #52718f;
+    color: white;
+}
+
+.secondary:hover {
+    border-color: #168cff;
+    background: rgba(22, 140, 255, 0.1);
+}
+
+
+/* =========================
+   TAGS
+========================= */
+
+.hero-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.hero-tags span {
+    color: #8fa8c0;
+
+    border-left: 2px solid #168cff;
+
+    padding-left: 9px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   ENGINEERING VISUAL
+========================= */
+
+.hero-visual {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    z-index: 2;
+
+    overflow: hidden;
+}
+
+
+/* Blueprint grid */
+
+.circuit-grid {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(65, 155, 230, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(65, 155, 230, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    transform: perspective(600px) rotateX(55deg) scale(1.5);
+
+    transform-origin: center bottom;
+}
+
+
+/* Chip */
+
+.chip {
+    position: absolute;
+
+    width: 270px;
+    height: 270px;
+
+    right: 18%;
+    top: 33%;
+
+    border: 3px solid #4da8ff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #162d46,
+            #07111f
+        );
+
+    box-shadow:
+        0 0 50px rgba(22, 140, 255, 0.25),
+        inset 0 0 40px rgba(22, 140, 255, 0.12);
+
+    transform: rotate(8deg);
+}
+
+
+/* Chip pins */
+
+.chip::before,
+.chip::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -20px;
+
+    border-top: 3px solid #287fc4;
+    border-bottom: 3px solid #287fc4;
+}
+
+.chip::after {
+    transform: rotate(90deg);
+}
+
+
+/* Chip center */
+
+.chip-center {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(-8deg);
+
+    text-align: center;
+}
+
+.chip-center span {
+    display: block;
+
+    color: #62b5ff;
+
+    font-size: 45px;
+
+    font-weight: 800;
+
+    letter-spacing: 5px;
+}
+
+.chip-center small {
+    color: #718ba4;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+/* Circuit lines */
+
+.circuit-line {
+    position: absolute;
+
+    height: 2px;
+
+    background: #168cff;
+
+    opacity: 0.7;
+}
+
+.line-1 {
+    width: 220px;
+    right: 5%;
+    top: 25%;
+}
+
+.line-2 {
+    width: 170px;
+    right: 28%;
+    top: 70%;
+    transform: rotate(25deg);
+}
+
+.line-3 {
+    width: 250px;
+    right: 2%;
+    top: 78%;
+    transform: rotate(-15deg);
+}
+
+.line-4 {
+    width: 130px;
+    right: 35%;
+    top: 18%;
+    transform: rotate(-25deg);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    min-height: 500px;
+
+    padding: 120px 8%;
+
+    background: #f4f8fc;
+
+    color: #071426;
+}
+
+.dark-section {
+    background: #071426;
+
+    color: white;
+}
+
+.section-label {
+    color: #168cff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.section h2 {
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.section-intro {
+    color: #64748b;
+
+    max-width: 600px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 8%;
+
+    background: #040b14;
+
+    color: #718096;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 850px;
+    }
+
+    .hero-content {
+        width: 100%;
+
+        padding: 140px 8% 80px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        opacity: 0.25;
+    }
+
+    .hero::after {
+        width: 100%;
+        right: 0;
+    }
+
+    .chip {
+        right: 10%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
 }
