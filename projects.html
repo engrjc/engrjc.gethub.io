@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Projects | John Carl P. Ortiz
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <style>
+
+        /* =========================================
+           PROJECTS PAGE
+           ========================================= */
+
+        .projects-page {
+            background: #f5f8fb;
+            color: #031426;
+        }
+
+
+        /* =========================================
+           PROJECT HERO
+           ========================================= */
+
+        .projects-hero {
+            min-height: 360px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(3, 20, 38, 0.98),
+                    rgba(5, 38, 68, 0.96)
+                );
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .projects-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border: 1px solid rgba(0, 170, 255, 0.20);
+            border-radius: 50%;
+
+            right: -180px;
+            top: -200px;
+        }
+
+
+        .projects-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 320px;
+            height: 320px;
+
+            border: 1px solid rgba(0, 170, 255, 0.14);
+            border-radius: 50%;
+
+            right: 30px;
+            bottom: -230px;
+        }
+
+
+        .projects-hero-container {
+            width: 90%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .projects-label {
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            color: #55c8ff;
+
+            margin-bottom: 15px;
+        }
+
+
+        .projects-hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+
+            line-height: 1.05;
+
+            color: white;
+
+            margin: 0 0 18px;
+        }
+
+
+        .projects-hero h1 span {
+            color: #45c7ff;
+        }
+
+
+        .projects-hero-description {
+            max-width: 650px;
+
+            font-size: 17px;
+            line-height: 1.8;
+
+            color: rgba(255, 255, 255, 0.78);
+
+            margin: 0;
+        }
+
+
+        /* =========================================
+           CATEGORY INTRO
+           ========================================= */
+
+        .project-category-section {
+            padding: 90px 0 100px;
+
+            background: #f5f8fb;
+        }
+
+
+        .project-category-container {
+            width: 90%;
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+
+        .project-section-heading {
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
+        .project-section-heading .section-label {
+            display: block;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            color: #087db5;
+
+            margin-bottom: 14px;
+        }
+
+
+        .project-section-heading h2 {
+            font-size: clamp(30px, 4vw, 46px);
+
+            line-height: 1.15;
+
+            margin: 0 0 15px;
+
+            color: #031426;
+        }
+
+
+        .project-section-heading p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #607080;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           CATEGORY GRID
+           ========================================= */
+
+        .project-category-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 30px;
+        }
+
+
+        /* =========================================
+           CATEGORY CARD
+           ========================================= */
+
+        .project-category-card {
+            background: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            border: 1px solid #dfe8ef;
+
+            box-shadow:
+                0 12px 35px rgba(3, 20, 38, 0.08);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .project-category-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 20px 45px rgba(3, 20, 38, 0.13);
+        }
+
+
+        /* =========================================
+           CATEGORY IMAGE
+           ========================================= */
+
+        .project-category-image {
+            height: 280px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #031426,
+                    #0a3a5c
+                );
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .project-category-image::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border:
+                1px solid
+                rgba(69, 199, 255, 0.35);
+
+            border-radius: 50%;
+        }
+
+
+        .project-category-image::after {
+            content: "";
+
+            position: absolute;
+
+            width: 110px;
+            height: 110px;
+
+            border:
+                1px solid
+                rgba(69, 199, 255, 0.25);
+
+            border-radius: 50%;
+        }
+
+
+        .category-placeholder {
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+            color: #45c7ff;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+
+        .category-placeholder-icon {
+            display: block;
+
+            font-size: 42px;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================================
+           CATEGORY CONTENT
+           ========================================= */
+
+        .project-category-content {
+            padding: 32px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            flex: 1;
+        }
+
+
+        .project-number {
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: #087db5;
+
+            margin-bottom: 10px;
+        }
+
+
+        .project-category-content h3 {
+            font-size: 25px;
+
+            line-height: 1.2;
+
+            margin: 0 0 14px;
+
+            color: #031426;
+        }
+
+
+        .project-category-description {
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            color: #607080;
+
+            margin: 0 0 25px;
+        }
+
+
+        /* =========================================
+           SKILLS / TOOLS
+           ========================================= */
+
+        .project-meta {
+            margin-bottom: 25px;
+        }
+
+
+        .project-meta-title {
+            display: block;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+
+            color: #82909d;
+
+            text-transform: uppercase;
+
+            margin-bottom: 9px;
+        }
+
+
+        .project-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+        }
+
+
+        .project-tag {
+            padding: 7px 10px;
+
+            border-radius: 5px;
+
+            background: #edf5fa;
+
+            color: #145878;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           PROJECT COUNT
+           ========================================= */
+
+        .project-card-footer {
+            margin-top: auto;
+
+            padding-top: 22px;
+
+            border-top:
+                1px solid #e5edf2;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .project-count {
+            font-size: 12px;
+
+            color: #687987;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           VIEW PROJECT BUTTON
+           ========================================= */
+
+        .project-view-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 12px 17px;
+
+            background: #031426;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .project-view-button span {
+            color: #45c7ff;
+
+            font-size: 16px;
+
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        .project-view-button:hover {
+            background: #087db5;
+        }
+
+
+        .project-view-button:hover span {
+            transform: translateX(3px);
+        }
+
+
+        /* =========================================
+           ENGINEERING APPROACH
+           ========================================= */
+
+        .projects-approach {
+            padding: 85px 0;
+
+            background: #031426;
+
+            color: white;
+        }
+
+
+        .projects-approach-container {
+            width: 90%;
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+
+        .projects-approach .section-label {
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            color: #45c7ff;
+
+            margin-bottom: 15px;
+        }
+
+
+        .projects-approach h2 {
+            font-size: clamp(28px, 4vw, 42px);
+
+            margin: 0 0 20px;
+
+            line-height: 1.2;
+        }
+
+
+        .projects-approach p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: rgba(255, 255, 255, 0.72);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+
+        @media (max-width: 800px) {
+
+            .projects-hero {
+                min-height: 320px;
+            }
+
+
+            .project-category-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .project-category-image {
+                height: 250px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .projects-hero-container,
+            .project-category-container,
+            .projects-approach-container {
+                width: 88%;
+            }
+
+
+            .projects-hero {
+                min-height: 300px;
+            }
+
+
+            .project-category-section {
+                padding: 65px 0 75px;
+            }
+
+
+            .project-category-content {
+                padding: 25px;
+            }
+
+
+            .project-category-image {
+                height: 220px;
+            }
+
+
+            .project-card-footer {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+
+            .project-view-button {
+                width: 100%;
+
+                justify-content: center;
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            .projects-hero h1 {
+                font-size: 38px;
+            }
+
+
+            .project-category-content h3 {
+                font-size: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="projects-page">
+
+
+<header class="site-header">
+
+    <div class="header-container">
+
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <div
+                class="brand-logo"
+                aria-label="JC Engineering Logo"
+            >
+
+                <span class="logo-j">J</span>
+
+                <span class="logo-c">C</span>
+
+
+                <span class="circuit circuit-top"></span>
+
+                <span class="circuit circuit-bottom"></span>
+
+                <span class="circuit circuit-left"></span>
+
+                <span class="circuit circuit-right"></span>
+
+
+                <span class="node node-top"></span>
+
+                <span class="node node-bottom"></span>
+
+                <span class="node node-left"></span>
+
+                <span class="node node-right"></span>
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <strong>
+                    JOHN CARL P. ORTIZ
+                </strong>
+
+                <small>
+                    Electronics Design Engineer
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a
+                href="projects.html"
+                class="active"
+            >
+                Projects
+            </a>
+
+            <a href="skills.html">
+                Skills
+            </a>
+
+            <a href="resume.html">
+                Resume
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <button
+            class="theme-button"
+            id="themeButton"
+            aria-label="Toggle theme"
+        >
+            ☾
+        </button>
+
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+    <!-- =========================================
+         PROJECT HERO
+         ========================================= -->
+
+    <section class="projects-hero">
+
+        <div class="projects-hero-container">
+
+            <p class="projects-label">
+                ENGINEERING PORTFOLIO
+            </p>
+
+
+            <h1>
+                Engineering <span>Projects</span>
+            </h1>
+
+
+            <p class="projects-hero-description">
+
+                A collection of engineering design and technical
+                projects demonstrating experience in
+                telecommunications, PCB development,
+                electronics design, and ELV systems.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PROJECT CATEGORIES
+         ========================================= -->
+
+    <section class="project-category-section">
+
+        <div class="project-category-container">
+
+
+            <div class="project-section-heading">
+
+                <span class="section-label">
+                    PROJECT CATEGORIES
+                </span>
+
+
+                <h2>
+                    Engineering Design & Technical Work
+                </h2>
+
+
+                <p>
+
+                    Explore my projects by engineering discipline.
+                    Each category contains related design work,
+                    technical documentation, and project outputs.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="project-category-grid">
+
+
+                <!-- =================================
+                     CATEGORY 01
+                     ================================= -->
+
+                <article class="project-category-card">
+
+
+                    <div class="project-category-image">
+
+                        <div class="category-placeholder">
+
+                            <span
+                                class="category-placeholder-icon"
+                            >
+                                ◉
+                            </span>
+
+                            MICROWAVE
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-category-content">
+
+
+                        <div class="project-number">
+                            CATEGORY 01
+                        </div>
+
+
+                        <h3>
+                            Microwave Link Design
+                        </h3>
+
+
+                        <p class="project-category-description">
+
+                            Telecommunications engineering
+                            projects involving RF planning,
+                            path analysis, link budgeting,
+                            antenna selection, and microwave
+                            system design.
+
+                        </p>
+
+
+                        <div class="project-meta">
+
+                            <span class="project-meta-title">
+                                Skills Demonstrated
+                            </span>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    RF Planning
+                                </span>
+
+                                <span class="project-tag">
+                                    Link Budget
+                                </span>
+
+                                <span class="project-tag">
+                                    Path Analysis
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-meta">
+
+                            <span class="project-meta-title">
+                                Tools / Software
+                            </span>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    Radio Mobile
+                                </span>
+
+                                <span class="project-tag">
+                                    Google Earth
+                                </span>
+
+                                <span class="project-tag">
+                                    Excel
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-card-footer">
+
+                            <span class="project-count">
+                                Project Count: To be added
+                            </span>
+
+
+                            <a
+                                href="#"
+                                class="project-view-button"
+                            >
+
+                                View Projects
+
+                                <span>
+                                    →
+                                </span>
+
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================
+                     CATEGORY 02
+                     ================================= -->
+
+                <article class="project-category-card">
+
+
+                    <div class="project-category-image">
+
+                        <div class="category-placeholder">
+
+                            <span
+                                class="category-placeholder-icon"
+                            >
+                                ▦
+                            </span>
+
+                            PCB DESIGN
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-category-content">
+
+
+                        <div class="project-number">
+                            CATEGORY 02
+                        </div>
+
+
+                        <h3>
+                            PCB Design
+                        </h3>
+
+
+                        <p class="project-category-description">
+
+                            Printed circuit board design projects
+                            involving schematic development,
+                            component placement, PCB routing,
+                            board layout, and technical
+                            documentation.
+
+                        </p>
+
+
+                        <div class="project-meta">
+
+                            <span class="project-meta-title">
+                                Skills Demonstrated
+                            </span>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    PCB Layout
+                                </span>
+
+                                <span class="project-tag">
+                                    Schematic Design
+                                </span>
+
+                                <span class="project-tag">
+                                    Board Design
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-meta">
+
+                            <span class="project-meta-title">
+                                Tools / Software
+                            </span>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    To be added
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-card-footer">
+
+                            <span class="project-count">
+                                Project Count: To be added
+                            </span>
+
+
+                            <a
+                                href="#"
+                                class="project-view-button"
+                            >
+
+                                View Projects
+
+                                <span>
+                                    →
+                                </span>
+
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================
+                     CATEGORY 03
+                     ================================= -->
+
+                <article class="project-category-card">
+
+
+                    <div class="project-category-image">
+
+                        <div class="category-placeholder">
+
+                            <span
+                                class="category-placeholder-icon"
+                            >
+                                ◇
+                            </span>
+
+                            ELECTRONICS
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-category-content">
+
+
+                        <div class="project-number">
+                            CATEGORY 03
+                        </div>
+
+
+                        <h3>
+                            Electronics Design
+                        </h3>
+
+
+                        <p class="project-category-description">
+
+                            Electronics engineering projects
+                            involving circuit development,
+                            component selection, simulation,
+                            testing, troubleshooting, and
+                            technical documentation.
+
+                        </p>
+
+
+                        <div class="project-meta">
+
+                            <span class="project-meta-title">
+                                Skills Demonstrated
+                            </span>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    Circuit Design
+                                </span>
+
+                                <span class="project-tag">
+                                    Simulation
+                                </span>
+
+                                <span class="project-tag">
+                                    Troubleshooting
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-meta">
+
+                            <span class="project-meta-title">
+                                Tools / Software
+                            </span>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    To be added
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-card-footer">
+
+                            <span class="project-count">
+                                Project Count: To be added
+                            </span>
+
+
+                            <a
+                                href="#"
+                                class="project-view-button"
+                            >
+
+                                View Projects
+
+                                <span>
+                                    →
+                                </span>
+
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================
+                     CATEGORY 04
+                     ================================= -->
+
+                <article class="project-category-card">
+
+
+                    <div class="project-category-image">
+
+                        <div class="category-placeholder">
+
+                            <span
+                                class="category-placeholder-icon"
+                            >
+                                ⊞
+                            </span>
+
+                            FDAS & CCTV
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-category-content">
+
+
+                        <div class="project-number">
+                            CATEGORY 04
+                        </div>
+
+
+                        <h3>
+                            FDAS & CCTV Design
+                        </h3>
+
+
+                        <p class="project-category-description">
+
+                            ELV system design projects involving
+                            fire detection and alarm systems,
+                            CCTV layouts, device placement,
+                            system architecture, and technical
+                            drawings.
+
+                        </p>
+
+
+                        <div class="project-meta">
+
+                            <span class="project-meta-title">
+                                Skills Demonstrated
+                            </span>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    FDAS
+                                </span>
+
+                                <span class="project-tag">
+                                    CCTV
+                                </span>
+
+                                <span class="project-tag">
+                                    ELV Systems
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-meta">
+
+                            <span class="project-meta-title">
+                                Tools / Software
+                            </span>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    AutoCAD
+                                </span>
+
+                                <span class="project-tag">
+                                    To be added
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-card-footer">
+
+                            <span class="project-count">
+                                Project Count: To be added
+                            </span>
+
+
+                            <a
+                                href="#"
+                                class="project-view-button"
+                            >
+
+                                View Projects
+
+                                <span>
+                                    →
+                                </span>
+
+                            </a>
+
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         ENGINEERING APPROACH
+         ========================================= -->
+
+    <section class="projects-approach">
+
+        <div class="projects-approach-container">
+
+
+            <p class="section-label">
+                ENGINEERING APPROACH
+            </p>
+
+
+            <h2>
+                From Design Concept to Technical Documentation
+            </h2>
+
+
+            <p>
+
+                Each project combines engineering principles,
+                digital design tools, technical analysis, and
+                practical problem-solving to develop clear
+                and reliable engineering solutions.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
