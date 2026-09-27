@@ -1,23 +1,9 @@
-// Smooth navigation
+/* ==========================================
+   JOHN CARL P. ORTIZ PORTFOLIO
+========================================== */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+const themeButton = document.querySelector(".theme-button");
 
-    link.addEventListener("click", function(event) {
-
-        const target = document.querySelector(
-            this.getAttribute("href")
-        );
-
-        if (target) {
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-
-    });
-
+themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
 });
-
-console.log("John Carl Ortiz Portfolio Loaded");
