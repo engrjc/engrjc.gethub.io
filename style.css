@@ -688,6 +688,7 @@ button {
 
 /* =========================================================
    ABOUT CONTENT
+   GLASS / FROSTED BOX
    ========================================================= */
 
 .about-content {
@@ -708,27 +709,31 @@ button {
 }
 
 .about-content-inner {
-    width: 50%;
+    width: 48%;
 
     max-width: 650px;
 
-    /* LEFT MARGIN */
     margin-left: 5%;
 
     padding: 45px 45px;
 
-    /* GLASS EFFECT */
-    background: rgba(3, 20, 38, 0.62);
+    /* TRANSPARENT GLASS */
+    background: rgba(3, 20, 38, 0.48);
 
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    /* VISIBLE GLASS EDGE */
+    border: 1px solid rgba(255, 255, 255, 0.25);
 
-    border-radius: 18px;
+    /* SMOOTH CORNERS */
+    border-radius: 20px;
 
+    /* SOFT SHADOW */
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.28);
+        0 20px 50px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    /* FROSTED GLASS BLUR */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 
 
