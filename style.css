@@ -704,9 +704,6 @@ button {
 
     align-items: center;
 
-    /*
-       MOVED TEXT TO THE LEFT
-    */
     justify-content: flex-start;
 }
 
@@ -715,10 +712,8 @@ button {
 
     max-width: 650px;
 
-    /*
-       MOVED TEXT TO THE LEFT
-    */
-    margin-left: 8%;
+    /* TEXT MOVED ALL THE WAY TO THE LEFT */
+    margin-left: 0;
 
     padding: 70px 0;
 
@@ -970,7 +965,7 @@ button {
     .about-content-inner {
         width: 52%;
 
-        margin-left: 7%;
+        margin-left: 0;
 
         padding: 55px 0;
     }
@@ -1032,9 +1027,7 @@ button {
     }
 
 
-    /* =====================================================
-       HOME
-       ===================================================== */
+    /* HOME */
 
     .hero {
         margin-top: 108px;
@@ -1064,8 +1057,6 @@ button {
 
     .hero-message {
         right: 25px;
-
-        bottom: 28px;
     }
 
     .engineering-focus {
@@ -1073,9 +1064,7 @@ button {
     }
 
 
-    /* =====================================================
-       ABOUT
-       ===================================================== */
+    /* ABOUT */
 
     .about-main {
         min-height: 560px;
@@ -1094,7 +1083,7 @@ button {
     .about-content-inner {
         width: 60%;
 
-        margin-left: 6%;
+        margin-left: 0;
 
         padding: 45px 0;
     }
@@ -1172,9 +1161,7 @@ button {
     }
 
 
-    /* =====================================================
-       HOME
-       ===================================================== */
+    /* HOME */
 
     .hero {
         min-height: 550px;
@@ -1264,9 +1251,7 @@ button {
     }
 
 
-    /* =====================================================
-       ABOUT
-       ===================================================== */
+    /* ABOUT */
 
     .about-main {
         min-height: 540px;
@@ -1283,7 +1268,7 @@ button {
     .about-content-inner {
         width: 68%;
 
-        margin-left: 5%;
+        margin-left: 0;
 
         padding: 35px 0;
     }
@@ -1402,7 +1387,7 @@ button {
     .about-content-inner {
         width: 72%;
 
-        margin-left: 4%;
+        margin-left: 0;
 
         padding: 30px 0;
     }
