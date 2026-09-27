@@ -1,10 +1,12 @@
-/* =====================================================
+/* =========================================================
    JOHN CARL P. ORTIZ
    ELECTRONICS DESIGN ENGINEER PORTFOLIO
-===================================================== */
+   ========================================================= */
 
 
-/* ================= GLOBAL ================= */
+/* =========================================================
+   1. RESET
+   ========================================================= */
 
 * {
     margin: 0;
@@ -18,17 +20,22 @@ html {
 
 body {
     font-family:
-        "Segoe UI",
         Arial,
         Helvetica,
         sans-serif;
 
-    background: #f4f8fc;
-    color: #10243d;
+    color: #10233d;
+    background: #f4f7fb;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
 a {
-    text-decoration: none;
+    color: inherit;
 }
 
 button {
@@ -36,23 +43,23 @@ button {
 }
 
 
-/* ================= HEADER ================= */
+/* =========================================================
+   2. HEADER
+   ========================================================= */
 
 .site-header {
-    position: absolute;
-
+    position: fixed;
     top: 0;
     left: 0;
 
     width: 100%;
+    height: 64px;
 
-    height: 55px;
+    background: rgba(2, 15, 29, 0.97);
+
+    border-bottom: 1px solid rgba(45, 155, 240, 0.45);
 
     z-index: 1000;
-
-    background: rgba(4, 17, 31, 0.94);
-
-    border-bottom: 1px solid rgba(40, 145, 235, 0.35);
 }
 
 .header-container {
@@ -60,144 +67,132 @@ button {
     max-width: 1440px;
 
     height: 100%;
+    margin: 0 auto;
 
-    margin: auto;
-
-    padding: 0 41px;
+    padding: 0 42px;
 
     display: flex;
-
     align-items: center;
 }
 
 
-/* ================= BRAND ================= */
+/* =========================================================
+   3. BRAND
+   ========================================================= */
 
 .brand {
     display: flex;
-
     align-items: center;
 
     gap: 12px;
 
-    color: white;
+    text-decoration: none;
 
-    min-width: 430px;
+    margin-right: auto;
 }
-
-
-/* JC geometric logo */
 
 .brand-logo {
     position: relative;
 
-    width: 43px;
-    height: 43px;
-
-    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
 }
 
-.logo-left,
-.logo-right,
+
+/* Simple engineering-style logo */
+
+.logo-left {
+    position: absolute;
+
+    left: 4px;
+    top: 7px;
+
+    width: 12px;
+    height: 28px;
+
+    background: #168eea;
+
+    clip-path: polygon(
+        0 0,
+        100% 18%,
+        100% 82%,
+        0 100%
+    );
+}
+
+.logo-right {
+    position: absolute;
+
+    right: 4px;
+    top: 7px;
+
+    width: 12px;
+    height: 28px;
+
+    background: #42aaff;
+
+    clip-path: polygon(
+        0 18%,
+        100% 0,
+        100% 100%,
+        0 82%
+    );
+}
+
 .logo-center {
     position: absolute;
 
-    display: block;
+    left: 17px;
+    top: 10px;
 
-    border-color: #2499ff;
+    width: 8px;
+    height: 22px;
+
+    background: #ffffff;
+
+    clip-path: polygon(
+        0 0,
+        100% 15%,
+        100% 85%,
+        0 100%
+    );
 }
-
-
-/* Left geometric piece */
-
-.logo-left {
-    width: 13px;
-    height: 29px;
-
-    left: 3px;
-    top: 7px;
-
-    border-left: 4px solid #2499ff;
-    border-bottom: 4px solid #2499ff;
-
-    transform: skewY(-27deg);
-}
-
-
-/* Right geometric piece */
-
-.logo-right {
-    width: 13px;
-    height: 29px;
-
-    right: 3px;
-    top: 7px;
-
-    border-right: 4px solid #2499ff;
-    border-top: 4px solid #2499ff;
-
-    transform: skewY(-27deg);
-}
-
-
-/* Center */
-
-.logo-center {
-    width: 4px;
-    height: 31px;
-
-    left: 19px;
-    top: 6px;
-
-    background: #2499ff;
-
-    transform: skewY(28deg);
-}
-
 
 .brand-text {
     display: flex;
-
     flex-direction: column;
-
-    line-height: 1;
 }
 
 .brand-text strong {
-    color: #f7fbff;
+    color: #ffffff;
 
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.1;
 
-    font-weight: 700;
-
-    letter-spacing: 0.2px;
+    letter-spacing: 0.4px;
 }
 
 .brand-text small {
-    color: #b4c5d7;
+    color: #aebdcd;
 
     font-size: 10px;
+    line-height: 1.2;
 
-    margin-top: 4px;
-
-    letter-spacing: 0.2px;
+    margin-top: 3px;
 }
 
 
-/* ================= NAVIGATION ================= */
+/* =========================================================
+   4. NAVIGATION
+   ========================================================= */
 
 .main-nav {
     height: 100%;
 
     display: flex;
-
     align-items: center;
 
-    justify-content: flex-end;
-
-    gap: 30px;
-
-    flex: 1;
+    gap: 28px;
 }
 
 .main-nav a {
@@ -206,27 +201,24 @@ button {
     height: 100%;
 
     display: flex;
-
     align-items: center;
 
-    color: #d2deeb;
+    color: #dbe6f1;
 
-    font-size: 11px;
+    text-decoration: none;
 
+    font-size: 13px;
     font-weight: 400;
 
     transition: color 0.2s ease;
 }
 
 .main-nav a:hover {
-    color: #38a7ff;
+    color: #45aaff;
 }
 
-
-/* Active navigation */
-
 .main-nav a.active {
-    color: #38a7ff;
+    color: #45aaff;
 }
 
 .main-nav a.active::after {
@@ -234,75 +226,84 @@ button {
 
     position: absolute;
 
-    bottom: 0;
-
     left: 0;
     right: 0;
+    bottom: 0;
 
     height: 4px;
 
-    background: #1698ff;
+    background: #168eea;
 }
 
-
-/* Projects arrow */
+.projects-link {
+    gap: 7px;
+}
 
 .arrow-down {
-    margin-left: 7px;
-
-    font-size: 14px;
-
-    line-height: 1;
+    font-size: 16px;
 
     position: relative;
-
     top: -1px;
 }
 
 
-/* ================= THEME BUTTON ================= */
+/* =========================================================
+   5. THEME BUTTON
+   ========================================================= */
 
 .theme-button {
-    width: 30px;
-    height: 30px;
+    margin-left: 25px;
 
-    margin-left: 24px;
+    width: 34px;
+    height: 34px;
 
     border: none;
-
     background: transparent;
 
-    color: #b9cee1;
+    color: #dce8f5;
 
-    font-size: 19px;
+    font-size: 22px;
 
     cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.theme-button:hover {
+    color: #43aaff;
 }
 
 
-/* ================= HERO ================= */
+/* =========================================================
+   6. HERO
+   ========================================================= */
 
 .hero {
     position: relative;
 
     width: 100%;
 
-    height: 350px;
+    min-height: 445px;
 
-    min-height: 350px;
+    margin-top: 64px;
 
     overflow: hidden;
 
-    background: #06182b;
+    background: #031426;
 }
 
 
-/* Your uploaded PCB image */
+/* ---------------------------------------------------------
+   FULL HERO IMAGE
+   --------------------------------------------------------- */
 
 .hero-background {
     position: absolute;
 
     inset: 0;
+
+    width: 100%;
+    height: 100%;
 
     background-image: url("images/hero-pcb.PNG");
 
@@ -311,182 +312,168 @@ button {
     background-position: center center;
 
     background-repeat: no-repeat;
+
+    z-index: 0;
 }
 
 
-/* Left-side darkening */
+/* ---------------------------------------------------------
+   IMAGE READABILITY OVERLAY
+   --------------------------------------------------------- */
 
 .hero-overlay {
     position: absolute;
 
     inset: 0;
 
+    width: 100%;
+    height: 100%;
+
     background:
         linear-gradient(
             90deg,
-            rgba(3, 18, 33, 0.98) 0%,
-            rgba(3, 18, 33, 0.96) 28%,
-            rgba(3, 18, 33, 0.80) 42%,
-            rgba(3, 18, 33, 0.10) 69%,
-            rgba(3, 18, 33, 0.02) 100%
+            rgba(1, 18, 34, 0.10) 0%,
+            rgba(1, 18, 34, 0.04) 45%,
+            rgba(1, 18, 34, 0.00) 100%
         );
 
     z-index: 1;
-}
-
-
-/* ================= DIAGONAL HERO SHAPE ================= */
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    z-index: 2;
-
-    top: 0;
-    bottom: 0;
-
-    left: 37.5%;
-
-    width: 115px;
-
-    background:
-        linear-gradient(
-            135deg,
-            transparent 0%,
-            transparent 46%,
-            rgba(7, 68, 125, 0.65) 47%,
-            rgba(17, 122, 211, 0.75) 53%,
-            rgba(3, 24, 46, 0.92) 55%,
-            rgba(3, 24, 46, 0.80) 62%,
-            transparent 63%
-        );
 
     pointer-events: none;
 }
 
 
-/* ================= HERO CONTAINER ================= */
+/* ---------------------------------------------------------
+   HERO CONTAINER
+   --------------------------------------------------------- */
 
 .hero-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1440px;
+
+    min-height: 445px;
+
+    margin: 0 auto;
+
+    padding:
+        55px
+        42px
+        40px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   HERO TEXT
+   --------------------------------------------------------- */
+
+.hero-content {
     position: relative;
 
     z-index: 5;
 
     width: 100%;
-
-    max-width: 1440px;
-
-    height: 100%;
-
-    margin: auto;
-
-    padding-left: 41px;
+    max-width: 650px;
 }
-
-
-/* ================= HERO CONTENT ================= */
-
-.hero-content {
-    position: absolute;
-
-    left: 41px;
-
-    top: 97px;
-
-    width: 600px;
-}
-
-
-/* Eyebrow */
 
 .hero-eyebrow {
-    color: #48adff;
+    margin-bottom: 15px;
 
-    font-size: 12px;
+    color: #45adff;
 
-    font-weight: 500;
-
-    letter-spacing: 0.8px;
-
-    margin-bottom: 10px;
-}
-
-
-/* Main name */
-
-.hero h1 {
-    color: #ffffff;
-
-    font-size: 47px;
-
-    line-height: 1.05;
-
-    font-weight: 700;
-
-    letter-spacing: -1.2px;
-
-    margin-bottom: 4px;
-}
-
-
-/* Job title */
-
-.hero h2 {
-    color: #64baff;
-
-    font-size: 27px;
-
-    line-height: 1.15;
+    font-size: 15px;
 
     font-weight: 600;
 
+    letter-spacing: 1px;
+
+    line-height: 1.3;
+}
+
+.hero h1 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 5vw, 64px);
+
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+}
+
+.hero h2 {
+    margin-top: 7px;
     margin-bottom: 17px;
+
+    color: #55b5ff;
+
+    font-size: clamp(27px, 3vw, 38px);
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.5px;
 }
 
 
-/* Specialties */
+/* =========================================================
+   7. HERO SPECIALTIES
+   ========================================================= */
 
 .hero-specialties {
     display: flex;
 
     align-items: center;
 
+    flex-wrap: wrap;
+
     gap: 12px;
 
-    color: #f2f7fc;
+    margin-bottom: 26px;
 
-    font-size: 13px;
+    color: #ffffff;
 
-    font-weight: 500;
+    font-size: 15px;
 
-    white-space: nowrap;
-
-    margin-bottom: 24px;
+    font-weight: 400;
 }
 
 .hero-specialties i {
-    color: #90a9be;
+    color: #9caebe;
 
     font-style: normal;
-
-    font-size: 10px;
 }
 
 
-/* ================= BUTTONS ================= */
+/* =========================================================
+   8. HERO BUTTONS
+   ========================================================= */
 
 .hero-buttons {
     display: flex;
 
-    gap: 15px;
-
     align-items: center;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
 }
 
 .button {
-    height: 38px;
+    min-width: 153px;
+
+    padding: 12px 19px;
 
     display: inline-flex;
 
@@ -494,99 +481,405 @@ button {
 
     justify-content: center;
 
-    gap: 25px;
+    gap: 22px;
 
-    padding: 0 20px;
+    border-radius: 4px;
 
-    font-size: 11px;
+    text-decoration: none;
+
+    font-size: 13px;
 
     font-weight: 600;
 
-    border-radius: 3px;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
 
-    transition: all 0.2s ease;
+.button:hover {
+    transform: translateY(-1px);
 }
 
 
-/* Primary */
+/* Blue button */
 
 .button-primary {
-    background: #1199ff;
+    color: #ffffff;
 
-    color: white;
+    background: #1599f5;
 
-    border: 1px solid #1199ff;
-
-    min-width: 153px;
+    border: 1px solid #1599f5;
 }
 
 .button-primary:hover {
-    background: #32a8ff;
+    background: #0788e3;
 }
 
 
-/* Outline */
+/* Outline button */
 
 .button-outline {
-    color: white;
+    color: #ffffff;
 
-    background: rgba(4, 20, 36, 0.25);
+    background: rgba(2, 18, 34, 0.25);
 
-    border: 1px solid rgba(225, 237, 248, 0.8);
-
-    min-width: 158px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
 }
 
 .button-outline:hover {
-    border-color: #31a5ff;
-
-    color: #52b4ff;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 
-/* ================= HERO MESSAGE ================= */
+/* =========================================================
+   9. HERO MESSAGE
+   ========================================================= */
 
 .hero-message {
     position: absolute;
 
     right: 42px;
+    bottom: 27px;
 
-    bottom: 26px;
-
-    z-index: 10;
+    z-index: 5;
 
     text-align: right;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    line-height: 1.35;
 }
 
 .hero-message p {
-    color: #eef6fd;
-
-    font-size: 10px;
-
-    line-height: 1.35;
-
-    font-weight: 400;
+    margin: 0 0 8px;
 }
 
 .hero-message span {
     display: block;
 
-    width: 20px;
-
+    width: 25px;
     height: 2px;
 
     margin-left: auto;
 
-    margin-top: 7px;
-
-    background: #149dff;
+    background: #1599f5;
 }
 
 
-/* ================= TEMPORARY SECTIONS ================= */
+/* =========================================================
+   10. PROJECTS SECTION
+   ========================================================= */
+
+.projects-section {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        48px
+        42px
+        52px;
+
+    background: #f4f7fb;
+}
+
+
+/* ---------------------------------------------------------
+   PROJECT SECTION HEADING
+   --------------------------------------------------------- */
+
+.section-heading {
+    width: 100%;
+    max-width: 1360px;
+
+    margin: 0 auto 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 40px;
+}
+
+.heading-left {
+    max-width: 560px;
+}
+
+
+/* Label */
+
+.section-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 7px;
+
+    color: #213c58;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.section-label span {
+    width: 22px;
+    height: 3px;
+
+    display: inline-block;
+
+    background: #1599f5;
+}
+
+
+/* Heading */
+
+.section-heading h2 {
+    margin-bottom: 5px;
+
+    color: #10263f;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+.section-heading p {
+    max-width: 520px;
+
+    color: #50647a;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* View all */
+
+.view-all {
+    margin-top: 10px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #168eea;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.view-all:hover {
+    color: #087bcf;
+}
+
+
+/* =========================================================
+   11. PROJECT GRID
+   ========================================================= */
+
+.projects-grid {
+    width: 100%;
+    max-width: 1360px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   12. PROJECT CARD
+   ========================================================= */
+
+.project-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #dce4ed;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 3px 10px rgba(16, 35, 61, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(16, 35, 61, 0.10);
+}
+
+
+/* =========================================================
+   13. PROJECT IMAGE
+   ========================================================= */
+
+.project-image {
+    position: relative;
+
+    width: 100%;
+
+    height: 150px;
+
+    overflow: hidden;
+
+    background: #dce7f1;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.03);
+}
+
+
+/* =========================================================
+   14. PROJECT ICON
+   ========================================================= */
+
+.project-icon {
+    position: absolute;
+
+    left: 13px;
+    bottom: -16px;
+
+    width: 39px;
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #082849;
+
+    border: 3px solid #ffffff;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   15. PROJECT CONTENT
+   ========================================================= */
+
+.project-content {
+    padding:
+        25px
+        14px
+        16px;
+}
+
+.project-content h3 {
+    margin-bottom: 4px;
+
+    color: #10243c;
+
+    font-size: 16px;
+
+    line-height: 1.25;
+
+    font-weight: 700;
+}
+
+.project-subtitle {
+    margin-bottom: 8px;
+
+    color: #2378b8;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    line-height: 1.4;
+}
+
+.project-content p {
+    min-height: 57px;
+
+    margin-bottom: 12px;
+
+    color: #53677b;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+.project-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #1599f5;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.project-link:hover {
+    color: #087bcf;
+}
+
+
+/* =========================================================
+   16. TEMPORARY SECTIONS
+   ========================================================= */
 
 .temporary-section {
     min-height: 500px;
+
+    padding:
+        100px
+        42px;
 
     display: flex;
 
@@ -594,59 +887,89 @@ button {
 
     justify-content: center;
 
-    background: #f4f8fc;
-
-    color: #0d233c;
+    background: #f4f7fb;
 }
 
 .temporary-section.dark {
-    background: #07192b;
+    color: #ffffff;
 
-    color: white;
+    background: #061a2d;
 }
 
 .temporary-section h2 {
-    font-size: 40px;
+    font-size: 48px;
+
+    text-align: center;
 }
 
 
-/* ================= TABLET ================= */
+/* =========================================================
+   17. RESPONSIVE — TABLET
+   ========================================================= */
 
 @media (max-width: 1000px) {
 
-    .brand {
-        min-width: auto;
+    .header-container {
+        padding: 0 25px;
     }
 
     .main-nav {
-        gap: 17px;
+        gap: 18px;
     }
 
     .main-nav a {
-        font-size: 10px;
-    }
-
-    .hero-content {
-        left: 30px;
+        font-size: 12px;
     }
 
     .hero-container {
         padding-left: 30px;
+        padding-right: 30px;
     }
 
+    .hero-content {
+        max-width: 570px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .projects-section {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .projects-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 }
 
 
-/* ================= MOBILE ================= */
+/* =========================================================
+   18. RESPONSIVE — MOBILE
+   ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 720px) {
+
+    /* HEADER */
 
     .site-header {
-        height: 64px;
+        height: auto;
+
+        min-height: 64px;
     }
 
     .header-container {
-        padding: 0 18px;
+        min-height: 64px;
+
+        padding:
+            8px
+            16px;
     }
 
     .brand-text strong {
@@ -654,11 +977,11 @@ button {
     }
 
     .brand-text small {
-        font-size: 8px;
+        font-size: 9px;
     }
 
     .brand-logo {
-        width: 32px;
+        width: 35px;
         height: 35px;
     }
 
@@ -670,49 +993,150 @@ button {
         margin-left: auto;
     }
 
-    .hero {
-        height: 650px;
 
-        min-height: 650px;
+    /* HERO */
+
+    .hero {
+        margin-top: 64px;
+
+        min-height: 590px;
     }
 
     .hero-background {
-        background-position: 65% center;
-    }
-
-    .hero-overlay {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(3, 18, 33, 0.98) 0%,
-                rgba(3, 18, 33, 0.91) 50%,
-                rgba(3, 18, 33, 0.45) 100%
-            );
-    }
-
-    .hero::after {
-        display: none;
+        background-position: 60% center;
     }
 
     .hero-container {
-        padding: 0 25px;
+        min-height: 590px;
+
+        padding:
+            55px
+            22px
+            40px;
+
+        align-items: flex-start;
     }
 
     .hero-content {
-        left: 25px;
-        right: 25px;
-
-        top: 155px;
-
-        width: auto;
+        max-width: 100%;
     }
 
     .hero-eyebrow {
-        font-size: 10px;
+        font-size: 12px;
+
+        margin-bottom: 12px;
     }
 
     .hero h1 {
         font-size: 40px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+
+        margin-top: 8px;
+    }
+
+    .hero-specialties {
+        gap: 8px;
+
+        font-size: 12px;
+
+        margin-bottom: 22px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .button {
+        min-width: 140px;
+
+        padding:
+            11px
+            14px;
+
+        font-size: 12px;
+    }
+
+    .hero-message {
+        right: 22px;
+        bottom: 25px;
+
+        font-size: 10px;
+    }
+
+
+    /* PROJECTS */
+
+    .projects-section {
+        padding:
+            40px
+            16px
+            45px;
+    }
+
+    .section-heading {
+        display: block;
+
+        margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .section-heading p {
+        font-size: 12px;
+    }
+
+    .view-all {
+        margin-top: 15px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .project-image {
+        height: 190px;
+    }
+
+
+    /* TEMPORARY */
+
+    .temporary-section {
+        min-height: 400px;
+
+        padding: 70px 20px;
+    }
+
+    .temporary-section h2 {
+        font-size: 38px;
+    }
+}
+
+
+/* =========================================================
+   19. VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-container {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
     }
 
     .hero h2 {
@@ -720,20 +1144,16 @@ button {
     }
 
     .hero-specialties {
-        flex-wrap: wrap;
-
-        white-space: normal;
-
-        gap: 8px;
-
-        font-size: 11px;
+        max-width: 300px;
     }
 
     .hero-buttons {
-        flex-wrap: wrap;
+        flex-direction: column;
+
+        align-items: flex-start;
     }
 
-    .hero-message {
-        right: 25px;
+    .button {
+        width: 165px;
     }
 }
