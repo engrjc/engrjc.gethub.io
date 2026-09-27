@@ -1,5 +1,12 @@
 /* =========================================================
-   GLOBAL
+   JOHN CARL P. ORTIZ
+   ELECTRONICS ENGINEERING PORTFOLIO
+   MAIN WEBSITE STYLESHEET
+   ========================================================= */
+
+
+/* =========================================================
+   01. GLOBAL RESET
    ========================================================= */
 
 * {
@@ -16,15 +23,24 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+
     background: #ffffff;
+
     color: #061a2d;
+
     overflow-x: hidden;
 }
 
 
+img {
+    max-width: 100%;
+}
+
+
 a {
-    text-decoration: none;
     color: inherit;
+
+    text-decoration: none;
 }
 
 
@@ -34,7 +50,7 @@ button {
 
 
 /* =========================================================
-   HEADER
+   02. HEADER
    ========================================================= */
 
 .site-header {
@@ -50,7 +66,8 @@ button {
 
     background: #031426;
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
 
     z-index: 1000;
 }
@@ -77,7 +94,7 @@ button {
 
 
 /* =========================================================
-   BRAND
+   03. ENGINEERING LOGO
    ========================================================= */
 
 .brand {
@@ -92,69 +109,122 @@ button {
 }
 
 
-/* =========================================================
-   BRAND / LOGO
-   ========================================================= */
-
 .brand-logo {
 
     position: relative;
 
-    width: 32px;
+    width: 38px;
 
-    height: 32px;
+    height: 38px;
 
-    border: 1px solid #4db8ff;
+    border:
+        1px solid #4db8ff;
+
+    background: #061a2d;
 
     display: flex;
 
     align-items: center;
 
     justify-content: center;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
 }
 
 
-.logo-left,
-.logo-right,
-.logo-center {
+/* JC LETTERS */
+
+.logo-j,
+.logo-c {
 
     position: absolute;
 
-    display: block;
+    color: #ffffff;
 
-    background: #4db8ff;
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    z-index: 3;
 }
 
 
-.logo-left {
-
-    width: 4px;
-
-    height: 18px;
-
-    left: 7px;
+.logo-j {
+    left: 8px;
 }
 
 
-.logo-right {
-
-    width: 4px;
-
-    height: 18px;
+.logo-c {
 
     right: 7px;
+
+    color: #4db8ff;
 }
 
 
-.logo-center {
+/* CIRCUIT LINES */
 
-    width: 10px;
+.circuit {
 
-    height: 4px;
+    position: absolute;
 
-    left: 10px;
+    background: #4db8ff;
 
-    top: 14px;
+    z-index: 1;
+}
+
+
+.circuit-top {
+
+    width: 1px;
+
+    height: 7px;
+
+    top: 0;
+
+    left: 19px;
+}
+
+
+.circuit-bottom {
+
+    width: 1px;
+
+    height: 7px;
+
+    bottom: 0;
+
+    left: 19px;
+}
+
+
+.circuit-left {
+
+    width: 7px;
+
+    height: 1px;
+
+    left: 0;
+
+    top: 19px;
+}
+
+
+.circuit-right {
+
+    width: 7px;
+
+    height: 1px;
+
+    right: 0;
+
+    top: 19px;
 }
 
 
@@ -165,9 +235,11 @@ button {
     position: absolute;
 
     width: 4px;
+
     height: 4px;
 
-    border: 1px solid #4db8ff;
+    border:
+        1px solid #4db8ff;
 
     background: #061a2d;
 
@@ -178,6 +250,7 @@ button {
 .node-top {
 
     top: 2px;
+
     left: 17px;
 }
 
@@ -185,6 +258,7 @@ button {
 .node-bottom {
 
     bottom: 2px;
+
     left: 17px;
 }
 
@@ -192,6 +266,7 @@ button {
 .node-left {
 
     left: 2px;
+
     top: 17px;
 }
 
@@ -199,11 +274,14 @@ button {
 .node-right {
 
     right: 2px;
+
     top: 17px;
 }
 
 
-/* BRAND TEXT */
+/* =========================================================
+   04. BRAND TEXT
+   ========================================================= */
 
 .brand-text {
 
@@ -240,7 +318,7 @@ button {
 
 
 /* =========================================================
-   NAVIGATION
+   05. NAVIGATION
    ========================================================= */
 
 .main-nav {
@@ -271,7 +349,8 @@ button {
 
     padding: 23px 0 21px;
 
-    transition: color 0.2s ease;
+    transition:
+        color 0.2s ease;
 }
 
 
@@ -306,7 +385,7 @@ button {
 
 
 /* =========================================================
-   THEME BUTTON
+   06. THEME BUTTON
    ========================================================= */
 
 .theme-button {
@@ -321,7 +400,8 @@ button {
 
     justify-content: center;
 
-    border: 1px solid rgba(255,255,255,0.18);
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
 
     background: transparent;
 
@@ -331,20 +411,24 @@ button {
 
     cursor: pointer;
 
-    transition: 0.2s ease;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
 .theme-button:hover {
 
-    background: rgba(255,255,255,0.08);
+    background:
+        rgba(255, 255, 255, 0.08);
 
-    border-color: rgba(255,255,255,0.35);
+    border-color:
+        rgba(255, 255, 255, 0.35);
 }
 
 
 /* =========================================================
-   HERO
+   07. HOME — HERO
    ========================================================= */
 
 .hero {
@@ -363,9 +447,7 @@ button {
 }
 
 
-/* =========================================================
-   HERO BACKGROUND IMAGE
-   ========================================================= */
+/* HERO IMAGE */
 
 .hero-background {
 
@@ -377,7 +459,8 @@ button {
 
     height: 100%;
 
-    background-image: url("images/hero-pcb.PNG");
+    background-image:
+        url("images/hero-pcb.PNG");
 
     background-size: cover;
 
@@ -389,9 +472,7 @@ button {
 }
 
 
-/* =========================================================
-   HERO OVERLAY
-   ========================================================= */
+/* HERO OVERLAY */
 
 .hero-overlay {
 
@@ -406,9 +487,9 @@ button {
     background:
         linear-gradient(
             90deg,
-            rgba(1,18,34,0.25) 0%,
-            rgba(1,18,34,0.10) 45%,
-            rgba(1,18,34,0) 100%
+            rgba(1, 18, 34, 0.25) 0%,
+            rgba(1, 18, 34, 0.10) 45%,
+            rgba(1, 18, 34, 0.00) 100%
         );
 
     z-index: 1;
@@ -417,9 +498,7 @@ button {
 }
 
 
-/* =========================================================
-   HERO CONTAINER
-   ========================================================= */
+/* HERO CONTAINER */
 
 .hero-container {
 
@@ -443,9 +522,7 @@ button {
 }
 
 
-/* =========================================================
-   HERO CONTENT
-   ========================================================= */
+/* HERO CONTENT */
 
 .hero-content {
 
@@ -459,9 +536,7 @@ button {
 }
 
 
-/* =========================================================
-   EYEBROW
-   ========================================================= */
+/* HERO EYEBROW */
 
 .hero-eyebrow {
 
@@ -477,9 +552,7 @@ button {
 }
 
 
-/* =========================================================
-   NAME
-   ========================================================= */
+/* HERO NAME */
 
 .hero-content h1 {
 
@@ -487,7 +560,8 @@ button {
 
     color: #ffffff;
 
-    font-size: clamp(38px,5vw,64px);
+    font-size:
+        clamp(38px, 5vw, 64px);
 
     line-height: 1.02;
 
@@ -497,9 +571,7 @@ button {
 }
 
 
-/* =========================================================
-   JOB TITLE
-   ========================================================= */
+/* HERO JOB */
 
 .hero-content h2 {
 
@@ -515,9 +587,7 @@ button {
 }
 
 
-/* =========================================================
-   SPECIALTIES
-   ========================================================= */
+/* HERO SPECIALTIES */
 
 .hero-specialties {
 
@@ -548,7 +618,7 @@ button {
 
 
 /* =========================================================
-   BUTTONS
+   08. BUTTONS
    ========================================================= */
 
 .hero-buttons {
@@ -587,7 +657,10 @@ button {
 
     text-transform: uppercase;
 
-    transition: 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
@@ -597,15 +670,14 @@ button {
 }
 
 
-/* PRIMARY */
-
 .button-primary {
 
     background: #ffffff;
 
     color: #061a2d;
 
-    border: 1px solid #ffffff;
+    border:
+        1px solid #ffffff;
 }
 
 
@@ -617,21 +689,21 @@ button {
 }
 
 
-/* OUTLINE */
-
 .button-outline {
 
     background: transparent;
 
     color: #ffffff;
 
-    border: 1px solid rgba(255,255,255,0.55);
+    border:
+        1px solid rgba(255, 255, 255, 0.55);
 }
 
 
 .button-outline:hover {
 
-    background: rgba(255,255,255,0.08);
+    background:
+        rgba(255, 255, 255, 0.08);
 
     border-color: #ffffff;
 }
@@ -646,7 +718,7 @@ button {
 
 
 /* =========================================================
-   HERO MESSAGE
+   09. HOME — HERO MESSAGE
    ========================================================= */
 
 .hero-message {
@@ -665,7 +737,8 @@ button {
 
 .hero-message p {
 
-    color: rgba(255,255,255,0.88);
+    color:
+        rgba(255, 255, 255, 0.88);
 
     font-size: 11px;
 
@@ -692,7 +765,7 @@ button {
 
 
 /* =========================================================
-   ENGINEERING FOCUS
+   10. HOME — ENGINEERING FOCUS
    ========================================================= */
 
 .engineering-focus {
@@ -762,10 +835,367 @@ button {
 
 
 /* =========================================================
-   TABLET
+   11. ABOUT — MAIN COMPOSITION
    ========================================================= */
 
-@media (max-width:1000px) {
+.about-main {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 610px;
+
+    margin-top: 64px;
+
+    display: grid;
+
+    grid-template-columns: 55% 45%;
+
+    overflow: hidden;
+
+    background: #031426;
+}
+
+
+/* =========================================================
+   12. ABOUT — IMAGE
+   ========================================================= */
+
+.about-visual {
+
+    position: relative;
+
+    min-height: 610px;
+
+    overflow: hidden;
+
+    background: #031426;
+}
+
+
+.about-visual img {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   13. ABOUT — IMAGE TO BACKGROUND TRANSITION
+   ========================================================= */
+
+.about-visual::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    right: -1px;
+
+    width: 48%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+
+            rgba(3, 20, 38, 0.00) 0%,
+
+            rgba(3, 20, 38, 0.10) 15%,
+
+            rgba(3, 20, 38, 0.30) 32%,
+
+            rgba(3, 20, 38, 0.58) 52%,
+
+            rgba(3, 20, 38, 0.82) 72%,
+
+            #031426 100%
+        );
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   14. ABOUT — TEXT SIDE
+   ========================================================= */
+
+.about-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    min-height: 610px;
+
+    background: #031426;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.about-content-inner {
+
+    width: 100%;
+
+    max-width: 610px;
+
+    padding:
+        70px
+        70px
+        70px
+        25px;
+}
+
+
+/* ABOUT LABEL */
+
+.about-label {
+
+    margin-bottom: 18px;
+
+    color: #62c3ff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* ABOUT HEADING */
+
+.about-content h1 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(34px, 4vw, 52px);
+
+    line-height: 1.08;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+}
+
+
+/* ACCENT LINE */
+
+.about-line {
+
+    width: 55px;
+
+    height: 2px;
+
+    margin: 25px 0;
+
+    background: #4db8ff;
+}
+
+
+/* NAME */
+
+.about-content h2 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+/* ROLE */
+
+.about-role {
+
+    margin-top: 6px;
+
+    color: #62c3ff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* DESCRIPTION */
+
+.about-description {
+
+    max-width: 560px;
+
+    margin-top: 20px;
+
+    color: #b9cbd8;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   15. ABOUT — SPECIALTIES
+   ========================================================= */
+
+.about-specialties {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 24px;
+}
+
+
+.about-specialties span {
+
+    padding:
+        7px 10px;
+
+    color: #d8e6ef;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.13);
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   16. ABOUT — PROJECT BUTTON
+   ========================================================= */
+
+.about-project-button {
+
+    margin-top: 28px;
+
+    background: #ffffff;
+
+    color: #061a2d;
+
+    border:
+        1px solid #ffffff;
+}
+
+
+.about-project-button:hover {
+
+    background: #dff3ff;
+
+    border-color: #dff3ff;
+}
+
+
+/* =========================================================
+   17. ABOUT — LOWER STATEMENT
+   ========================================================= */
+
+.about-statement {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 75px 42px 80px;
+}
+
+
+.about-statement-inner {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+.about-statement .about-label {
+
+    color: #1769aa;
+}
+
+
+.about-statement h2 {
+
+    margin: 0;
+
+    color: #061a2d;
+
+    font-size: 32px;
+
+    line-height: 1.25;
+}
+
+
+.about-statement-inner > p:last-child {
+
+    max-width: 680px;
+
+    margin: 20px auto 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   18. TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+
+    /* HEADER */
 
     .header-container {
 
@@ -787,6 +1217,8 @@ button {
     }
 
 
+    /* HOME */
+
     .hero-container {
 
         padding-left: 30px;
@@ -800,14 +1232,43 @@ button {
         right: 30px;
     }
 
+
+    /* ABOUT */
+
+    .about-main {
+
+        grid-template-columns: 52% 48%;
+    }
+
+
+    .about-content-inner {
+
+        padding:
+            55px
+            40px
+            55px
+            10px;
+    }
+
+
+    .about-content h1 {
+
+        font-size: 38px;
+    }
+
 }
 
 
 /* =========================================================
-   SMALL TABLET
+   19. SMALL TABLET
    ========================================================= */
 
-@media (max-width:760px) {
+@media (max-width: 760px) {
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
 
     .site-header {
 
@@ -833,7 +1294,8 @@ button {
 
         width: 100%;
 
-        margin: 5px 0 0;
+        margin:
+            5px 0 0;
 
         padding-bottom: 5px;
 
@@ -847,7 +1309,8 @@ button {
 
     .main-nav a {
 
-        padding: 8px 0;
+        padding:
+            8px 0;
 
         white-space: nowrap;
     }
@@ -865,6 +1328,10 @@ button {
     }
 
 
+    /* =====================================================
+       HOME
+       ===================================================== */
+
     .hero {
 
         margin-top: 108px;
@@ -877,7 +1344,10 @@ button {
 
         min-height: 520px;
 
-        padding: 55px 25px 100px;
+        padding:
+            55px
+            25px
+            100px;
 
         align-items: center;
     }
@@ -911,17 +1381,134 @@ button {
 
     .engineering-focus {
 
-        padding: 60px 25px 65px;
+        padding:
+            60px
+            25px
+            65px;
+    }
+
+
+    /* =====================================================
+       ABOUT
+       ===================================================== */
+
+    .about-main {
+
+        display: block;
+
+        min-height: auto;
+
+        margin-top: 108px;
+    }
+
+
+    /* IMAGE */
+
+    .about-visual {
+
+        height: 390px;
+
+        min-height: 390px;
+    }
+
+
+    .about-visual img {
+
+        height: 100%;
+    }
+
+
+    /* IMAGE FADES DOWN */
+
+    .about-visual::after {
+
+        top: auto;
+
+        right: 0;
+
+        bottom: -1px;
+
+        width: 100%;
+
+        height: 48%;
+
+        background:
+            linear-gradient(
+                180deg,
+
+                rgba(3,20,38,0) 0%,
+
+                rgba(3,20,38,0.12) 20%,
+
+                rgba(3,20,38,0.35) 40%,
+
+                rgba(3,20,38,0.70) 70%,
+
+                #031426 100%
+            );
+    }
+
+
+    /* CONTENT */
+
+    .about-content {
+
+        min-height: auto;
+
+        margin-top: -1px;
+
+        display: block;
+    }
+
+
+    .about-content-inner {
+
+        padding:
+            45px
+            25px
+            65px;
+    }
+
+
+    .about-content h1 {
+
+        font-size: 38px;
+    }
+
+
+    .about-description {
+
+        font-size: 14px;
+    }
+
+
+    /* STATEMENT */
+
+    .about-statement {
+
+        padding:
+            60px
+            20px
+            65px;
+    }
+
+
+    .about-statement h2 {
+
+        font-size: 27px;
     }
 
 }
 
 
 /* =========================================================
-   MOBILE
+   20. MOBILE
    ========================================================= */
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
+
+
+    /* BRAND */
 
     .brand-text strong {
 
@@ -943,6 +1530,8 @@ button {
     }
 
 
+    /* NAV */
+
     .main-nav {
 
         gap: 14px;
@@ -957,6 +1546,10 @@ button {
     }
 
 
+    /* =====================================================
+       HOME
+       ===================================================== */
+
     .hero {
 
         min-height: 550px;
@@ -967,7 +1560,10 @@ button {
 
         min-height: 550px;
 
-        padding: 50px 20px 100px;
+        padding:
+            50px
+            20px
+            100px;
     }
 
 
@@ -1041,9 +1637,14 @@ button {
     }
 
 
+    /* ENGINEERING FOCUS */
+
     .engineering-focus {
 
-        padding: 60px 20px 65px;
+        padding:
+            60px
+            20px
+            65px;
     }
 
 
@@ -1068,14 +1669,95 @@ button {
         line-height: 1.7;
     }
 
+
+    /* =====================================================
+       ABOUT
+       ===================================================== */
+
+    .about-visual {
+
+        height: 350px;
+
+        min-height: 350px;
+    }
+
+
+    .about-content-inner {
+
+        padding:
+            40px
+            20px
+            60px;
+    }
+
+
+    .about-content h1 {
+
+        font-size: 34px;
+
+        letter-spacing: -0.8px;
+    }
+
+
+    .about-content h2 {
+
+        font-size: 21px;
+    }
+
+
+    .about-description {
+
+        font-size: 13px;
+
+        line-height: 1.75;
+    }
+
+
+    .about-specialties {
+
+        gap: 6px;
+    }
+
+
+    .about-specialties span {
+
+        padding:
+            6px
+            8px;
+
+        font-size: 9px;
+    }
+
+
+    .about-statement {
+
+        padding:
+            55px
+            20px
+            60px;
+    }
+
+
+    .about-statement h2 {
+
+        font-size: 25px;
+    }
+
+
+    .about-statement-inner > p:last-child {
+
+        font-size: 14px;
+    }
+
 }
 
 
 /* =========================================================
-   VERY SMALL PHONE
+   21. VERY SMALL PHONES
    ========================================================= */
 
-@media (max-width:400px) {
+@media (max-width: 400px) {
+
 
     .brand-text small {
 
@@ -1100,487 +1782,24 @@ button {
         display: none;
     }
 
-}
 
+    .about-visual {
 
-/* =========================================================
-   ABOUT PAGE
-   ========================================================= */
+        height: 320px;
 
-
-/* =========================================================
-   ABOUT HERO
-   ========================================================= */
-
-.about-hero {
-
-    margin-top: 64px;
-
-    min-height: 330px;
-
-    background: #031426;
-
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-
-    display: flex;
-
-    align-items: center;
-}
-
-
-.about-hero-container {
-
-    width: 100%;
-
-    max-width: 1440px;
-
-    margin: 0 auto;
-
-    padding: 75px 42px;
-}
-
-
-.about-heading {
-
-    max-width: 850px;
-}
-
-
-.about-heading .section-label {
-
-    color: #62c3ff;
-
-    margin-bottom: 18px;
-}
-
-
-.about-heading h1 {
-
-    color: #ffffff;
-
-    font-size: clamp(40px, 5vw, 64px);
-
-    line-height: 1.05;
-
-    letter-spacing: -1.5px;
-
-    margin: 0;
-}
-
-
-.about-lead {
-
-    max-width: 700px;
-
-    margin-top: 22px;
-
-    color: #b9cbd8;
-
-    font-size: 18px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   ABOUT INTRO
-   ========================================================= */
-
-.about-intro {
-
-    background: #ffffff;
-
-    padding: 90px 42px;
-}
-
-
-.about-intro-container {
-
-    width: 100%;
-
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 70px;
-
-    align-items: center;
-}
-
-
-/* IMAGE */
-
-.about-image {
-
-    width: 100%;
-
-    overflow: hidden;
-
-    border: 1px solid #dbe5ec;
-
-    background: #f4f7fa;
-}
-
-
-.about-image img {
-
-    display: block;
-
-    width: 100%;
-
-    height: auto;
-
-    object-fit: cover;
-}
-
-
-/* TEXT */
-
-.about-text {
-
-    max-width: 560px;
-}
-
-
-.about-text .section-label {
-
-    color: #1769aa;
-
-    margin-bottom: 15px;
-}
-
-
-.about-text h2 {
-
-    margin: 0 0 22px;
-
-    color: #061a2d;
-
-    font-size: 34px;
-
-    line-height: 1.2;
-}
-
-
-.about-text p:not(.section-label) {
-
-    margin-bottom: 18px;
-
-    color: #64748b;
-
-    font-size: 15px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================================
-   ENGINEERING APPROACH
-   ========================================================= */
-
-.engineering-approach {
-
-    background: #f5f8fb;
-
-    padding: 90px 42px;
-}
-
-
-.approach-container {
-
-    width: 100%;
-
-    max-width: 1200px;
-
-    margin: 0 auto;
-}
-
-
-.approach-heading {
-
-    text-align: center;
-
-    margin-bottom: 55px;
-}
-
-
-.approach-heading .section-label {
-
-    color: #1769aa;
-}
-
-
-.approach-heading h2 {
-
-    margin-top: 12px;
-
-    color: #061a2d;
-
-    font-size: 34px;
-
-    line-height: 1.25;
-}
-
-
-/* GRID */
-
-.approach-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 1px;
-
-    background: #d8e1e8;
-
-    border: 1px solid #d8e1e8;
-}
-
-
-.approach-item {
-
-    position: relative;
-
-    min-height: 250px;
-
-    padding: 30px;
-
-    background: #ffffff;
-}
-
-
-.approach-number {
-
-    display: block;
-
-    margin-bottom: 25px;
-
-    color: #4db8ff;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 2px;
-}
-
-
-.approach-item h3 {
-
-    margin-bottom: 14px;
-
-    color: #061a2d;
-
-    font-size: 20px;
-}
-
-
-.approach-item p {
-
-    color: #64748b;
-
-    font-size: 14px;
-
-    line-height: 1.75;
-}
-
-
-/* =========================================================
-   CAREER OBJECTIVE
-   ========================================================= */
-
-.career-objective {
-
-    background: #031426;
-
-    padding: 95px 42px;
-}
-
-
-.career-container {
-
-    width: 100%;
-
-    max-width: 850px;
-
-    margin: 0 auto;
-
-    text-align: center;
-}
-
-
-.career-container .section-label {
-
-    color: #62c3ff;
-}
-
-
-.career-container h2 {
-
-    margin-top: 14px;
-
-    color: #ffffff;
-
-    font-size: 36px;
-
-    line-height: 1.25;
-}
-
-
-.career-container > p:not(.section-label) {
-
-    max-width: 720px;
-
-    margin: 22px auto 0;
-
-    color: #b9cbd8;
-
-    font-size: 15px;
-
-    line-height: 1.8;
-}
-
-
-.about-button {
-
-    margin-top: 32px;
-
-    background: #ffffff;
-
-    color: #061a2d;
-
-    border: 1px solid #ffffff;
-}
-
-
-.about-button:hover {
-
-    background: #dff3ff;
-
-    border-color: #dff3ff;
-}
-
-
-/* =========================================================
-   ABOUT TABLET
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    .about-intro-container {
-
-        grid-template-columns: 1fr;
-
-        gap: 45px;
+        min-height: 320px;
     }
 
 
-    .about-text {
+    .about-content h1 {
 
-        max-width: 100%;
+        font-size: 31px;
     }
 
 
-    .approach-grid {
+    .about-content h2 {
 
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-}
-
-
-/* =========================================================
-   ABOUT MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .about-hero {
-
-        margin-top: 108px;
-
-        min-height: 350px;
-    }
-
-
-    .about-hero-container {
-
-        padding: 60px 20px;
-    }
-
-
-    .about-heading h1 {
-
-        font-size: 40px;
-    }
-
-
-    .about-lead {
-
-        font-size: 16px;
-    }
-
-
-    .about-intro {
-
-        padding: 65px 20px;
-    }
-
-
-    .about-text h2 {
-
-        font-size: 28px;
-    }
-
-
-    .engineering-approach {
-
-        padding: 65px 20px;
-    }
-
-
-    .approach-heading {
-
-        margin-bottom: 35px;
-    }
-
-
-    .approach-heading h2 {
-
-        font-size: 28px;
-    }
-
-
-    .approach-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    .approach-item {
-
-        min-height: auto;
-
-        padding: 28px;
-    }
-
-
-    .career-objective {
-
-        padding: 70px 20px;
-    }
-
-
-    .career-container h2 {
-
-        font-size: 29px;
+        font-size: 20px;
     }
 
 }
