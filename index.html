@@ -18,7 +18,7 @@
         <div class="header-container">
 
             <!-- Logo -->
-            <a href="#home" class="brand">
+            <a href="index.html" class="brand">
 
                 <div class="brand-logo">
                     <span class="logo-left"></span>
@@ -37,26 +37,37 @@
             <!-- Navigation -->
             <nav class="main-nav">
 
-                <a href="#home" class="active">Home</a>
-
-                <a href="#about">About</a>
-
-                <a href="#projects" class="projects-link">
-                    Projects
-                    <span class="arrow-down">⌄</span>
+                <a href="index.html" class="active">
+                    Home
                 </a>
 
-                <a href="#skills">Skills</a>
+                <a href="about.html">
+                    About
+                </a>
 
-                <a href="#resume">Resume</a>
+                <a href="projects.html">
+                    Projects
+                </a>
 
-                <a href="#contact">Contact</a>
+                <a href="skills.html">
+                    Skills
+                </a>
+
+                <a href="resume.html">
+                    Resume
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
 
             </nav>
 
 
-            <!-- Theme icon -->
-            <button class="theme-button" aria-label="Toggle theme">
+            <!-- Theme button -->
+            <button
+                class="theme-button"
+                aria-label="Toggle theme">
                 ☾
             </button>
 
@@ -65,18 +76,16 @@
     </header>
 
 
-
-    <!-- ================= HERO ================= -->
+    <!-- ================= HOME / HERO ================= -->
 
     <main>
 
-        <section id="home" class="hero">
+        <section class="hero">
 
-            <!-- Your actual PCB background -->
+            <!-- Full PCB background -->
             <div class="hero-background"></div>
 
-
-            <!-- Dark overlay for readability -->
+            <!-- Overlay -->
             <div class="hero-overlay"></div>
 
 
@@ -125,14 +134,25 @@
 
                     <div class="hero-buttons">
 
-                        <a href="#projects" class="button button-primary">
+                        <a
+                            href="projects.html"
+                            class="button button-primary">
+
                             View My Projects
+
                             <span>→</span>
+
                         </a>
 
-                        <a href="#resume" class="button button-outline">
+
+                        <a
+                            href="resume.html"
+                            class="button button-outline">
+
                             Download Resume
+
                             <span>↓</span>
+
                         </a>
 
                     </div>
@@ -140,7 +160,8 @@
                 </div>
 
 
-                <!-- Hero bottom-right message -->
+                <!-- Bottom-right message -->
+
                 <div class="hero-message">
 
                     <p>
@@ -155,168 +176,6 @@
             </div>
 
         </section>
-
-
-        <!-- Temporary sections so navigation works -->
-
-        <section id="projects" class="projects-section">
-
-    <div class="section-heading">
-
-        <div class="heading-left">
-            <div class="section-label">
-                <span></span>
-                FEATURED PROJECTS
-            </div>
-
-            <h2>My Key Projects</h2>
-
-            <p>
-                A collection of my engineering projects that showcase
-                my skills in design, analysis, and technical solutions
-                across different fields of electronics and engineering.
-            </p>
-        </div>
-
-        <a href="#projects" class="view-all">
-            View All Projects <span>→</span>
-        </a>
-
-    </div>
-
-
-    <div class="projects-grid">
-
-        <!-- 01 MICROWAVE LINK -->
-        <article class="project-card">
-
-            <div class="project-image">
-                <img src="images/hero-pcb.PNG"
-                     alt="Microwave Link Design">
-
-                <div class="project-icon">◉</div>
-            </div>
-
-            <div class="project-content">
-
-                <h3>Microwave Link Design</h3>
-
-                <div class="project-subtitle">
-                    20.6 km Point-to-Point Link
-                </div>
-
-                <p>
-                    Link budget, path profile, Fresnel zone analysis,
-                    antenna selection and reliability design.
-                </p>
-
-                <a href="#" class="project-link">
-                    View Project <span>→</span>
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- 02 PCB DESIGN -->
-        <article class="project-card">
-
-            <div class="project-image">
-                <img src="images/hero-pcb.PNG"
-                     alt="PCB Design">
-
-                <div class="project-icon">▣</div>
-            </div>
-
-            <div class="project-content">
-
-                <h3>PCB Design</h3>
-
-                <div class="project-subtitle">
-                    Electronic System PCB Development
-                </div>
-
-                <p>
-                    Schematic, layout, 3D model,
-                    Gerber files and BOM.
-                </p>
-
-                <a href="#" class="project-link">
-                    View Project <span>→</span>
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- 03 ELECTRONICS DESIGN -->
-        <article class="project-card">
-
-            <div class="project-image">
-                <img src="images/about-engineering.PNG"
-                     alt="Electronics Design">
-
-                <div class="project-icon">ϟ</div>
-            </div>
-
-            <div class="project-content">
-
-                <h3>Electronics Design</h3>
-
-                <div class="project-subtitle">
-                    Circuit Design &amp; Simulation
-                </div>
-
-                <p>
-                    Component selection, circuit analysis,
-                    calculations and simulation.
-                </p>
-
-                <a href="#" class="project-link">
-                    View Project <span>→</span>
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- 04 FDAS & CCTV -->
-        <article class="project-card">
-
-            <div class="project-image">
-                <img src="images/about-engineering.PNG"
-                     alt="FDAS and CCTV Design">
-
-                <div class="project-icon">◇</div>
-            </div>
-
-            <div class="project-content">
-
-                <h3>FDAS &amp; CCTV Design</h3>
-
-                <div class="project-subtitle">
-                    Building Security &amp; Fire Protection System
-                </div>
-
-                <p>
-                    System layout, device placement,
-                    cable routing and equipment schedule.
-                </p>
-
-                <a href="#" class="project-link">
-                    View Project <span>→</span>
-                </a>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
 
     </main>
 
