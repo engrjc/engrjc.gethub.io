@@ -1,6 +1,10 @@
-/* =========================
-   RESET
-========================= */
+/* =====================================================
+   JOHN CARL P. ORTIZ
+   ELECTRONICS DESIGN ENGINEER PORTFOLIO
+===================================================== */
+
+
+/* ================= GLOBAL ================= */
 
 * {
     margin: 0;
@@ -13,524 +17,723 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #06101d;
-    color: #ffffff;
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f8fc;
+    color: #10243d;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* ================= HEADER ================= */
 
-.navbar {
+.site-header {
     position: absolute;
+
     top: 0;
     left: 0;
 
     width: 100%;
-    height: 80px;
+
+    height: 55px;
+
+    z-index: 1000;
+
+    background: rgba(4, 17, 31, 0.94);
+
+    border-bottom: 1px solid rgba(40, 145, 235, 0.35);
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1440px;
+
+    height: 100%;
+
+    margin: auto;
+
+    padding: 0 41px;
 
     display: flex;
+
     align-items: center;
-    justify-content: space-between;
-
-    padding: 0 7%;
-
-    z-index: 100;
 }
 
-.logo {
-    color: white;
-    text-decoration: none;
 
-    font-size: 30px;
-    font-weight: 800;
-}
+/* ================= BRAND ================= */
 
-.logo span {
-    color: #168cff;
-}
-
-.navbar nav {
+.brand {
     display: flex;
-    gap: 35px;
-}
 
-.navbar nav a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-}
+    align-items: center;
 
-.navbar nav a:hover {
-    color: #168cff;
-}
+    gap: 12px;
 
-.nav-button {
-    text-decoration: none;
     color: white;
 
-    border: 1px solid #168cff;
-    padding: 11px 20px;
-
-    font-size: 13px;
-    font-weight: 600;
-
-    transition: 0.3s;
-}
-
-.nav-button:hover {
-    background: #168cff;
+    min-width: 430px;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* JC geometric logo */
 
-.hero {
-    min-height: 100vh;
+.brand-logo {
+    position: relative;
+
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+}
+
+.logo-left,
+.logo-right,
+.logo-center {
+    position: absolute;
+
+    display: block;
+
+    border-color: #2499ff;
+}
+
+
+/* Left geometric piece */
+
+.logo-left {
+    width: 13px;
+    height: 29px;
+
+    left: 3px;
+    top: 7px;
+
+    border-left: 4px solid #2499ff;
+    border-bottom: 4px solid #2499ff;
+
+    transform: skewY(-27deg);
+}
+
+
+/* Right geometric piece */
+
+.logo-right {
+    width: 13px;
+    height: 29px;
+
+    right: 3px;
+    top: 7px;
+
+    border-right: 4px solid #2499ff;
+    border-top: 4px solid #2499ff;
+
+    transform: skewY(-27deg);
+}
+
+
+/* Center */
+
+.logo-center {
+    width: 4px;
+    height: 31px;
+
+    left: 19px;
+    top: 6px;
+
+    background: #2499ff;
+
+    transform: skewY(28deg);
+}
+
+
+.brand-text {
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+.brand-text strong {
+    color: #f7fbff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+}
+
+.brand-text small {
+    color: #b4c5d7;
+
+    font-size: 10px;
+
+    margin-top: 4px;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+.main-nav {
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 30px;
+
+    flex: 1;
+}
+
+.main-nav a {
+    position: relative;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    color: #d2deeb;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: #38a7ff;
+}
+
+
+/* Active navigation */
+
+.main-nav a.active {
+    color: #38a7ff;
+}
+
+.main-nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background: #1698ff;
+}
+
+
+/* Projects arrow */
+
+.arrow-down {
+    margin-left: 7px;
+
+    font-size: 14px;
+
+    line-height: 1;
 
     position: relative;
+
+    top: -1px;
+}
+
+
+/* ================= THEME BUTTON ================= */
+
+.theme-button {
+    width: 30px;
+    height: 30px;
+
+    margin-left: 24px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #b9cee1;
+
+    font-size: 19px;
+
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+
+    height: 350px;
+
+    min-height: 350px;
+
     overflow: hidden;
 
-    display: flex;
-    align-items: center;
+    background: #06182b;
+}
+
+
+/* Your uploaded PCB image */
+
+.hero-background {
+    position: absolute;
+
+    inset: 0;
+
+    background-image: url("images/hero-pcb.PNG");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* Left-side darkening */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
 
     background:
         linear-gradient(
             90deg,
-            #06101d 0%,
-            #071426 45%,
-            #0b2340 100%
+            rgba(3, 18, 33, 0.98) 0%,
+            rgba(3, 18, 33, 0.96) 28%,
+            rgba(3, 18, 33, 0.80) 42%,
+            rgba(3, 18, 33, 0.10) 69%,
+            rgba(3, 18, 33, 0.02) 100%
         );
+
+    z-index: 1;
 }
 
 
-/* Blue diagonal transition */
+/* ================= DIAGONAL HERO SHAPE ================= */
 
 .hero::after {
     content: "";
 
     position: absolute;
 
-    right: -15%;
-    top: 0;
+    z-index: 2;
 
-    width: 55%;
-    height: 100%;
+    top: 0;
+    bottom: 0;
+
+    left: 37.5%;
+
+    width: 115px;
 
     background:
         linear-gradient(
             135deg,
-            transparent 20%,
-            rgba(15, 107, 190, 0.22) 20%,
-            rgba(15, 107, 190, 0.22) 65%,
-            rgba(3, 12, 23, 0.7) 65%
+            transparent 0%,
+            transparent 46%,
+            rgba(7, 68, 125, 0.65) 47%,
+            rgba(17, 122, 211, 0.75) 53%,
+            rgba(3, 24, 46, 0.92) 55%,
+            rgba(3, 24, 46, 0.80) 62%,
+            transparent 63%
         );
 
     pointer-events: none;
 }
 
 
-/* =========================
-   HERO CONTENT
-========================= */
+/* ================= HERO CONTAINER ================= */
+
+.hero-container {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 1440px;
+
+    height: 100%;
+
+    margin: auto;
+
+    padding-left: 41px;
+}
+
+
+/* ================= HERO CONTENT ================= */
 
 .hero-content {
-    width: 55%;
+    position: absolute;
 
-    padding-left: 8%;
-    padding-top: 70px;
+    left: 41px;
 
-    position: relative;
-    z-index: 10;
+    top: 97px;
+
+    width: 600px;
 }
 
-.eyebrow {
-    color: #168cff;
 
-    font-size: 13px;
-    font-weight: 700;
+/* Eyebrow */
 
-    letter-spacing: 3px;
+.hero-eyebrow {
+    color: #48adff;
 
-    margin-bottom: 20px;
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.8px;
+
+    margin-bottom: 10px;
 }
+
+
+/* Main name */
 
 .hero h1 {
-    font-size: clamp(45px, 6vw, 82px);
+    color: #ffffff;
 
-    line-height: 0.98;
+    font-size: 47px;
 
-    margin-bottom: 18px;
+    line-height: 1.05;
 
-    letter-spacing: -2px;
+    font-weight: 700;
+
+    letter-spacing: -1.2px;
+
+    margin-bottom: 4px;
 }
+
+
+/* Job title */
 
 .hero h2 {
-    color: #72b9ff;
+    color: #64baff;
 
-    font-size: clamp(20px, 2.5vw, 32px);
+    font-size: 27px;
 
-    font-weight: 400;
+    line-height: 1.15;
 
-    margin-bottom: 25px;
-}
+    font-weight: 600;
 
-.hero-description {
-    max-width: 570px;
-
-    color: #aebdce;
-
-    font-size: 17px;
-
-    line-height: 1.8;
-
-    margin-bottom: 35px;
+    margin-bottom: 17px;
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
+/* Specialties */
+
+.hero-specialties {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #f2f7fc;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    margin-bottom: 24px;
+}
+
+.hero-specialties i {
+    color: #90a9be;
+
+    font-style: normal;
+
+    font-size: 10px;
+}
+
+
+/* ================= BUTTONS ================= */
 
 .hero-buttons {
     display: flex;
+
     gap: 15px;
 
-    flex-wrap: wrap;
-
-    margin-bottom: 35px;
+    align-items: center;
 }
 
-.btn {
-    display: inline-block;
+.button {
+    height: 38px;
 
-    text-decoration: none;
+    display: inline-flex;
 
-    padding: 15px 24px;
+    align-items: center;
 
-    font-size: 12px;
+    justify-content: center;
 
-    font-weight: 700;
+    gap: 25px;
 
-    letter-spacing: 1px;
+    padding: 0 20px;
 
-    transition: 0.3s;
+    font-size: 11px;
+
+    font-weight: 600;
+
+    border-radius: 3px;
+
+    transition: all 0.2s ease;
 }
 
-.primary {
-    background: #168cff;
+
+/* Primary */
+
+.button-primary {
+    background: #1199ff;
+
     color: white;
+
+    border: 1px solid #1199ff;
+
+    min-width: 153px;
 }
 
-.primary:hover {
-    background: #42a5ff;
-    transform: translateY(-2px);
+.button-primary:hover {
+    background: #32a8ff;
 }
 
-.secondary {
-    border: 1px solid #52718f;
+
+/* Outline */
+
+.button-outline {
     color: white;
+
+    background: rgba(4, 20, 36, 0.25);
+
+    border: 1px solid rgba(225, 237, 248, 0.8);
+
+    min-width: 158px;
 }
 
-.secondary:hover {
-    border-color: #168cff;
-    background: rgba(22, 140, 255, 0.1);
-}
+.button-outline:hover {
+    border-color: #31a5ff;
 
-
-/* =========================
-   TAGS
-========================= */
-
-.hero-tags {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-}
-
-.hero-tags span {
-    color: #8fa8c0;
-
-    border-left: 2px solid #168cff;
-
-    padding-left: 9px;
-
-    font-size: 12px;
+    color: #52b4ff;
 }
 
 
-/* =========================
-   ENGINEERING VISUAL
-========================= */
+/* ================= HERO MESSAGE ================= */
 
-.hero-visual {
+.hero-message {
     position: absolute;
 
-    right: 0;
-    top: 0;
+    right: 42px;
 
-    width: 50%;
-    height: 100%;
+    bottom: 26px;
 
-    z-index: 2;
+    z-index: 10;
 
-    overflow: hidden;
+    text-align: right;
 }
 
+.hero-message p {
+    color: #eef6fd;
 
-/* Blueprint grid */
+    font-size: 10px;
 
-.circuit-grid {
-    position: absolute;
+    line-height: 1.35;
 
-    inset: 0;
-
-    background-image:
-        linear-gradient(
-            rgba(65, 155, 230, 0.08) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(65, 155, 230, 0.08) 1px,
-            transparent 1px
-        );
-
-    background-size: 45px 45px;
-
-    transform: perspective(600px) rotateX(55deg) scale(1.5);
-
-    transform-origin: center bottom;
+    font-weight: 400;
 }
 
-
-/* Chip */
-
-.chip {
-    position: absolute;
-
-    width: 270px;
-    height: 270px;
-
-    right: 18%;
-    top: 33%;
-
-    border: 3px solid #4da8ff;
-
-    background:
-        linear-gradient(
-            145deg,
-            #162d46,
-            #07111f
-        );
-
-    box-shadow:
-        0 0 50px rgba(22, 140, 255, 0.25),
-        inset 0 0 40px rgba(22, 140, 255, 0.12);
-
-    transform: rotate(8deg);
-}
-
-
-/* Chip pins */
-
-.chip::before,
-.chip::after {
-    content: "";
-
-    position: absolute;
-
-    inset: -20px;
-
-    border-top: 3px solid #287fc4;
-    border-bottom: 3px solid #287fc4;
-}
-
-.chip::after {
-    transform: rotate(90deg);
-}
-
-
-/* Chip center */
-
-.chip-center {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%) rotate(-8deg);
-
-    text-align: center;
-}
-
-.chip-center span {
+.hero-message span {
     display: block;
 
-    color: #62b5ff;
-
-    font-size: 45px;
-
-    font-weight: 800;
-
-    letter-spacing: 5px;
-}
-
-.chip-center small {
-    color: #718ba4;
-
-    font-size: 9px;
-
-    letter-spacing: 3px;
-}
-
-
-/* Circuit lines */
-
-.circuit-line {
-    position: absolute;
+    width: 20px;
 
     height: 2px;
 
-    background: #168cff;
+    margin-left: auto;
 
-    opacity: 0.7;
-}
+    margin-top: 7px;
 
-.line-1 {
-    width: 220px;
-    right: 5%;
-    top: 25%;
-}
-
-.line-2 {
-    width: 170px;
-    right: 28%;
-    top: 70%;
-    transform: rotate(25deg);
-}
-
-.line-3 {
-    width: 250px;
-    right: 2%;
-    top: 78%;
-    transform: rotate(-15deg);
-}
-
-.line-4 {
-    width: 130px;
-    right: 35%;
-    top: 18%;
-    transform: rotate(-25deg);
+    background: #149dff;
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+/* ================= TEMPORARY SECTIONS ================= */
 
-.section {
+.temporary-section {
     min-height: 500px;
 
-    padding: 120px 8%;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     background: #f4f8fc;
 
-    color: #071426;
+    color: #0d233c;
 }
 
-.dark-section {
-    background: #071426;
+.temporary-section.dark {
+    background: #07192b;
 
     color: white;
 }
 
-.section-label {
-    color: #168cff;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 15px;
-}
-
-.section h2 {
-    font-size: 45px;
-
-    margin-bottom: 20px;
-}
-
-.section-intro {
-    color: #64748b;
-
-    max-width: 600px;
-
-    line-height: 1.7;
+.temporary-section h2 {
+    font-size: 40px;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* ================= TABLET ================= */
 
-footer {
-    padding: 30px 8%;
+@media (max-width: 1000px) {
 
-    background: #040b14;
-
-    color: #718096;
-
-    text-align: center;
-
-    font-size: 12px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 900px) {
-
-    .navbar nav {
-        display: none;
+    .brand {
+        min-width: auto;
     }
 
-    .hero {
-        min-height: 850px;
+    .main-nav {
+        gap: 17px;
+    }
+
+    .main-nav a {
+        font-size: 10px;
     }
 
     .hero-content {
-        width: 100%;
-
-        padding: 140px 8% 80px;
+        left: 30px;
     }
 
-    .hero-visual {
-        width: 100%;
-        opacity: 0.25;
+    .hero-container {
+        padding-left: 30px;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        height: 64px;
+    }
+
+    .header-container {
+        padding: 0 18px;
+    }
+
+    .brand-text strong {
+        font-size: 12px;
+    }
+
+    .brand-text small {
+        font-size: 8px;
+    }
+
+    .brand-logo {
+        width: 32px;
+        height: 35px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .theme-button {
+        margin-left: auto;
+    }
+
+    .hero {
+        height: 650px;
+
+        min-height: 650px;
+    }
+
+    .hero-background {
+        background-position: 65% center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(3, 18, 33, 0.98) 0%,
+                rgba(3, 18, 33, 0.91) 50%,
+                rgba(3, 18, 33, 0.45) 100%
+            );
     }
 
     .hero::after {
-        width: 100%;
-        right: 0;
+        display: none;
     }
 
-    .chip {
-        right: 10%;
+    .hero-container {
+        padding: 0 25px;
+    }
+
+    .hero-content {
+        left: 25px;
+        right: 25px;
+
+        top: 155px;
+
+        width: auto;
+    }
+
+    .hero-eyebrow {
+        font-size: 10px;
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero-specialties {
+        flex-wrap: wrap;
+
+        white-space: normal;
+
+        gap: 8px;
+
+        font-size: 11px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .hero-message {
+        right: 25px;
     }
 }
