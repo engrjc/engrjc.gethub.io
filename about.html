@@ -2,52 +2,25 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>About | John Carl P. Ortiz</title>
 
-    <title>
-        About | John Carl P. Ortiz
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
-
-
-<!-- =====================================================
-     HEADER
-     ===================================================== -->
 
 <header class="site-header">
 
     <div class="header-container">
 
+        <a href="index.html" class="brand">
 
-        <!-- LOGO + NAME -->
-
-        <a
-            href="index.html"
-            class="brand"
-        >
-
-            <div
-                class="brand-logo"
-                aria-label="JC Engineering Logo"
-            >
+            <div class="brand-logo" aria-label="JC Engineering Logo">
 
                 <span class="logo-j">J</span>
-
                 <span class="logo-c">C</span>
 
                 <span class="circuit circuit-top"></span>
@@ -62,94 +35,70 @@
 
             </div>
 
-
             <div class="brand-text">
-
-                <strong>
-                    JOHN CARL P. ORTIZ
-                </strong>
-
-                <small>
-                    Electronics Design Engineer
-                </small>
-
+                <strong>JOHN CARL P. ORTIZ</strong>
+                <small>Electronics Design Engineer</small>
             </div>
 
         </a>
 
 
-        <!-- NAVIGATION -->
-
         <nav class="main-nav">
 
-            <a href="index.html">
-                Home
-            </a>
+            <a href="index.html">Home</a>
 
-            <a
-                href="about.html"
-                class="active"
-            >
-                About
-            </a>
+            <a href="about.html" class="active">About</a>
 
-            <a href="projects.html">
-                Projects
-            </a>
+            <a href="projects.html">Projects</a>
 
-            <a href="skills.html">
-                Skills
-            </a>
+            <a href="skills.html">Skills</a>
 
-            <a href="resume.html">
-                Resume
-            </a>
+            <a href="resume.html">Resume</a>
 
-            <a href="contact.html">
-                Contact
-            </a>
+            <a href="contact.html">Contact</a>
 
         </nav>
 
 
-        <!-- THEME BUTTON -->
-
         <button
             class="theme-button"
             id="themeButton"
-            aria-label="Toggle theme"
-        >
+            aria-label="Toggle theme">
             ☾
         </button>
-
 
     </div>
 
 </header>
 
 
-
-<!-- =====================================================
-     MAIN
-     ===================================================== -->
-
 <main>
 
-
-    <!-- =================================================
-         ABOUT MAIN
-         TEXT LEFT / IMAGE RIGHT
-         ================================================= -->
+    <!-- =====================================================
+         ABOUT HERO
+         IMAGE LEFT + TEXT RIGHT
+         ===================================================== -->
 
     <section class="about-main">
 
 
-        <!-- LEFT SIDE — TEXT -->
+        <!-- LEFT: ENGINEERING IMAGE -->
+
+        <div class="about-visual">
+
+            <img
+                src="images/about-engineering.PNG"
+                alt="Electronics Engineering"
+            >
+
+        </div>
+
+
+        <!-- RIGHT: ABOUT INFORMATION -->
 
         <div class="about-content">
 
             <div class="about-content-inner">
-
 
                 <p class="about-label">
                     ABOUT ME
@@ -175,127 +124,82 @@
 
 
                 <p class="about-description">
-
-                    I am a Bachelor of Science in Electronics
-                    Engineering graduate with an interest in
-                    electronics design, computer-aided design,
-                    printed circuit board development,
-                    telecommunications, and extra-low-voltage
-                    systems.
-
+                    I am a Bachelor of Science in Electronics Engineering
+                    graduate with an interest in electronics design,
+                    computer-aided design, printed circuit board development,
+                    telecommunications, and extra-low-voltage systems.
                 </p>
 
 
                 <p class="about-description">
-
-                    My engineering approach combines technical
-                    knowledge, digital tools, and practical
-                    problem-solving to develop reliable and
-                    functional engineering solutions.
-
+                    My engineering approach combines technical knowledge,
+                    digital tools, and practical problem-solving to develop
+                    reliable and functional engineering solutions.
                 </p>
 
 
                 <div class="about-specialties">
 
-                    <span>
-                        Electronics
-                    </span>
+                    <span>Electronics</span>
 
-                    <span>
-                        PCB Design
-                    </span>
+                    <span>PCB Design</span>
 
-                    <span>
-                        CAD
-                    </span>
+                    <span>CAD</span>
 
-                    <span>
-                        Telecommunications
-                    </span>
+                    <span>Telecommunications</span>
 
-                    <span>
-                        ELV Systems
-                    </span>
+                    <span>ELV Systems</span>
 
                 </div>
 
 
                 <a
                     href="projects.html"
-                    class="button about-project-button"
-                >
+                    class="button about-project-button">
 
                     View My Projects
 
-                    <span>
-                        →
-                    </span>
+                    <span>→</span>
 
                 </a>
-
 
             </div>
 
         </div>
 
-
-
-        <!-- RIGHT SIDE — IMAGE -->
-
-        <div class="about-visual">
-
-            <img
-                src="images/about-engineering.PNG"
-                alt="Electronics Engineering"
-            >
-
-        </div>
-
-
     </section>
 
 
-
-    <!-- =================================================
-         LOWER WHITE SECTION
-         ================================================= -->
+    <!-- =====================================================
+         LOWER STATEMENT
+         ===================================================== -->
 
     <section class="about-statement">
 
         <div class="about-statement-inner">
 
-
             <p class="about-label">
                 ENGINEERING APPROACH
             </p>
-
 
             <h2>
                 Designing Practical Engineering Solutions
             </h2>
 
-
             <p>
-
                 Combining engineering knowledge, digital tools,
                 and hands-on design to develop practical and
                 reliable solutions.
-
             </p>
-
 
         </div>
 
     </section>
 
-
 </main>
 
 
-
 <script src="script.js"></script>
-
 
 </body>
 
