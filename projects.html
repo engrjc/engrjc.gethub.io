@@ -19,1085 +19,869 @@
         href="style.css"
     >
 
+
     <style>
 
-/* =========================================================
-   PROJECTS PAGE
-========================================================= */
 
-.projects-page {
-    background: #f6f8fb;
-    min-height: calc(100vh - 64px);
-}
+        /* =========================================
+           PROJECTS PAGE
+        ========================================= */
 
+        .projects-page {
 
-/* =========================================================
-   PROJECT HERO
-========================================================= */
+            background: #f6f8fb;
 
-.projects-hero {
+            min-height: calc(100vh - 64px);
 
-    position: relative;
+        }
 
-    background:
-        linear-gradient(
-            135deg,
-            #031426 0%,
-            #061d35 55%,
-            #082846 100%
-        );
 
-    color: #ffffff;
 
-    padding: 72px 30px 78px;
+        /* =========================================
+           PROJECT HERO
+        ========================================= */
 
-    overflow: hidden;
+        .projects-hero {
 
-}
+            position: relative;
 
+            background:
+                linear-gradient(
+                    135deg,
+                    #031426 0%,
+                    #061d35 55%,
+                    #082846 100%
+                );
 
-/* Technical grid */
+            color: #ffffff;
 
-.projects-hero::before {
+            padding: 48px 30px 52px;
 
-    content: "";
+            overflow: hidden;
 
-    position: absolute;
+        }
 
-    inset: 0;
 
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        );
+        .projects-hero::before {
 
-    background-size: 45px 45px;
+            content: "";
 
-    pointer-events: none;
+            position: absolute;
 
-}
+            inset: 0;
 
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.035) 1px,
+                    transparent 1px
+                );
 
-/* Blue glow */
+            background-size: 40px 40px;
 
-.projects-hero::after {
+            pointer-events: none;
 
-    content: "";
+        }
 
-    position: absolute;
 
-    width: 360px;
+        .projects-hero::after {
 
-    height: 360px;
+            content: "";
 
-    right: -140px;
+            position: absolute;
 
-    top: -160px;
+            width: 420px;
 
-    border-radius: 50%;
+            height: 420px;
 
-    background: rgba(40, 150, 255, 0.10);
+            right: -140px;
 
-    filter: blur(10px);
+            top: -190px;
 
-}
+            border-radius: 50%;
 
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 140, 255, 0.18),
+                    transparent 68%
+                );
 
-.projects-hero-content {
+            pointer-events: none;
 
-    position: relative;
+        }
 
-    z-index: 2;
 
-    max-width: 1100px;
+        .projects-hero-inner {
 
-    margin: auto;
+            position: relative;
 
-}
+            z-index: 2;
 
+            max-width: 1380px;
 
-.projects-eyebrow {
+            margin: 0 auto;
 
-    margin: 0 0 12px;
+        }
 
-    font-size: 11px;
 
-    font-weight: 700;
+        .projects-eyebrow {
 
-    letter-spacing: 4px;
+            margin: 0 0 8px;
 
-    color: #67b7ff;
+            font-size: 11px;
 
-}
+            font-weight: 700;
 
+            letter-spacing: 3px;
 
-.projects-hero h1 {
+            color: #62b8ff;
 
-    margin: 0 0 14px;
+        }
 
-    font-size: clamp(40px, 5vw, 64px);
 
-    line-height: 1;
+        .projects-hero h1 {
 
-    font-weight: 700;
+            margin: 0;
 
-    letter-spacing: -1.5px;
+            font-size: 42px;
 
-}
+            line-height: 1;
 
+            letter-spacing: 1px;
 
-.projects-hero h2 {
+        }
 
-    margin: 0 0 20px;
 
-    font-size: clamp(20px, 2.5vw, 29px);
+        .projects-hero h2 {
 
-    font-weight: 400;
+            margin: 8px 0 10px;
 
-    color: #dbe9f6;
+            font-size: 20px;
 
-}
+            font-weight: 500;
 
+            color: #dcecff;
 
-.projects-hero-description {
+        }
 
-    max-width: 700px;
 
-    margin: 0;
+        .projects-hero p {
 
-    font-size: 14px;
+            max-width: 720px;
 
-    line-height: 1.8;
+            margin: 0;
 
-    color: #b9c9d9;
+            font-size: 13px;
 
-}
+            line-height: 1.6;
 
+            color: #b9cde1;
 
-/* =========================================================
-   PROJECT CATEGORY SECTION
-========================================================= */
+        }
 
-.project-categories {
 
-    max-width: 1380px;
 
-    margin: auto;
+        /* =========================================
+           CATEGORY SECTION
+        ========================================= */
 
-    padding: 65px 30px 80px;
+        .project-category-section {
 
-}
+            max-width: 1380px;
 
+            margin: 0 auto;
 
-.categories-heading {
+            padding: 40px 30px 45px;
 
-    margin-bottom: 30px;
+        }
 
-}
 
+        .project-section-heading {
 
-.categories-heading-left {
+            margin-bottom: 22px;
 
-    max-width: 650px;
+        }
 
-}
 
+        .project-section-label {
 
-.categories-label {
+            margin: 0 0 5px;
 
-    margin: 0 0 8px;
+            font-size: 10px;
 
-    font-size: 10px;
+            font-weight: 700;
 
-    font-weight: 700;
+            letter-spacing: 2.5px;
 
-    letter-spacing: 3px;
+            color: #1976d2;
 
-    color: #1677c8;
+        }
 
-}
 
+        .project-section-heading h2 {
 
-.categories-heading h2 {
+            margin: 0 0 5px;
 
-    margin: 0 0 10px;
+            font-size: 26px;
 
-    font-size: 29px;
+            color: #031426;
 
-    color: #071b2e;
+        }
 
-}
 
+        .project-section-heading p {
 
-.categories-heading p {
+            margin: 0;
 
-    margin: 0;
+            font-size: 12px;
 
-    color: #617181;
+            color: #667789;
 
-    line-height: 1.6;
+        }
 
-    font-size: 14px;
 
-}
 
+        /* =========================================
+           CATEGORY GRID
+        ========================================= */
 
-/* =========================================================
-   CATEGORY GRID
-========================================================= */
+        .project-category-grid {
 
-.category-grid {
+            display: grid;
 
-    display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
 
-    grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+            gap: 16px;
 
-    gap: 16px;
+        }
 
-}
 
 
-/* =========================================================
-   CATEGORY CARD
-========================================================= */
+        /* =========================================
+           CATEGORY CARD
+        ========================================= */
 
-.category-card {
+        .project-category-card {
 
-    position: relative;
+            position: relative;
 
-    display: flex;
+            display: flex;
 
-    flex-direction: column;
+            flex-direction: column;
 
-    min-height: 350px;
+            min-height: 315px;
 
-    background: #ffffff;
+            background: #ffffff;
 
-    border: 1px solid #dbe3eb;
+            border: 1px solid #dce4ec;
 
-    overflow: hidden;
+            overflow: hidden;
 
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
 
-}
+        }
 
 
-.category-card:hover {
+        .project-category-card:hover {
 
-    transform: translateY(-5px);
+            transform: translateY(-3px);
 
-    border-color: #67b7ff;
+            border-color: #8dbde7;
 
-    box-shadow:
-        0 14px 32px rgba(3, 20, 38, 0.10);
+        }
 
-}
 
 
-/* =========================================================
-   CARD VISUAL
-========================================================= */
+        /* =========================================
+           CARD VISUAL
+        ========================================= */
 
-.category-visual {
+        .project-card-visual {
 
-    position: relative;
+            position: relative;
 
-    height: 135px;
+            height: 120px;
 
-    flex-shrink: 0;
+            flex-shrink: 0;
 
-    overflow: hidden;
+            background:
+                linear-gradient(
+                    135deg,
+                    #031426,
+                    #092b4a
+                );
 
-    background: #061a2d;
+            overflow: hidden;
 
-}
+        }
 
 
-/* Technical grid */
+        .project-card-number {
 
-.category-visual::before {
+            position: absolute;
 
-    content: "";
+            top: 12px;
 
-    position: absolute;
+            left: 14px;
 
-    inset: 0;
+            z-index: 5;
 
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,0.05) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,0.05) 1px,
-            transparent 1px
-        );
+            font-size: 10px;
 
-    background-size: 20px 20px;
+            font-weight: 700;
 
-}
+            letter-spacing: 2px;
 
+            color: #62b8ff;
 
-/* =========================================================
-   CATEGORY NUMBER
-========================================================= */
+        }
 
-.category-number {
 
-    position: absolute;
 
-    top: 13px;
+        /* =========================================
+           MICROWAVE VISUAL
+        ========================================= */
 
-    left: 15px;
+        .rf-wave {
 
-    z-index: 5;
+            position: absolute;
 
-    font-size: 10px;
+            width: 180px;
 
-    font-weight: 700;
+            height: 70px;
 
-    letter-spacing: 2px;
+            left: 50%;
 
-    color: #67b7ff;
+            top: 50%;
 
-}
+            transform:
+                translate(-50%, -50%);
 
+            border-top:
+                2px solid rgba(98,184,255,0.8);
 
-/* =========================================================
-   MICROWAVE VISUAL
-========================================================= */
+            border-radius: 50%;
 
-.microwave-visual {
+        }
 
-    background:
-        radial-gradient(
-            circle at 75% 50%,
-            rgba(54, 163, 255, 0.20),
-            transparent 28%
-        ),
-        #061a2d;
 
-}
+        .rf-wave::before {
 
+            content: "";
 
-.microwave-wave {
+            position: absolute;
 
-    position: absolute;
+            width: 130px;
 
-    width: 125px;
+            height: 50px;
 
-    height: 125px;
+            left: 25px;
 
-    right: -28px;
+            top: 8px;
 
-    top: 5px;
+            border-top:
+                2px solid rgba(98,184,255,0.55);
 
-    border: 1px solid rgba(103,183,255,0.55);
+            border-radius: 50%;
 
-    border-radius: 50%;
+        }
 
-}
 
+        .rf-wave::after {
 
-.microwave-wave::before {
+            content: "";
 
-    content: "";
+            position: absolute;
 
-    position: absolute;
+            width: 80px;
 
-    inset: 18px;
+            height: 30px;
 
-    border: 1px solid rgba(103,183,255,0.40);
+            left: 50px;
 
-    border-radius: 50%;
+            top: 18px;
 
-}
+            border-top:
+                2px solid rgba(98,184,255,0.35);
 
+            border-radius: 50%;
 
-.microwave-wave::after {
+        }
 
-    content: "";
 
-    position: absolute;
+        .rf-line {
 
-    inset: 36px;
+            position: absolute;
 
-    border: 1px solid rgba(103,183,255,0.25);
+            width: 100%;
 
-    border-radius: 50%;
+            height: 1px;
 
-}
+            top: 50%;
 
+            left: 0;
 
-.microwave-line {
+            background:
+                rgba(255,255,255,0.15);
 
-    position: absolute;
+        }
 
-    left: 14%;
 
-    right: 14%;
 
-    top: 50%;
+        /* =========================================
+           PCB VISUAL
+        ========================================= */
 
-    height: 1px;
+        .pcb-visual {
 
-    background: #67b7ff;
+            position: absolute;
 
-}
+            width: 150px;
 
+            height: 85px;
 
-.microwave-point {
+            left: 50%;
 
-    position: absolute;
+            top: 50%;
 
-    width: 7px;
+            transform:
+                translate(-50%, -50%);
 
-    height: 7px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0c3b59,
+                    #061e34
+                );
 
-    border-radius: 50%;
+            border:
+                1px solid #438fc5;
 
-    background: #67b7ff;
+        }
 
-    top: calc(50% - 3px);
 
-}
+        .pcb-visual::before {
 
+            content: "";
 
-.microwave-point.left {
+            position: absolute;
 
-    left: 14%;
+            inset: 10px;
 
-}
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    transparent 0 18px,
+                    rgba(98,184,255,0.5) 19px 20px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0 18px,
+                    rgba(98,184,255,0.5) 19px 20px
+                );
 
+        }
 
-.microwave-point.right {
 
-    right: 14%;
+        .pcb-chip {
 
-}
+            position: absolute;
 
+            width: 42px;
 
-/* =========================================================
-   PCB VISUAL
-========================================================= */
+            height: 30px;
 
-.pcb-visual {
+            left: 50%;
 
-    background:
-        linear-gradient(
-            rgba(3,20,38,0.30),
-            rgba(3,20,38,0.62)
-        ),
-        url("images/hero-pcb.PNG")
-        center / cover no-repeat;
+            top: 50%;
 
-}
+            transform:
+                translate(-50%, -50%);
 
+            background: #031426;
 
-.pcb-visual::after {
+            border:
+                1px solid #62b8ff;
 
-    content: "";
+        }
 
-    position: absolute;
 
-    inset: 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(3,20,38,0.50),
-            transparent 70%
-        );
+        /* =========================================
+           ELECTRONICS VISUAL
+        ========================================= */
 
-}
+        .chip {
 
+            position: absolute;
 
-/* =========================================================
-   ELECTRONICS VISUAL
-========================================================= */
+            width: 78px;
 
-.electronics-visual {
+            height: 58px;
 
-    background:
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(74,169,255,0.16),
-            transparent 40%
-        ),
-        #061a2d;
+            left: 50%;
 
-}
+            top: 50%;
 
+            transform:
+                translate(-50%, -50%);
 
-.circuit-chip {
+            background: #071d32;
 
-    position: absolute;
+            border:
+                1px solid #62b8ff;
 
-    width: 82px;
+        }
 
-    height: 55px;
 
-    left: 50%;
+        .chip::before,
+        .chip::after {
 
-    top: 50%;
+            content: "";
 
-    transform: translate(-50%, -50%);
+            position: absolute;
 
-    border: 1px solid #67b7ff;
+            top: 12px;
 
-    background: rgba(7,34,57,0.85);
+            bottom: 12px;
 
-}
+            width: 10px;
 
+            background:
+                repeating-linear-gradient(
+                    180deg,
+                    #62b8ff 0 3px,
+                    transparent 3px 9px
+                );
 
-.circuit-chip::before,
-.circuit-chip::after {
+        }
 
-    content: "";
 
-    position: absolute;
+        .chip::before {
 
-    left: -28px;
+            left: -11px;
 
-    right: -28px;
+        }
 
-    height: 1px;
 
-    background: rgba(103,183,255,0.65);
+        .chip::after {
 
-}
+            right: -11px;
 
+        }
 
-.circuit-chip::before {
 
-    top: 17px;
+        .chip-center {
 
-}
+            position: absolute;
 
+            width: 30px;
 
-.circuit-chip::after {
+            height: 22px;
 
-    bottom: 17px;
+            left: 50%;
 
-}
+            top: 50%;
 
+            transform:
+                translate(-50%, -50%);
 
-.chip-line {
+            border:
+                1px solid rgba(98,184,255,0.8);
 
-    position: absolute;
+        }
 
-    width: 28px;
 
-    height: 1px;
 
-    background: #67b7ff;
+        /* =========================================
+           FDAS / CCTV VISUAL
+        ========================================= */
 
-}
+        .cctv-ring {
 
+            position: absolute;
 
-.chip-line.one {
+            width: 90px;
 
-    left: 0;
+            height: 90px;
 
-    top: 50%;
+            left: 50%;
 
-}
+            top: 50%;
 
+            transform:
+                translate(-50%, -50%);
 
-.chip-line.two {
+            border:
+                1px solid rgba(98,184,255,0.7);
 
-    right: 0;
+            border-radius: 50%;
 
-    top: 35%;
+        }
 
-}
 
+        .cctv-ring::before {
 
-.chip-line.three {
+            content: "";
 
-    right: 0;
+            position: absolute;
 
-    top: 65%;
+            width: 60px;
 
-}
+            height: 60px;
 
+            left: 14px;
 
-.chip-node {
+            top: 14px;
 
-    position: absolute;
+            border:
+                1px solid rgba(98,184,255,0.5);
 
-    width: 6px;
+            border-radius: 50%;
 
-    height: 6px;
+        }
 
-    border-radius: 50%;
 
-    background: #67b7ff;
+        .cctv-ring::after {
 
-}
+            content: "";
 
+            position: absolute;
 
-.chip-node.one {
+            width: 28px;
 
-    left: -31px;
+            height: 28px;
 
-    top: calc(50% - 3px);
+            left: 30px;
 
-}
+            top: 30px;
 
+            border:
+                1px solid rgba(98,184,255,0.8);
 
-.chip-node.two {
+            border-radius: 50%;
 
-    right: -31px;
+        }
 
-    top: calc(35% - 3px);
 
-}
 
+        /* =========================================
+           CARD CONTENT
+        ========================================= */
 
-.chip-node.three {
+        .project-card-content {
 
-    right: -31px;
+            display: flex;
 
-    top: calc(65% - 3px);
+            flex-direction: column;
 
-}
+            flex: 1;
 
+            padding: 15px 16px 14px;
 
-/* =========================================================
-   FDAS / CCTV VISUAL
-========================================================= */
+        }
 
-.fdas-visual {
 
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(103,183,255,0.16),
-            transparent 45%
-        ),
-        #061a2d;
+        .project-card-content h3 {
 
-}
+            margin: 0 0 6px;
 
+            font-size: 17px;
 
-.fdas-ring {
+            line-height: 1.2;
 
-    position: absolute;
+            color: #031426;
 
-    width: 90px;
+        }
 
-    height: 90px;
 
-    border: 1px solid rgba(103,183,255,0.65);
+        .project-card-content p {
 
-    border-radius: 50%;
+            margin: 0 0 9px;
 
-    left: 50%;
+            font-size: 11px;
 
-    top: 50%;
+            line-height: 1.5;
 
-    transform: translate(-50%, -50%);
+            color: #637486;
 
-}
+        }
 
 
-.fdas-ring::before {
+        .project-disciplines {
 
-    content: "";
+            font-size: 9px;
 
-    position: absolute;
+            line-height: 1.4;
 
-    width: 54px;
+            font-weight: 600;
 
-    height: 54px;
+            color: #1976d2;
 
-    border: 1px solid rgba(103,183,255,0.45);
+            text-transform: uppercase;
 
-    border-radius: 50%;
+            letter-spacing: 0.5px;
 
-    left: 50%;
+        }
 
-    top: 50%;
 
-    transform: translate(-50%, -50%);
 
-}
+        /* =========================================
+           VIEW PROJECTS BUTTON
+        ========================================= */
 
+        .project-card-button {
 
-.fdas-ring::after {
+            display: flex;
 
-    content: "";
+            align-items: center;
 
-    position: absolute;
+            justify-content: space-between;
 
-    width: 7px;
+            margin-top: auto;
 
-    height: 7px;
+            padding: 9px 11px;
 
-    border-radius: 50%;
+            background: #031426;
 
-    background: #67b7ff;
+            color: #ffffff;
 
-    left: 50%;
+            text-decoration: none;
 
-    top: 50%;
+            font-size: 10px;
 
-    transform: translate(-50%, -50%);
+            font-weight: 700;
 
-}
+            letter-spacing: 0.5px;
 
+            transition:
+                background 0.2s ease;
 
-.fdas-line {
+        }
 
-    position: absolute;
 
-    height: 1px;
+        .project-card-button:hover {
 
-    background: rgba(103,183,255,0.50);
+            background: #0a3559;
 
-    width: 75px;
+        }
 
-    top: 50%;
 
-}
+        .project-card-button span {
 
+            font-size: 15px;
 
-.fdas-line.left {
+            line-height: 1;
 
-    right: calc(50% + 45px);
+        }
 
-}
 
 
-.fdas-line.right {
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
 
-    left: calc(50% + 45px);
+        @media (max-width: 1100px) {
 
-}
+            .projects-hero {
 
+                padding: 42px 25px 46px;
 
-/* =========================================================
-   CARD CONTENT
-========================================================= */
+            }
 
-.category-content {
 
-    display: flex;
+            .project-category-section {
 
-    flex-direction: column;
+                padding: 35px 25px 40px;
 
-    flex: 1;
+            }
 
-    padding: 18px 18px 16px;
 
-}
+            .project-category-grid {
 
+                grid-template-columns:
+                    repeat(2, 1fr);
 
-.category-content h3 {
+            }
 
-    margin: 0 0 8px;
+        }
 
-    font-size: 17px;
 
-    line-height: 1.25;
 
-    letter-spacing: -0.2px;
+        @media (max-width: 600px) {
 
-    color: #071b2e;
+            .projects-hero {
 
-}
+                padding: 36px 20px 40px;
 
+            }
 
-.category-disciplines {
 
-    margin: 0;
+            .projects-hero h1 {
 
-    color: #1677c8;
+                font-size: 34px;
 
-    font-size: 10px;
+            }
 
-    font-weight: 700;
 
-    line-height: 1.6;
+            .projects-hero h2 {
 
-}
+                font-size: 18px;
 
+            }
 
-.category-description {
 
-    margin: 12px 0 15px;
+            .project-category-section {
 
-    color: #687786;
+                padding: 30px 20px 35px;
 
-    font-size: 11px;
+            }
 
-    line-height: 1.65;
 
-}
+            .project-section-heading {
 
+                margin-bottom: 18px;
 
-.category-button {
+            }
 
-    margin-top: auto;
 
-    display: flex;
+            .project-section-heading h2 {
 
-    align-items: center;
+                font-size: 23px;
 
-    justify-content: space-between;
+            }
 
-    gap: 10px;
 
-    padding-top: 12px;
+            .project-category-grid {
 
-    border-top: 1px solid #e3e8ed;
+                grid-template-columns: 1fr;
 
-    color: #071b2e;
+                gap: 14px;
 
-    text-decoration: none;
+            }
 
-    font-size: 10px;
 
-    font-weight: 700;
+            .project-category-card {
 
-    letter-spacing: 0.4px;
+                min-height: 300px;
 
-    transition: color 0.25s ease;
+            }
 
-}
+        }
 
-
-.category-button span:last-child {
-
-    font-size: 16px;
-
-    font-weight: 400;
-
-    transition: transform 0.25s ease;
-
-}
-
-
-.category-button:hover {
-
-    color: #1677c8;
-
-}
-
-
-.category-button:hover span:last-child {
-
-    transform: translateX(4px);
-
-}
-
-
-/* =========================================================
-   ENGINEERING APPROACH
-========================================================= */
-
-.projects-approach {
-
-    background: #031426;
-
-    color: #ffffff;
-
-    padding: 70px 30px;
-
-}
-
-
-.projects-approach-inner {
-
-    max-width: 850px;
-
-    margin: auto;
-
-    text-align: center;
-
-}
-
-
-.projects-approach-label {
-
-    margin: 0 0 12px;
-
-    color: #67b7ff;
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-}
-
-
-.projects-approach h2 {
-
-    margin: 0 0 15px;
-
-    font-size: 28px;
-
-}
-
-
-.projects-approach p {
-
-    max-width: 620px;
-
-    margin: auto;
-
-    color: #b8c8d8;
-
-    line-height: 1.7;
-
-    font-size: 13px;
-
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1100px) {
-
-    .category-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-
-    }
-
-}
-
-
-/* =========================================================
-   SMALL TABLET
-========================================================= */
-
-@media (max-width: 760px) {
-
-    .projects-hero {
-
-        padding:
-            60px 25px
-            65px;
-
-    }
-
-    .project-categories {
-
-        padding:
-            55px 25px
-            70px;
-
-    }
-
-    .categories-heading h2 {
-
-        font-size: 27px;
-
-    }
-
-}
-
-
-/* =========================================================
-   PHONE
-========================================================= */
-
-@media (max-width: 560px) {
-
-    .projects-hero {
-
-        padding:
-            55px 20px
-            60px;
-
-    }
-
-    .projects-hero h1 {
-
-        font-size: 42px;
-
-    }
-
-    .projects-hero h2 {
-
-        font-size: 22px;
-
-    }
-
-    .projects-hero-description {
-
-        font-size: 13px;
-
-    }
-
-    .project-categories {
-
-        padding:
-            50px 18px
-            65px;
-
-    }
-
-    .category-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 16px;
-
-    }
-
-    .category-card {
-
-        min-height: 345px;
-
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL PHONE
-========================================================= */
-
-@media (max-width: 400px) {
-
-    .projects-hero h1 {
-
-        font-size: 38px;
-
-    }
-
-    .category-content {
-
-        padding:
-            17px 17px
-            15px;
-
-    }
-
-}
 
     </style>
 
 </head>
+
 
 
 <body>
@@ -1158,6 +942,7 @@
         </a>
 
 
+
         <nav class="main-nav">
 
             <a href="index.html">
@@ -1190,6 +975,7 @@
         </nav>
 
 
+
         <button
             class="theme-button"
             id="themeButton"
@@ -1208,53 +994,49 @@
 <main class="projects-page">
 
 
-<!-- =====================================================
-     PROJECT HERO
-===================================================== -->
 
-<section class="projects-hero">
+    <!-- =====================================
+         PROJECT HERO
+    ====================================== -->
 
-    <div class="projects-hero-content">
+    <section class="projects-hero">
 
-        <p class="projects-eyebrow">
-            ENGINEERING PORTFOLIO
-        </p>
+        <div class="projects-hero-inner">
 
-        <h1>
-            PROJECTS
-        </h1>
+            <p class="projects-eyebrow">
+                ENGINEERING PORTFOLIO
+            </p>
 
-        <h2>
-            Engineering Projects
-        </h2>
+            <h1>
+                PROJECTS
+            </h1>
 
-        <p class="projects-hero-description">
+            <h2>
+                Engineering Projects
+            </h2>
 
-            A collection of my engineering designs,
-            technical work, and projects that demonstrate
-            my skills in electronics, telecommunications,
-            PCB design, CAD, and ELV systems.
+            <p>
+                A collection of my engineering designs, technical work,
+                and projects that demonstrate my skills in electronics,
+                telecommunications, PCB design, CAD, and ELV systems.
+            </p>
 
-        </p>
+        </div>
 
-    </div>
-
-</section>
+    </section>
 
 
 
-<!-- =====================================================
-     PROJECT CATEGORIES
-===================================================== -->
+    <!-- =====================================
+         PROJECT CATEGORIES
+    ====================================== -->
 
-<section class="project-categories">
+    <section class="project-category-section">
 
 
-    <div class="categories-heading">
+        <div class="project-section-heading">
 
-        <div class="categories-heading-left">
-
-            <p class="categories-label">
+            <p class="project-section-label">
                 PROJECT CATEGORIES
             </p>
 
@@ -1263,323 +1045,244 @@
             </h2>
 
             <p>
-                Explore projects organized by engineering
-                discipline and design focus.
+                Explore projects organized by engineering discipline
+                and design focus.
             </p>
 
         </div>
 
-    </div>
+
+
+        <div class="project-category-grid">
 
 
 
-    <div class="category-grid">
+            <!-- MICROWAVE -->
+
+            <article class="project-category-card">
 
 
-        <!-- =================================================
-             01 — MICROWAVE LINK DESIGN
-        ================================================== -->
+                <div class="project-card-visual">
 
-        <article class="category-card">
-
-
-            <div class="category-visual microwave-visual">
-
-                <span class="category-number">
-                    01
-                </span>
-
-                <div class="microwave-wave"></div>
-
-                <div class="microwave-line"></div>
-
-                <span class="microwave-point left"></span>
-
-                <span class="microwave-point right"></span>
-
-            </div>
-
-
-            <div class="category-content">
-
-                <h3>
-                    Microwave Link Design
-                </h3>
-
-                <p class="category-disciplines">
-
-                    Telecommunications
-                    <br>
-                    RF • Link Design
-
-                </p>
-
-                <p class="category-description">
-
-                    Point-to-point microwave communication
-                    and RF engineering design projects.
-
-                </p>
-
-                <a
-                    href="microwave.html"
-                    class="category-button"
-                >
-
-                    <span>
-                        View Projects
+                    <span class="project-card-number">
+                        01
                     </span>
 
-                    <span>
-                        →
-                    </span>
+                    <div class="rf-line"></div>
 
-                </a>
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- =================================================
-             02 — PCB DESIGN
-        ================================================== -->
-
-        <article class="category-card">
-
-
-            <div class="category-visual pcb-visual">
-
-                <span class="category-number">
-                    02
-                </span>
-
-            </div>
-
-
-            <div class="category-content">
-
-                <h3>
-                    PCB Design
-                </h3>
-
-                <p class="category-disciplines">
-
-                    PCB • Schematic
-                    <br>
-                    Layout • 3D
-
-                </p>
-
-                <p class="category-description">
-
-                    Printed circuit board development,
-                    schematic design, layout, and
-                    3D visualization projects.
-
-                </p>
-
-                <a
-                    href="pcb.html"
-                    class="category-button"
-                >
-
-                    <span>
-                        View Projects
-                    </span>
-
-                    <span>
-                        →
-                    </span>
-
-                </a>
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- =================================================
-             03 — ELECTRONICS DESIGN
-        ================================================== -->
-
-        <article class="category-card">
-
-
-            <div class="category-visual electronics-visual">
-
-                <span class="category-number">
-                    03
-                </span>
-
-
-                <div class="circuit-chip">
-
-                    <span class="chip-line one"></span>
-
-                    <span class="chip-line two"></span>
-
-                    <span class="chip-line three"></span>
-
-                    <span class="chip-node one"></span>
-
-                    <span class="chip-node two"></span>
-
-                    <span class="chip-node three"></span>
+                    <div class="rf-wave"></div>
 
                 </div>
 
-            </div>
+
+                <div class="project-card-content">
+
+                    <h3>
+                        Microwave Link Design
+                    </h3>
+
+                    <p>
+                        Point-to-point microwave communication
+                        and RF engineering design projects.
+                    </p>
+
+                    <div class="project-disciplines">
+                        Telecommunications / RF
+                        <br>
+                        Link Design
+                    </div>
 
 
-            <div class="category-content">
+                    <a
+                        href="microwave.html"
+                        class="project-card-button"
+                    >
 
-                <h3>
-                    Electronics Design
-                </h3>
-
-                <p class="category-disciplines">
-
-                    Circuit • Simulation
-                    <br>
-                    Analysis • Testing
-
-                </p>
-
-                <p class="category-description">
-
-                    Electronics circuits, simulations,
-                    analysis, testing, and prototype
-                    development projects.
-
-                </p>
-
-                <a
-                    href="electronics.html"
-                    class="category-button"
-                >
-
-                    <span>
                         View Projects
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PCB -->
+
+            <article class="project-category-card">
+
+
+                <div class="project-card-visual">
+
+                    <span class="project-card-number">
+                        02
                     </span>
 
-                    <span>
-                        →
-                    </span>
+                    <div class="pcb-visual">
 
-                </a>
+                        <div class="pcb-chip"></div>
 
-            </div>
+                    </div>
 
-
-        </article>
+                </div>
 
 
+                <div class="project-card-content">
 
-        <!-- =================================================
-             04 — FDAS & CCTV DESIGN
-        ================================================== -->
+                    <h3>
+                        PCB Design
+                    </h3>
 
-        <article class="category-card">
+                    <p>
+                        Printed circuit board development,
+                        schematic design, layout, and 3D
+                        visualization projects.
+                    </p>
 
-
-            <div class="category-visual fdas-visual">
-
-                <span class="category-number">
-                    04
-                </span>
-
-
-                <div class="fdas-ring"></div>
-
-                <div class="fdas-line left"></div>
-
-                <div class="fdas-line right"></div>
-
-            </div>
+                    <div class="project-disciplines">
+                        PCB
+                        <br>
+                        Schematic / Layout / 3D
+                    </div>
 
 
-            <div class="category-content">
+                    <a
+                        href="pcb.html"
+                        class="project-card-button"
+                    >
 
-                <h3>
-                    FDAS &amp; CCTV Design
-                </h3>
-
-                <p class="category-disciplines">
-
-                    AutoCAD • FDAS
-                    <br>
-                    CCTV • ELV Systems
-
-                </p>
-
-                <p class="category-description">
-
-                    Fire detection, CCTV, and extra-low-
-                    voltage system design and
-                    documentation projects.
-
-                </p>
-
-                <a
-                    href="fdas-cctv.html"
-                    class="category-button"
-                >
-
-                    <span>
                         View Projects
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ELECTRONICS -->
+
+            <article class="project-category-card">
+
+
+                <div class="project-card-visual">
+
+                    <span class="project-card-number">
+                        03
                     </span>
 
-                    <span>
-                        →
+                    <div class="chip">
+
+                        <div class="chip-center"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="project-card-content">
+
+                    <h3>
+                        Electronics Design
+                    </h3>
+
+                    <p>
+                        Electronics circuits, simulations,
+                        analysis, testing, and prototype
+                        development projects.
+                    </p>
+
+                    <div class="project-disciplines">
+                        Circuit
+                        <br>
+                        Simulation / Analysis / Testing
+                    </div>
+
+
+                    <a
+                        href="electronics.html"
+                        class="project-card-button"
+                    >
+
+                        View Projects
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- FDAS / CCTV -->
+
+            <article class="project-category-card">
+
+
+                <div class="project-card-visual">
+
+                    <span class="project-card-number">
+                        04
                     </span>
 
-                </a>
+                    <div class="cctv-ring"></div>
 
-            </div>
-
-
-        </article>
+                </div>
 
 
-    </div>
+                <div class="project-card-content">
+
+                    <h3>
+                        FDAS &amp; CCTV Design
+                    </h3>
+
+                    <p>
+                        Fire detection, CCTV, and extra-low-voltage
+                        system design and documentation projects.
+                    </p>
+
+                    <div class="project-disciplines">
+                        AutoCAD
+                        <br>
+                        FDAS / CCTV / ELV Systems
+                    </div>
 
 
-</section>
+                    <a
+                        href="fdas-cctv.html"
+                        class="project-card-button"
+                    >
+
+                        View Projects
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
 
 
+        </div>
 
-<!-- =====================================================
-     ENGINEERING APPROACH
-===================================================== -->
-
-<section class="projects-approach">
-
-    <div class="projects-approach-inner">
-
-        <p class="projects-approach-label">
-            ENGINEERING APPROACH
-        </p>
-
-        <h2>
-            From Concept to Technical Design
-        </h2>
-
-        <p>
-
-            Each project is presented with a focus on
-            practical engineering, clear documentation,
-            technical design, and functional solutions.
-
-        </p>
-
-    </div>
-
-</section>
+    </section>
 
 
 </main>
