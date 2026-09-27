@@ -601,14 +601,9 @@ button {
 
 
 /* =========================================================
-   =========================================================
    ABOUT PAGE
-   =========================================================
    FULL IMAGE BACKGROUND
    TEXT OVER IMAGE
-   NO GRID
-   NO SEPARATE PANEL
-   =========================================================
    ========================================================= */
 
 .about-main {
@@ -655,12 +650,6 @@ button {
 
     object-fit: cover;
 
-    /*
-       IMPORTANT:
-       The image covers the ENTIRE About section.
-       No left/right column.
-    */
-
     object-position: 72% center;
 }
 
@@ -678,11 +667,6 @@ button {
 
     width: 100%;
     height: 100%;
-
-    /*
-       The image remains visible underneath.
-       Darker only toward the text area.
-    */
 
     background:
         linear-gradient(
@@ -714,22 +698,16 @@ button {
     width: 100%;
     min-height: 610px;
 
-    /*
-       IMPORTANT:
-       Completely transparent.
-       No background.
-       No border.
-       No box.
-       No grid.
-    */
-
     background: transparent;
 
     display: flex;
 
     align-items: center;
 
-    justify-content: flex-end;
+    /*
+       MOVED TEXT TO THE LEFT
+    */
+    justify-content: flex-start;
 }
 
 .about-content-inner {
@@ -737,13 +715,12 @@ button {
 
     max-width: 650px;
 
-    margin-right: 5%;
+    /*
+       MOVED TEXT TO THE LEFT
+    */
+    margin-left: 8%;
 
     padding: 70px 0;
-
-    /*
-       Completely transparent.
-    */
 
     background: transparent;
 
@@ -993,7 +970,7 @@ button {
     .about-content-inner {
         width: 52%;
 
-        margin-right: 4%;
+        margin-left: 7%;
 
         padding: 55px 0;
     }
@@ -1098,7 +1075,6 @@ button {
 
     /* =====================================================
        ABOUT
-       FULL IMAGE + TEXT OVERLAY
        ===================================================== */
 
     .about-main {
@@ -1112,13 +1088,13 @@ button {
 
         align-items: center;
 
-        justify-content: flex-end;
+        justify-content: flex-start;
     }
 
     .about-content-inner {
         width: 60%;
 
-        margin-right: 5%;
+        margin-left: 6%;
 
         padding: 45px 0;
     }
@@ -1300,12 +1276,14 @@ button {
 
     .about-content {
         min-height: 540px;
+
+        justify-content: flex-start;
     }
 
     .about-content-inner {
         width: 68%;
 
-        margin-right: 5%;
+        margin-left: 5%;
 
         padding: 35px 0;
     }
@@ -1417,12 +1395,14 @@ button {
 
     .about-content {
         min-height: 520px;
+
+        justify-content: flex-start;
     }
 
     .about-content-inner {
         width: 72%;
 
-        margin-right: 4%;
+        margin-left: 4%;
 
         padding: 30px 0;
     }
