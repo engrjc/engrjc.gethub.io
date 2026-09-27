@@ -93,115 +93,68 @@ button {
 
 
 /* =========================================================
-   ENGINEERING LOGO
+   BRAND / LOGO
    ========================================================= */
 
 .brand-logo {
 
     position: relative;
 
-    width: 38px;
-    height: 38px;
+    width: 32px;
+
+    height: 32px;
 
     border: 1px solid #4db8ff;
-
-    background: #061a2d;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
-
-    overflow: hidden;
-
-    flex-shrink: 0;
 }
 
 
-/* JC LETTERS */
-
-.logo-j,
-.logo-c {
+.logo-left,
+.logo-right,
+.logo-center {
 
     position: absolute;
 
-    color: #ffffff;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 15px;
-
-    font-weight: 800;
-
-    line-height: 1;
-
-    z-index: 3;
-}
-
-
-.logo-j {
-
-    left: 8px;
-}
-
-
-.logo-c {
-
-    right: 7px;
-
-    color: #4db8ff;
-}
-
-
-/* CIRCUIT LINES */
-
-.circuit {
-
-    position: absolute;
+    display: block;
 
     background: #4db8ff;
-
-    z-index: 1;
 }
 
 
-.circuit-top {
+.logo-left {
 
-    width: 1px;
-    height: 7px;
+    width: 4px;
 
-    top: 0;
-    left: 19px;
+    height: 18px;
+
+    left: 7px;
 }
 
 
-.circuit-bottom {
+.logo-right {
 
-    width: 1px;
-    height: 7px;
+    width: 4px;
 
-    bottom: 0;
-    left: 19px;
+    height: 18px;
+
+    right: 7px;
 }
 
 
-.circuit-left {
+.logo-center {
 
-    width: 7px;
-    height: 1px;
+    width: 10px;
 
-    left: 0;
-    top: 19px;
-}
+    height: 4px;
 
+    left: 10px;
 
-.circuit-right {
-
-    width: 7px;
-    height: 1px;
-
-    right: 0;
-    top: 19px;
+    top: 14px;
 }
 
 
