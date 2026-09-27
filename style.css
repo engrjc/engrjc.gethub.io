@@ -92,65 +92,161 @@ button {
 }
 
 
+/* =========================================================
+   ENGINEERING LOGO
+   ========================================================= */
+
 .brand-logo {
 
     position: relative;
 
-    width: 32px;
-
-    height: 32px;
+    width: 38px;
+    height: 38px;
 
     border: 1px solid #4db8ff;
+
+    background: #061a2d;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
 }
 
 
-.logo-left,
-.logo-right,
-.logo-center {
+/* JC LETTERS */
+
+.logo-j,
+.logo-c {
 
     position: absolute;
 
-    display: block;
+    color: #ffffff;
 
-    background: #4db8ff;
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    z-index: 3;
 }
 
 
-.logo-left {
+.logo-j {
 
-    width: 4px;
-
-    height: 18px;
-
-    left: 7px;
+    left: 8px;
 }
 
 
-.logo-right {
-
-    width: 4px;
-
-    height: 18px;
+.logo-c {
 
     right: 7px;
+
+    color: #4db8ff;
 }
 
 
-.logo-center {
+/* CIRCUIT LINES */
 
-    width: 10px;
+.circuit {
 
+    position: absolute;
+
+    background: #4db8ff;
+
+    z-index: 1;
+}
+
+
+.circuit-top {
+
+    width: 1px;
+    height: 7px;
+
+    top: 0;
+    left: 19px;
+}
+
+
+.circuit-bottom {
+
+    width: 1px;
+    height: 7px;
+
+    bottom: 0;
+    left: 19px;
+}
+
+
+.circuit-left {
+
+    width: 7px;
+    height: 1px;
+
+    left: 0;
+    top: 19px;
+}
+
+
+.circuit-right {
+
+    width: 7px;
+    height: 1px;
+
+    right: 0;
+    top: 19px;
+}
+
+
+/* CIRCUIT NODES */
+
+.node {
+
+    position: absolute;
+
+    width: 4px;
     height: 4px;
 
-    left: 10px;
+    border: 1px solid #4db8ff;
 
-    top: 14px;
+    background: #061a2d;
+
+    z-index: 2;
+}
+
+
+.node-top {
+
+    top: 2px;
+    left: 17px;
+}
+
+
+.node-bottom {
+
+    bottom: 2px;
+    left: 17px;
+}
+
+
+.node-left {
+
+    left: 2px;
+    top: 17px;
+}
+
+
+.node-right {
+
+    right: 2px;
+    top: 17px;
 }
 
 
