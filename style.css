@@ -712,16 +712,23 @@ button {
 
     max-width: 650px;
 
-    /* TEXT MOVED ALL THE WAY TO THE LEFT */
-    margin-left: 0;
+    /* LEFT MARGIN */
+    margin-left: 5%;
 
-    padding: 70px 0;
+    padding: 45px 45px;
 
-    background: transparent;
+    /* GLASS EFFECT */
+    background: rgba(3, 20, 38, 0.62);
 
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.16);
 
-    box-shadow: none;
+    border-radius: 18px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.28);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 
@@ -965,9 +972,9 @@ button {
     .about-content-inner {
         width: 52%;
 
-        margin-left: 0;
+        margin-left: 4%;
 
-        padding: 55px 0;
+        padding: 40px 35px;
     }
 
     .about-content h1 {
@@ -1083,9 +1090,9 @@ button {
     .about-content-inner {
         width: 60%;
 
-        margin-left: 0;
+        margin-left: 4%;
 
-        padding: 45px 0;
+        padding: 35px 25px;
     }
 
     .about-content h1 {
@@ -1268,9 +1275,9 @@ button {
     .about-content-inner {
         width: 68%;
 
-        margin-left: 0;
+        margin-left: 4%;
 
-        padding: 35px 0;
+        padding: 28px 20px;
     }
 
     .about-label {
@@ -1387,9 +1394,9 @@ button {
     .about-content-inner {
         width: 72%;
 
-        margin-left: 0;
+        margin-left: 3%;
 
-        padding: 30px 0;
+        padding: 25px 16px;
     }
 
     .about-content h1 {
