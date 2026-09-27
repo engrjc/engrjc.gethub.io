@@ -480,8 +480,8 @@ button {
 
 /* =========================================================
    ABOUT PAGE
-   TEXT LEFT
-   IMAGE RIGHT
+   IMAGE LEFT
+   TEXT RIGHT
    ========================================================= */
 
 .about-main {
@@ -489,28 +489,74 @@ button {
     width: 100%;
     min-height: 610px;
     margin-top: 64px;
-
     display: grid;
-    grid-template-columns: 45% 55%;
-
+    grid-template-columns: 55% 45%;
     background: #031426;
     overflow: hidden;
 }
 
 
-/* =========================================================
-   ABOUT TEXT — LEFT
-   ========================================================= */
+/* ABOUT IMAGE */
+
+.about-visual {
+    position: relative;
+    width: 100%;
+    height: 610px;
+    min-height: 610px;
+    overflow: hidden;
+    background: #031426;
+}
+
+.about-visual img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+    /* CHANGED:
+       Shows more of the RIGHT side of the image,
+       including the laptop and hardhat / ECE area.
+    */
+    object-position: 75% center;
+
+    z-index: 1;
+}
+
+
+/* ABOUT IMAGE FADE */
+
+.about-visual::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(3, 20, 38, 0) 0%,
+        rgba(3, 20, 38, 0.10) 15%,
+        rgba(3, 20, 38, 0.30) 32%,
+        rgba(3, 20, 38, 0.58) 52%,
+        rgba(3, 20, 38, 0.82) 72%,
+        #031426 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+/* ABOUT TEXT */
 
 .about-content {
     position: relative;
     z-index: 3;
-
     width: 100%;
     min-height: 610px;
-
     background: #031426;
-
     display: flex;
     align-items: center;
 }
@@ -518,8 +564,7 @@ button {
 .about-content-inner {
     width: 100%;
     max-width: 610px;
-
-    padding: 70px 25px 70px 70px;
+    padding: 70px 70px 70px 25px;
 }
 
 
@@ -527,14 +572,10 @@ button {
 
 .about-label {
     margin-bottom: 18px;
-
     color: #62c3ff;
-
     font-size: 11px;
     font-weight: 700;
-
     letter-spacing: 2.8px;
-
     text-transform: uppercase;
 }
 
@@ -543,15 +584,10 @@ button {
 
 .about-content h1 {
     margin: 0;
-
     color: #ffffff;
-
     font-size: clamp(34px, 4vw, 52px);
-
     line-height: 1.08;
-
     font-weight: 700;
-
     letter-spacing: -1px;
 }
 
@@ -561,9 +597,7 @@ button {
 .about-line {
     width: 55px;
     height: 2px;
-
     margin: 25px 0;
-
     background: #4db8ff;
 }
 
@@ -572,25 +606,17 @@ button {
 
 .about-content h2 {
     margin: 0;
-
     color: #ffffff;
-
     font-size: 23px;
-
     font-weight: 600;
-
     line-height: 1.3;
 }
 
 .about-role {
     margin-top: 6px;
-
     color: #62c3ff;
-
     font-size: 12px;
-
     font-weight: 600;
-
     letter-spacing: 0.8px;
 }
 
@@ -599,13 +625,9 @@ button {
 
 .about-description {
     max-width: 560px;
-
     margin-top: 20px;
-
     color: #b9cbd8;
-
     font-size: 14px;
-
     line-height: 1.8;
 }
 
@@ -614,25 +636,17 @@ button {
 
 .about-specialties {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 8px;
-
     margin-top: 24px;
 }
 
 .about-specialties span {
     padding: 7px 10px;
-
     color: #d8e6ef;
-
     background: rgba(255, 255, 255, 0.05);
-
     border: 1px solid rgba(255, 255, 255, 0.13);
-
     font-size: 10px;
-
     letter-spacing: 0.5px;
 }
 
@@ -641,108 +655,29 @@ button {
 
 .about-project-button {
     margin-top: 28px;
-
     background: #ffffff;
-
     color: #061a2d;
-
     border: 1px solid #ffffff;
 }
 
 .about-project-button:hover {
     background: #dff3ff;
-
     border-color: #dff3ff;
 }
 
 
-/* =========================================================
-   ABOUT IMAGE — RIGHT
-   ========================================================= */
-
-.about-visual {
-    position: relative;
-
-    width: 100%;
-
-    height: 610px;
-    min-height: 610px;
-
-    overflow: hidden;
-
-    background: #031426;
-}
-
-.about-visual img {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    /* SHOW RIGHT SIDE OF ORIGINAL IMAGE */
-    object-position: 75% center;
-
-    z-index: 1;
-}
-
-
-/* =========================================================
-   IMAGE FADE INTO NAVY
-   ========================================================= */
-
-.about-visual::after {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -1px;
-
-    width: 50%;
-    height: 100%;
-
-    background: linear-gradient(
-        90deg,
-        #031426 0%,
-        rgba(3, 20, 38, 0.82) 20%,
-        rgba(3, 20, 38, 0.58) 42%,
-        rgba(3, 20, 38, 0.30) 65%,
-        rgba(3, 20, 38, 0.10) 85%,
-        rgba(3, 20, 38, 0) 100%
-    );
-
-    z-index: 2;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   ABOUT LOWER WHITE SECTION
-   ========================================================= */
+/* ABOUT LOWER SECTION */
 
 .about-statement {
     width: 100%;
-
     background: #ffffff;
-
     padding: 75px 42px 80px;
 }
 
 .about-statement-inner {
     width: 100%;
-
     max-width: 850px;
-
     margin: 0 auto;
-
     text-align: center;
 }
 
@@ -752,23 +687,16 @@ button {
 
 .about-statement h2 {
     margin: 0;
-
     color: #061a2d;
-
     font-size: 32px;
-
     line-height: 1.25;
 }
 
 .about-statement-inner > p:last-child {
     max-width: 680px;
-
     margin: 20px auto 0;
-
     color: #64748b;
-
     font-size: 15px;
-
     line-height: 1.8;
 }
 
