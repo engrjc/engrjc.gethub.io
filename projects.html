@@ -49,14 +49,14 @@
 
     color: #ffffff;
 
-    padding: 90px 30px 100px;
+    padding: 72px 30px 78px;
 
     overflow: hidden;
 
 }
 
 
-/* Technical background */
+/* Technical grid */
 
 .projects-hero::before {
 
@@ -92,13 +92,13 @@
 
     position: absolute;
 
-    width: 420px;
+    width: 360px;
 
-    height: 420px;
+    height: 360px;
 
-    right: -160px;
+    right: -140px;
 
-    top: -180px;
+    top: -160px;
 
     border-radius: 50%;
 
@@ -124,9 +124,9 @@
 
 .projects-eyebrow {
 
-    margin: 0 0 16px;
+    margin: 0 0 12px;
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 700;
 
@@ -139,24 +139,24 @@
 
 .projects-hero h1 {
 
-    margin: 0 0 18px;
+    margin: 0 0 14px;
 
-    font-size: clamp(42px, 6vw, 76px);
+    font-size: clamp(40px, 5vw, 64px);
 
     line-height: 1;
 
     font-weight: 700;
 
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
 
 }
 
 
 .projects-hero h2 {
 
-    margin: 0 0 25px;
+    margin: 0 0 20px;
 
-    font-size: clamp(22px, 3vw, 34px);
+    font-size: clamp(20px, 2.5vw, 29px);
 
     font-weight: 400;
 
@@ -167,11 +167,11 @@
 
 .projects-hero-description {
 
-    max-width: 720px;
+    max-width: 700px;
 
     margin: 0;
 
-    font-size: 16px;
+    font-size: 14px;
 
     line-height: 1.8;
 
@@ -186,26 +186,18 @@
 
 .project-categories {
 
-    max-width: 1400px;
+    max-width: 1380px;
 
     margin: auto;
 
-    padding: 85px 30px 100px;
+    padding: 65px 30px 80px;
 
 }
 
 
 .categories-heading {
 
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: flex-end;
-
-    gap: 30px;
-
-    margin-bottom: 45px;
+    margin-bottom: 30px;
 
 }
 
@@ -219,9 +211,9 @@
 
 .categories-label {
 
-    margin: 0 0 12px;
+    margin: 0 0 8px;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 700;
 
@@ -234,9 +226,9 @@
 
 .categories-heading h2 {
 
-    margin: 0 0 14px;
+    margin: 0 0 10px;
 
-    font-size: 34px;
+    font-size: 29px;
 
     color: #071b2e;
 
@@ -249,9 +241,9 @@
 
     color: #617181;
 
-    line-height: 1.7;
+    line-height: 1.6;
 
-    font-size: 15px;
+    font-size: 14px;
 
 }
 
@@ -267,7 +259,7 @@
     grid-template-columns:
         repeat(4, minmax(0, 1fr));
 
-    gap: 20px;
+    gap: 16px;
 
 }
 
@@ -284,7 +276,7 @@
 
     flex-direction: column;
 
-    min-height: 470px;
+    min-height: 350px;
 
     background: #ffffff;
 
@@ -302,25 +294,27 @@
 
 .category-card:hover {
 
-    transform: translateY(-7px);
+    transform: translateY(-5px);
 
     border-color: #67b7ff;
 
     box-shadow:
-        0 18px 45px rgba(3, 20, 38, 0.12);
+        0 14px 32px rgba(3, 20, 38, 0.10);
 
 }
 
 
 /* =========================================================
-   CARD VISUAL AREA
+   CARD VISUAL
 ========================================================= */
 
 .category-visual {
 
     position: relative;
 
-    height: 205px;
+    height: 135px;
+
+    flex-shrink: 0;
 
     overflow: hidden;
 
@@ -350,7 +344,7 @@
             transparent 1px
         );
 
-    background-size: 24px 24px;
+    background-size: 20px 20px;
 
 }
 
@@ -363,13 +357,13 @@
 
     position: absolute;
 
-    top: 20px;
+    top: 13px;
 
-    left: 20px;
+    left: 15px;
 
     z-index: 5;
 
-    font-size: 12px;
+    font-size: 10px;
 
     font-weight: 700;
 
@@ -401,13 +395,13 @@
 
     position: absolute;
 
-    width: 170px;
+    width: 125px;
 
-    height: 170px;
+    height: 125px;
 
-    right: -35px;
+    right: -28px;
 
-    top: 20px;
+    top: 5px;
 
     border: 1px solid rgba(103,183,255,0.55);
 
@@ -422,7 +416,7 @@
 
     position: absolute;
 
-    inset: 22px;
+    inset: 18px;
 
     border: 1px solid rgba(103,183,255,0.40);
 
@@ -437,7 +431,7 @@
 
     position: absolute;
 
-    inset: 45px;
+    inset: 36px;
 
     border: 1px solid rgba(103,183,255,0.25);
 
@@ -450,9 +444,9 @@
 
     position: absolute;
 
-    left: 15%;
+    left: 14%;
 
-    right: 15%;
+    right: 14%;
 
     top: 50%;
 
@@ -467,29 +461,29 @@
 
     position: absolute;
 
-    width: 8px;
+    width: 7px;
 
-    height: 8px;
+    height: 7px;
 
     border-radius: 50%;
 
     background: #67b7ff;
 
-    top: calc(50% - 4px);
+    top: calc(50% - 3px);
 
 }
 
 
 .microwave-point.left {
 
-    left: 15%;
+    left: 14%;
 
 }
 
 
 .microwave-point.right {
 
-    right: 15%;
+    right: 14%;
 
 }
 
@@ -502,8 +496,8 @@
 
     background:
         linear-gradient(
-            rgba(3,20,38,0.25),
-            rgba(3,20,38,0.60)
+            rgba(3,20,38,0.30),
+            rgba(3,20,38,0.62)
         ),
         url("images/hero-pcb.PNG")
         center / cover no-repeat;
@@ -522,8 +516,8 @@
     background:
         linear-gradient(
             90deg,
-            rgba(3,20,38,0.55),
-            transparent 65%
+            rgba(3,20,38,0.50),
+            transparent 70%
         );
 
 }
@@ -550,9 +544,9 @@
 
     position: absolute;
 
-    width: 105px;
+    width: 82px;
 
-    height: 70px;
+    height: 55px;
 
     left: 50%;
 
@@ -574,9 +568,9 @@
 
     position: absolute;
 
-    left: -35px;
+    left: -28px;
 
-    right: -35px;
+    right: -28px;
 
     height: 1px;
 
@@ -587,14 +581,14 @@
 
 .circuit-chip::before {
 
-    top: 20px;
+    top: 17px;
 
 }
 
 
 .circuit-chip::after {
 
-    bottom: 20px;
+    bottom: 17px;
 
 }
 
@@ -603,7 +597,7 @@
 
     position: absolute;
 
-    width: 35px;
+    width: 28px;
 
     height: 1px;
 
@@ -643,9 +637,9 @@
 
     position: absolute;
 
-    width: 7px;
+    width: 6px;
 
-    height: 7px;
+    height: 6px;
 
     border-radius: 50%;
 
@@ -656,7 +650,7 @@
 
 .chip-node.one {
 
-    left: -38px;
+    left: -31px;
 
     top: calc(50% - 3px);
 
@@ -665,7 +659,7 @@
 
 .chip-node.two {
 
-    right: -38px;
+    right: -31px;
 
     top: calc(35% - 3px);
 
@@ -674,7 +668,7 @@
 
 .chip-node.three {
 
-    right: -38px;
+    right: -31px;
 
     top: calc(65% - 3px);
 
@@ -702,9 +696,9 @@
 
     position: absolute;
 
-    width: 125px;
+    width: 90px;
 
-    height: 125px;
+    height: 90px;
 
     border: 1px solid rgba(103,183,255,0.65);
 
@@ -725,9 +719,9 @@
 
     position: absolute;
 
-    width: 75px;
+    width: 54px;
 
-    height: 75px;
+    height: 54px;
 
     border: 1px solid rgba(103,183,255,0.45);
 
@@ -748,9 +742,9 @@
 
     position: absolute;
 
-    width: 8px;
+    width: 7px;
 
-    height: 8px;
+    height: 7px;
 
     border-radius: 50%;
 
@@ -773,7 +767,7 @@
 
     background: rgba(103,183,255,0.50);
 
-    width: 100px;
+    width: 75px;
 
     top: 50%;
 
@@ -782,14 +776,14 @@
 
 .fdas-line.left {
 
-    right: calc(50% + 62px);
+    right: calc(50% + 45px);
 
 }
 
 
 .fdas-line.right {
 
-    left: calc(50% + 62px);
+    left: calc(50% + 45px);
 
 }
 
@@ -806,20 +800,20 @@
 
     flex: 1;
 
-    padding: 25px 24px 24px;
+    padding: 18px 18px 16px;
 
 }
 
 
 .category-content h3 {
 
-    margin: 0 0 12px;
+    margin: 0 0 8px;
 
-    font-size: 20px;
+    font-size: 17px;
 
     line-height: 1.25;
 
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
 
     color: #071b2e;
 
@@ -832,7 +826,7 @@
 
     color: #1677c8;
 
-    font-size: 12px;
+    font-size: 10px;
 
     font-weight: 700;
 
@@ -843,13 +837,13 @@
 
 .category-description {
 
-    margin: 18px 0 25px;
+    margin: 12px 0 15px;
 
     color: #687786;
 
-    font-size: 13px;
+    font-size: 11px;
 
-    line-height: 1.7;
+    line-height: 1.65;
 
 }
 
@@ -858,15 +852,15 @@
 
     margin-top: auto;
 
-    display: inline-flex;
+    display: flex;
 
     align-items: center;
 
     justify-content: space-between;
 
-    gap: 15px;
+    gap: 10px;
 
-    padding-top: 17px;
+    padding-top: 12px;
 
     border-top: 1px solid #e3e8ed;
 
@@ -874,20 +868,20 @@
 
     text-decoration: none;
 
-    font-size: 12px;
+    font-size: 10px;
 
     font-weight: 700;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 
     transition: color 0.25s ease;
 
 }
 
 
-.category-button span {
+.category-button span:last-child {
 
-    font-size: 18px;
+    font-size: 16px;
 
     font-weight: 400;
 
@@ -903,9 +897,9 @@
 }
 
 
-.category-button:hover span {
+.category-button:hover span:last-child {
 
-    transform: translateX(5px);
+    transform: translateX(4px);
 
 }
 
@@ -920,14 +914,14 @@
 
     color: #ffffff;
 
-    padding: 85px 30px;
+    padding: 70px 30px;
 
 }
 
 
 .projects-approach-inner {
 
-    max-width: 900px;
+    max-width: 850px;
 
     margin: auto;
 
@@ -938,11 +932,11 @@
 
 .projects-approach-label {
 
-    margin: 0 0 15px;
+    margin: 0 0 12px;
 
     color: #67b7ff;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 700;
 
@@ -953,30 +947,30 @@
 
 .projects-approach h2 {
 
-    margin: 0 0 18px;
+    margin: 0 0 15px;
 
-    font-size: 32px;
+    font-size: 28px;
 
 }
 
 
 .projects-approach p {
 
-    max-width: 650px;
+    max-width: 620px;
 
     margin: auto;
 
     color: #b8c8d8;
 
-    line-height: 1.8;
+    line-height: 1.7;
 
-    font-size: 15px;
+    font-size: 13px;
 
 }
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -988,17 +982,11 @@
 
     }
 
-    .category-card {
-
-        min-height: 450px;
-
-    }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE — SMALL TABLET
+   SMALL TABLET
 ========================================================= */
 
 @media (max-width: 760px) {
@@ -1006,30 +994,22 @@
     .projects-hero {
 
         padding:
-            70px 25px
-            80px;
+            60px 25px
+            65px;
 
     }
 
     .project-categories {
 
         padding:
-            65px 25px
-            80px;
-
-    }
-
-    .categories-heading {
-
-        display: block;
-
-        margin-bottom: 35px;
+            55px 25px
+            70px;
 
     }
 
     .categories-heading h2 {
 
-        font-size: 29px;
+        font-size: 27px;
 
     }
 
@@ -1037,7 +1017,7 @@
 
 
 /* =========================================================
-   RESPONSIVE — PHONE
+   PHONE
 ========================================================= */
 
 @media (max-width: 560px) {
@@ -1045,34 +1025,34 @@
     .projects-hero {
 
         padding:
-            60px 20px
-            70px;
+            55px 20px
+            60px;
 
     }
 
     .projects-hero h1 {
 
-        font-size: 45px;
+        font-size: 42px;
 
     }
 
     .projects-hero h2 {
 
-        font-size: 24px;
+        font-size: 22px;
 
     }
 
     .projects-hero-description {
 
-        font-size: 14px;
+        font-size: 13px;
 
     }
 
     .project-categories {
 
         padding:
-            55px 18px
-            70px;
+            50px 18px
+            65px;
 
     }
 
@@ -1080,19 +1060,13 @@
 
         grid-template-columns: 1fr;
 
-        gap: 18px;
+        gap: 16px;
 
     }
 
     .category-card {
 
-        min-height: 440px;
-
-    }
-
-    .category-visual {
-
-        height: 190px;
+        min-height: 345px;
 
     }
 
@@ -1107,15 +1081,15 @@
 
     .projects-hero h1 {
 
-        font-size: 39px;
+        font-size: 38px;
 
     }
 
     .category-content {
 
         padding:
-            22px 20px
-            21px;
+            17px 17px
+            15px;
 
     }
 
@@ -1303,7 +1277,7 @@
 
 
         <!-- =================================================
-             01 — MICROWAVE
+             01 — MICROWAVE LINK DESIGN
         ================================================== -->
 
         <article class="category-card">
@@ -1333,9 +1307,11 @@
                 </h3>
 
                 <p class="category-disciplines">
+
                     Telecommunications
                     <br>
                     RF • Link Design
+
                 </p>
 
                 <p class="category-description">
@@ -1368,7 +1344,7 @@
 
 
         <!-- =================================================
-             02 — PCB
+             02 — PCB DESIGN
         ================================================== -->
 
         <article class="category-card">
@@ -1390,9 +1366,11 @@
                 </h3>
 
                 <p class="category-disciplines">
+
                     PCB • Schematic
                     <br>
                     Layout • 3D
+
                 </p>
 
                 <p class="category-description">
@@ -1426,7 +1404,7 @@
 
 
         <!-- =================================================
-             03 — ELECTRONICS
+             03 — ELECTRONICS DESIGN
         ================================================== -->
 
         <article class="category-card">
@@ -1465,9 +1443,11 @@
                 </h3>
 
                 <p class="category-disciplines">
+
                     Circuit • Simulation
                     <br>
                     Analysis • Testing
+
                 </p>
 
                 <p class="category-description">
@@ -1501,7 +1481,7 @@
 
 
         <!-- =================================================
-             04 — FDAS & CCTV
+             04 — FDAS & CCTV DESIGN
         ================================================== -->
 
         <article class="category-card">
@@ -1530,9 +1510,11 @@
                 </h3>
 
                 <p class="category-disciplines">
+
                     AutoCAD • FDAS
                     <br>
                     CCTV • ELV Systems
+
                 </p>
 
                 <p class="category-description">
