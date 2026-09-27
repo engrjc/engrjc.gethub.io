@@ -31,7 +31,13 @@
 
             min-height: calc(100vh - 64px);
 
+            /* FIX:
+               Keeps the hero below the fixed header */
+
+            padding-top: 64px;
+
         }
+
 
 
         /* =========================================
@@ -52,10 +58,13 @@
 
             color: #ffffff;
 
-            /* TOP SPACE INCREASED
-               BOTTOM SPACE KEPT SMALL */
+            /*
+             * Compact top and bottom spacing.
+             * The page padding above already protects
+             * the content from the fixed header.
+             */
 
-            padding: 65px 30px 25px;
+            padding: 35px 30px 25px;
 
             overflow: hidden;
 
@@ -196,7 +205,7 @@
 
             margin: 0 auto;
 
-            /* SMALL TOP GAP */
+            /* Compact white section */
 
             padding: 25px 30px 45px;
 
@@ -793,11 +802,16 @@
 
         @media (max-width: 1100px) {
 
+            .projects-page {
+
+                padding-top: 64px;
+
+            }
+
+
             .projects-hero {
 
-                /* SAFE SPACE BELOW HEADER */
-
-                padding: 58px 25px 20px;
+                padding: 30px 25px 20px;
 
             }
 
@@ -822,11 +836,16 @@
 
         @media (max-width: 600px) {
 
+            .projects-page {
+
+                padding-top: 64px;
+
+            }
+
+
             .projects-hero {
 
-                /* SAFE MOBILE HEADER SPACE */
-
-                padding: 52px 20px 20px;
+                padding: 28px 20px 20px;
 
             }
 
@@ -882,7 +901,6 @@
             }
 
         }
-
 
     </style>
 
