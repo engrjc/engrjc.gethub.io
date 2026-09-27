@@ -1157,3 +1157,198 @@ button {
         width: 165px;
     }
 }
+
+
+/* =========================================================
+   ENGINEERING FOCUS
+   ========================================================= */
+
+.engineering-focus {
+    width: 100%;
+    background: #ffffff;
+    padding: 75px 42px 80px;
+}
+
+.focus-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-label {
+    margin: 0 0 12px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    color: #1769aa;
+}
+
+.focus-container h2 {
+    margin: 0;
+
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    color: #061a2d;
+}
+
+.focus-intro {
+    max-width: 650px;
+    margin: 18px auto 45px;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: #64748b;
+}
+
+
+/* ================= FOCUS CARDS ================= */
+
+.focus-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.focus-card {
+    padding: 30px 22px;
+
+    background: #f7f9fc;
+
+    border: 1px solid #e5ebf2;
+
+    text-align: left;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.focus-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #1769aa;
+
+    box-shadow: 0 12px 30px rgba(6, 26, 45, 0.10);
+}
+
+
+.focus-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #1769aa;
+
+    color: #1769aa;
+
+    font-size: 21px;
+}
+
+
+.focus-card h3 {
+    margin: 0 0 10px;
+
+    font-size: 17px;
+
+    color: #061a2d;
+}
+
+
+.focus-card p {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    color: #64748b;
+}
+
+
+/* ================= EXPLORE LINK ================= */
+
+.focus-link {
+    margin-top: 42px;
+}
+
+.focus-link a {
+    display: inline-flex;
+
+    align-items: center;
+    gap: 10px;
+
+    color: #061a2d;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #1769aa;
+
+    padding-bottom: 5px;
+}
+
+.focus-link a span {
+    font-size: 18px;
+
+    transition: transform 0.2s ease;
+}
+
+.focus-link a:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+
+    .focus-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .engineering-focus {
+        padding: 55px 20px 60px;
+    }
+
+    .focus-container h2 {
+        font-size: 26px;
+    }
+
+    .focus-intro {
+        font-size: 14px;
+        margin-bottom: 32px;
+    }
+
+    .focus-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .focus-card {
+        padding: 25px 20px;
+    }
+
+}
