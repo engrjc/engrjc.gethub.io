@@ -1,7 +1,7 @@
 /* =========================================================
    JOHN CARL P. ORTIZ
    ELECTRONICS ENGINEERING PORTFOLIO
-   MAIN WEBSITE STYLESHEET
+   COMPLETE STYLE SHEET
    ========================================================= */
 
 
@@ -21,8 +21,11 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #fff;
+
+    background: #ffffff;
+
     color: #061a2d;
+
     overflow-x: hidden;
 }
 
@@ -32,6 +35,7 @@ img {
 
 a {
     color: inherit;
+
     text-decoration: none;
 }
 
@@ -45,25 +49,43 @@ button {
    ========================================================= */
 
 .site-header {
+
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
+
     height: 64px;
+
     background: #031426;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
     z-index: 1000;
 }
 
+
 .header-container {
+
     width: 100%;
+
     max-width: 1440px;
+
     height: 64px;
+
     margin: 0 auto;
-    padding: 0 42px;
+
+    padding:
+        0 42px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 }
 
@@ -73,113 +95,189 @@ button {
    ========================================================= */
 
 .brand {
+
     display: flex;
+
     align-items: center;
+
     gap: 12px;
+
     flex-shrink: 0;
 }
 
+
 .brand-logo {
+
     position: relative;
+
     width: 38px;
     height: 38px;
 
-    border: 1px solid #4db8ff;
+    border:
+        1px solid
+        #4db8ff;
+
     background: #061a2d;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     overflow: hidden;
+
     flex-shrink: 0;
 }
 
+
 .logo-j,
 .logo-c {
+
     position: absolute;
 
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     font-size: 15px;
+
     font-weight: 800;
+
     line-height: 1;
 
     z-index: 3;
 }
 
+
 .logo-j {
     left: 8px;
 }
 
+
 .logo-c {
+
     right: 7px;
+
     color: #4db8ff;
 }
 
+
+/* =========================================================
+   CIRCUIT LOGO
+   ========================================================= */
+
 .circuit {
+
     position: absolute;
+
     background: #4db8ff;
+
     z-index: 1;
 }
 
+
 .circuit-top {
+
     width: 1px;
+
     height: 7px;
+
     top: 0;
+
     left: 19px;
 }
+
 
 .circuit-bottom {
+
     width: 1px;
+
     height: 7px;
+
     bottom: 0;
+
     left: 19px;
 }
 
+
 .circuit-left {
+
     width: 7px;
+
     height: 1px;
+
     left: 0;
+
     top: 19px;
 }
+
 
 .circuit-right {
+
     width: 7px;
+
     height: 1px;
+
     right: 0;
+
     top: 19px;
 }
 
+
+/* =========================================================
+   LOGO NODES
+   ========================================================= */
+
 .node {
+
     position: absolute;
 
     width: 4px;
+
     height: 4px;
 
-    border: 1px solid #4db8ff;
+    border:
+        1px solid
+        #4db8ff;
+
     background: #061a2d;
 
     z-index: 2;
 }
 
+
 .node-top {
+
     top: 2px;
+
     left: 17px;
 }
+
 
 .node-bottom {
+
     bottom: 2px;
+
     left: 17px;
 }
 
+
 .node-left {
+
     left: 2px;
+
     top: 17px;
 }
 
+
 .node-right {
+
     right: 2px;
+
     top: 17px;
 }
 
@@ -189,22 +287,35 @@ button {
    ========================================================= */
 
 .brand-text {
+
     display: flex;
+
     flex-direction: column;
+
     line-height: 1.1;
 }
 
+
 .brand-text strong {
-    color: #fff;
+
+    color: #ffffff;
+
     font-size: 13px;
+
     font-weight: 700;
+
     letter-spacing: 0.8px;
 }
 
+
 .brand-text small {
+
     margin-top: 4px;
+
     color: #8da4b8;
+
     font-size: 9px;
+
     letter-spacing: 0.8px;
 }
 
@@ -214,42 +325,61 @@ button {
    ========================================================= */
 
 .main-nav {
+
     display: flex;
+
     align-items: center;
+
     gap: 30px;
 
     margin-left: auto;
+
     margin-right: 25px;
 }
 
+
 .main-nav a {
+
     position: relative;
 
     color: #a9bac9;
+
     font-size: 12px;
+
     font-weight: 600;
+
     letter-spacing: 0.4px;
 
-    padding: 23px 0 21px;
+    padding:
+        23px 0 21px;
 
-    transition: color 0.2s ease;
+    transition:
+        color 0.2s ease;
 }
+
 
 .main-nav a:hover {
-    color: #fff;
+
+    color: #ffffff;
 }
+
 
 .main-nav a.active {
-    color: #fff;
+
+    color: #ffffff;
 }
 
+
 .main-nav a.active::after {
+
     content: "";
 
     position: absolute;
 
     left: 0;
+
     right: 0;
+
     bottom: 14px;
 
     height: 2px;
@@ -263,29 +393,38 @@ button {
    ========================================================= */
 
 .theme-button {
+
     width: 32px;
+
     height: 32px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
     background: transparent;
 
-    color: #fff;
+    color: #ffffff;
+
     font-size: 15px;
 
     cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease;
 }
 
+
 .theme-button:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.35);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(255, 255, 255, 0.35);
 }
 
 
@@ -294,9 +433,11 @@ button {
    ========================================================= */
 
 .hero {
+
     position: relative;
 
     width: 100%;
+
     min-height: 445px;
 
     margin-top: 64px;
@@ -306,28 +447,39 @@ button {
     background: #031426;
 }
 
+
 .hero-background {
+
     position: absolute;
 
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
-    background-image: url("images/hero-pcb.PNG");
+    background-image:
+        url("images/hero-pcb.PNG");
+
     background-size: cover;
-    background-position: center center;
+
+    background-position:
+        center center;
+
     background-repeat: no-repeat;
 
     z-index: 0;
 }
 
+
 .hero-overlay {
+
     position: absolute;
 
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     background:
@@ -343,50 +495,65 @@ button {
     pointer-events: none;
 }
 
+
 .hero-container {
+
     position: relative;
 
     z-index: 2;
 
     width: 100%;
+
     max-width: 1440px;
 
     min-height: 445px;
 
     margin: 0 auto;
 
-    padding: 55px 42px 40px;
+    padding:
+        55px 42px 40px;
 
     display: flex;
+
     align-items: center;
 }
 
+
 .hero-content {
+
     position: relative;
 
     z-index: 5;
 
     width: 100%;
+
     max-width: 650px;
 }
 
+
 .hero-eyebrow {
+
     margin-bottom: 13px;
 
     color: #62c3ff;
 
     font-size: 11px;
+
     font-weight: 700;
 
     letter-spacing: 2.3px;
 }
 
+
 .hero-content h1 {
+
     margin: 0;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: clamp(38px, 5vw, 64px);
+    font-size:
+        clamp(38px, 5vw, 64px);
+
     line-height: 1.02;
 
     font-weight: 700;
@@ -394,20 +561,27 @@ button {
     letter-spacing: -1.5px;
 }
 
+
 .hero-content h2 {
+
     margin-top: 14px;
 
     color: #d4e4ef;
 
     font-size: 21px;
+
     line-height: 1.3;
 
     font-weight: 400;
 }
 
+
 .hero-specialties {
+
     display: flex;
+
     flex-wrap: wrap;
+
     align-items: center;
 
     gap: 9px;
@@ -421,8 +595,11 @@ button {
     letter-spacing: 0.6px;
 }
 
+
 .hero-specialties i {
+
     color: #4db8ff;
+
     font-style: normal;
 }
 
@@ -432,8 +609,11 @@ button {
    ========================================================= */
 
 .hero-buttons {
+
     display: flex;
+
     flex-wrap: wrap;
+
     align-items: center;
 
     gap: 13px;
@@ -441,19 +621,24 @@ button {
     margin-top: 31px;
 }
 
+
 .button {
+
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 13px;
 
     min-height: 42px;
 
-    padding: 0 20px;
+    padding:
+        0 20px;
 
     font-size: 11px;
+
     font-weight: 700;
 
     letter-spacing: 0.8px;
@@ -466,39 +651,59 @@ button {
         border-color 0.2s ease;
 }
 
+
 .button:hover {
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
 }
 
+
 .button-primary {
-    background: #fff;
+
+    background: #ffffff;
 
     color: #061a2d;
 
-    border: 1px solid #fff;
+    border:
+        1px solid
+        #ffffff;
 }
 
+
 .button-primary:hover {
+
     background: #dff3ff;
+
     border-color: #dff3ff;
 }
 
+
 .button-outline {
+
     background: transparent;
 
-    color: #fff;
+    color: #ffffff;
 
-    border: 1px solid rgba(255, 255, 255, 0.55);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.55);
 }
+
 
 .button-outline:hover {
-    background: rgba(255, 255, 255, 0.08);
 
-    border-color: #fff;
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color: #ffffff;
 }
 
+
 .button span {
+
     font-size: 17px;
+
     line-height: 1;
 }
 
@@ -508,9 +713,11 @@ button {
    ========================================================= */
 
 .hero-message {
+
     position: absolute;
 
     right: 42px;
+
     bottom: 35px;
 
     z-index: 4;
@@ -518,10 +725,14 @@ button {
     text-align: right;
 }
 
+
 .hero-message p {
-    color: rgba(255, 255, 255, 0.88);
+
+    color:
+        rgba(255, 255, 255, 0.88);
 
     font-size: 11px;
+
     line-height: 1.6;
 
     letter-spacing: 1.4px;
@@ -529,13 +740,17 @@ button {
     text-transform: uppercase;
 }
 
+
 .hero-message span {
+
     display: block;
 
     width: 45px;
+
     height: 1px;
 
-    margin: 12px 0 0 auto;
+    margin:
+        12px 0 0 auto;
 
     background: #4db8ff;
 }
@@ -546,15 +761,20 @@ button {
    ========================================================= */
 
 .engineering-focus {
+
     width: 100%;
 
-    background: #fff;
+    background: #ffffff;
 
-    padding: 75px 42px 85px;
+    padding:
+        75px 42px 85px;
 }
 
+
 .focus-container {
+
     width: 100%;
+
     max-width: 850px;
 
     margin: 0 auto;
@@ -562,23 +782,30 @@ button {
     text-align: center;
 }
 
+
 .section-label {
-    margin: 0 0 14px;
+
+    margin:
+        0 0 14px;
 
     color: #1769aa;
 
     font-size: 12px;
+
     font-weight: 700;
 
     letter-spacing: 3px;
 }
 
+
 .focus-container h2 {
+
     margin: 0;
 
     color: #061a2d;
 
     font-size: 32px;
+
     line-height: 1.25;
 
     font-weight: 700;
@@ -586,24 +813,33 @@ button {
     letter-spacing: -0.5px;
 }
 
+
 .focus-intro {
+
     max-width: 680px;
 
-    margin: 20px auto 0;
+    margin:
+        20px auto 0;
 
     color: #64748b;
 
     font-size: 15px;
+
     line-height: 1.8;
 }
 
 
 /* =========================================================
    ABOUT PAGE
-   IMAGE LEFT — TEXT RIGHT
+   =========================================================
+
+   IMAGE LEFT
+   TEXT RIGHT
+
    ========================================================= */
 
 .about-main {
+
     position: relative;
 
     width: 100%;
@@ -616,9 +852,9 @@ button {
 
     grid-template-columns: 55% 45%;
 
-    overflow: hidden;
-
     background: #031426;
+
+    overflow: hidden;
 }
 
 
@@ -627,7 +863,12 @@ button {
    ========================================================= */
 
 .about-visual {
+
     position: relative;
+
+    width: 100%;
+
+    height: 610px;
 
     min-height: 610px;
 
@@ -636,36 +877,45 @@ button {
     background: #031426;
 }
 
+
 .about-visual img {
+
     position: absolute;
 
     top: 0;
+
     left: 0;
 
     width: 100%;
+
     height: 100%;
 
     display: block;
 
     object-fit: cover;
 
-    object-position: center;
+    object-position: center center;
 
     z-index: 1;
 }
 
 
-/* SMOOTH IMAGE → NAVY FADE */
+/* =========================================================
+   ABOUT IMAGE FADE
+   ========================================================= */
 
 .about-visual::after {
+
     content: "";
 
     position: absolute;
 
     top: 0;
+
     right: -1px;
 
-    width: 48%;
+    width: 50%;
+
     height: 100%;
 
     background:
@@ -686,13 +936,16 @@ button {
 
 
 /* =========================================================
-   ABOUT TEXT AREA
+   ABOUT TEXT
    ========================================================= */
 
 .about-content {
+
     position: relative;
 
     z-index: 3;
+
+    width: 100%;
 
     min-height: 610px;
 
@@ -703,23 +956,30 @@ button {
     align-items: center;
 }
 
+
 .about-content-inner {
+
     width: 100%;
 
     max-width: 610px;
 
-    padding: 70px 70px 70px 25px;
+    padding:
+        70px 70px 70px 25px;
 }
 
 
-/* LABEL */
+/* =========================================================
+   ABOUT LABEL
+   ========================================================= */
 
 .about-label {
+
     margin-bottom: 18px;
 
     color: #62c3ff;
 
     font-size: 11px;
+
     font-weight: 700;
 
     letter-spacing: 2.8px;
@@ -728,14 +988,18 @@ button {
 }
 
 
-/* NAME */
+/* =========================================================
+   ABOUT NAME
+   ========================================================= */
 
 .about-content h1 {
+
     margin: 0;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: clamp(34px, 4vw, 52px);
+    font-size:
+        clamp(34px, 4vw, 52px);
 
     line-height: 1.08;
 
@@ -745,24 +1009,32 @@ button {
 }
 
 
-/* BLUE LINE */
+/* =========================================================
+   ABOUT LINE
+   ========================================================= */
 
 .about-line {
+
     width: 55px;
+
     height: 2px;
 
-    margin: 25px 0;
+    margin:
+        25px 0;
 
     background: #4db8ff;
 }
 
 
-/* POSITION */
+/* =========================================================
+   ABOUT POSITION
+   ========================================================= */
 
 .about-content h2 {
+
     margin: 0;
 
-    color: #fff;
+    color: #ffffff;
 
     font-size: 23px;
 
@@ -771,7 +1043,9 @@ button {
     line-height: 1.3;
 }
 
+
 .about-role {
+
     margin-top: 6px;
 
     color: #62c3ff;
@@ -784,9 +1058,12 @@ button {
 }
 
 
-/* DESCRIPTION */
+/* =========================================================
+   ABOUT DESCRIPTION
+   ========================================================= */
 
 .about-description {
+
     max-width: 560px;
 
     margin-top: 20px;
@@ -804,6 +1081,7 @@ button {
    ========================================================= */
 
 .about-specialties {
+
     display: flex;
 
     flex-wrap: wrap;
@@ -813,14 +1091,20 @@ button {
     margin-top: 24px;
 }
 
+
 .about-specialties span {
-    padding: 7px 10px;
+
+    padding:
+        7px 10px;
 
     color: #d8e6ef;
 
-    background: rgba(255, 255, 255, 0.05);
+    background:
+        rgba(255, 255, 255, 0.05);
 
-    border: 1px solid rgba(255, 255, 255, 0.13);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.13);
 
     font-size: 10px;
 
@@ -829,20 +1113,25 @@ button {
 
 
 /* =========================================================
-   ABOUT BUTTON
+   ABOUT PROJECT BUTTON
    ========================================================= */
 
 .about-project-button {
+
     margin-top: 28px;
 
-    background: #fff;
+    background: #ffffff;
 
     color: #061a2d;
 
-    border: 1px solid #fff;
+    border:
+        1px solid
+        #ffffff;
 }
 
+
 .about-project-button:hover {
+
     background: #dff3ff;
 
     border-color: #dff3ff;
@@ -850,18 +1139,22 @@ button {
 
 
 /* =========================================================
-   ABOUT LOWER STATEMENT
+   ABOUT LOWER SECTION
    ========================================================= */
 
 .about-statement {
+
     width: 100%;
 
-    background: #fff;
+    background: #ffffff;
 
-    padding: 75px 42px 80px;
+    padding:
+        75px 42px 80px;
 }
 
+
 .about-statement-inner {
+
     width: 100%;
 
     max-width: 850px;
@@ -871,11 +1164,15 @@ button {
     text-align: center;
 }
 
+
 .about-statement .about-label {
+
     color: #1769aa;
 }
 
+
 .about-statement h2 {
+
     margin: 0;
 
     color: #061a2d;
@@ -885,10 +1182,13 @@ button {
     line-height: 1.25;
 }
 
+
 .about-statement-inner > p:last-child {
+
     max-width: 680px;
 
-    margin: 20px auto 0;
+    margin:
+        20px auto 0;
 
     color: #64748b;
 
@@ -900,32 +1200,41 @@ button {
 
 /* =========================================================
    TABLET
-   IMPORTANT:
-   IMAGE AND TEXT REMAIN SIDE-BY-SIDE
    ========================================================= */
 
 @media (max-width: 1000px) {
 
     .header-container {
-        padding: 0 25px;
+
+        padding:
+            0 25px;
     }
 
+
     .main-nav {
+
         gap: 18px;
 
         margin-right: 18px;
     }
 
+
     .main-nav a {
+
         font-size: 11px;
     }
 
+
     .hero-container {
+
         padding-left: 30px;
+
         padding-right: 30px;
     }
 
+
     .hero-message {
+
         right: 30px;
     }
 
@@ -933,58 +1242,89 @@ button {
     /* ABOUT */
 
     .about-main {
-        display: grid;
 
-        grid-template-columns: 52% 48%;
+        grid-template-columns:
+            52% 48%;
 
         min-height: 560px;
     }
+
 
     .about-visual {
+
+        height: 560px;
+
         min-height: 560px;
     }
+
 
     .about-content {
+
         min-height: 560px;
     }
 
+
     .about-content-inner {
-        padding: 55px 40px 55px 10px;
+
+        padding:
+            55px 40px 55px 15px;
     }
 
+
     .about-content h1 {
+
         font-size: 38px;
     }
+
 }
 
 
 /* =========================================================
    SMALL TABLET / IPAD
-   STILL SIDE-BY-SIDE
+   =========================================================
+
+   IMPORTANT:
+
+   The About page NEVER changes to display:block.
+
+   It remains:
+
+   IMAGE | TEXT
+
    ========================================================= */
 
 @media (max-width: 760px) {
 
+
+    /* HEADER */
+
     .site-header {
+
         height: auto;
 
         min-height: 64px;
     }
 
+
     .header-container {
+
         min-height: 64px;
 
-        padding: 10px 20px;
+        padding:
+            10px 20px;
 
         flex-wrap: wrap;
     }
 
+
     .main-nav {
+
         order: 3;
 
         width: 100%;
 
-        margin: 5px 0 0;
+        margin:
+            5px 0 0;
 
         padding-bottom: 5px;
 
@@ -995,17 +1335,24 @@ button {
         overflow-x: auto;
     }
 
+
     .main-nav a {
-        padding: 8px 0;
+
+        padding:
+            8px 0;
 
         white-space: nowrap;
     }
 
+
     .main-nav a.active::after {
+
         bottom: 0;
     }
 
+
     .theme-button {
+
         margin-left: auto;
     }
 
@@ -1015,91 +1362,119 @@ button {
        ===================================================== */
 
     .hero {
+
         margin-top: 108px;
 
         min-height: 520px;
     }
 
+
     .hero-container {
+
         min-height: 520px;
 
-        padding: 55px 25px 100px;
+        padding:
+            55px 25px 100px;
 
         align-items: center;
     }
 
+
     .hero-content {
+
         max-width: 100%;
     }
 
+
     .hero-content h1 {
+
         font-size: 42px;
     }
 
+
     .hero-content h2 {
+
         font-size: 19px;
     }
 
+
     .hero-message {
+
         right: 25px;
 
         bottom: 28px;
     }
 
+
     .engineering-focus {
-        padding: 60px 25px 65px;
+
+        padding:
+            60px 25px 65px;
     }
 
 
     /* =====================================================
        ABOUT
-       IMAGE LEFT + TEXT RIGHT
+       IMAGE LEFT
+       TEXT RIGHT
        ===================================================== */
 
     .about-main {
+
         display: grid;
 
-        grid-template-columns: 52% 48%;
+        grid-template-columns:
+            52% 48%;
+
+        width: 100%;
 
         min-height: 560px;
 
         margin-top: 108px;
 
+        background: #031426;
+
         overflow: hidden;
     }
 
+
     .about-visual {
+
         position: relative;
 
-        height: auto;
+        width: 100%;
+
+        height: 560px;
 
         min-height: 560px;
 
         overflow: hidden;
     }
 
+
     .about-visual img {
+
         position: absolute;
 
         top: 0;
+
         left: 0;
 
         width: 100%;
+
         height: 100%;
 
         object-fit: cover;
     }
 
-    /* KEEP HORIZONTAL FADE */
 
     .about-visual::after {
+
         top: 0;
 
-        right: -1px;
+        right: 0;
 
-        bottom: auto;
-
-        width: 50%;
+        width: 55%;
 
         height: 100%;
 
@@ -1107,18 +1482,22 @@ button {
             linear-gradient(
                 90deg,
                 rgba(3, 20, 38, 0) 0%,
-                rgba(3, 20, 38, 0.10) 15%,
-                rgba(3, 20, 38, 0.30) 32%,
-                rgba(3, 20, 38, 0.58) 52%,
-                rgba(3, 20, 38, 0.82) 72%,
+                rgba(3, 20, 38, 0.12) 15%,
+                rgba(3, 20, 38, 0.32) 35%,
+                rgba(3, 20, 38, 0.62) 55%,
+                rgba(3, 20, 38, 0.85) 75%,
                 #031426 100%
             );
     }
 
+
     .about-content {
+
+        width: 100%;
+
         min-height: 560px;
 
-        margin-top: 0;
+        margin: 0;
 
         display: flex;
 
@@ -1127,56 +1506,114 @@ button {
         background: #031426;
     }
 
+
     .about-content-inner {
-        padding: 45px 30px 45px 10px;
+
+        width: 100%;
+
+        padding:
+            45px 25px 45px 10px;
     }
+
 
     .about-content h1 {
-        font-size: 36px;
+
+        font-size: 34px;
     }
+
+
+    .about-content h2 {
+
+        font-size: 20px;
+    }
+
 
     .about-description {
-        font-size: 13px;
+
+        font-size: 12px;
+
+        line-height: 1.7;
     }
+
+
+    .about-specialties {
+
+        gap: 6px;
+    }
+
+
+    .about-specialties span {
+
+        padding:
+            6px 8px;
+
+        font-size: 8px;
+    }
+
+
+    .about-project-button {
+
+        margin-top: 22px;
+
+        padding:
+            0 12px;
+
+        font-size: 9px;
+    }
+
 
     .about-statement {
-        padding: 60px 20px 65px;
+
+        padding:
+            60px 20px 65px;
     }
 
+
     .about-statement h2 {
+
         font-size: 27px;
     }
+
 }
 
 
 /* =========================================================
-   MOBILE
-   IMPORTANT:
-   STILL SIDE-BY-SIDE
+   SMALL PHONE
    ========================================================= */
 
 @media (max-width: 600px) {
 
+
     .brand-text strong {
+
         font-size: 11px;
     }
 
+
     .brand-text small {
+
         font-size: 8px;
     }
 
+
     .brand-logo {
+
         width: 29px;
+
         height: 29px;
     }
 
+
     .main-nav {
+
         gap: 14px;
 
         justify-content: flex-start;
     }
 
+
     .main-nav a {
+
         font-size: 10px;
     }
 
@@ -1184,34 +1621,46 @@ button {
     /* HOME */
 
     .hero {
+
         min-height: 550px;
     }
+
 
     .hero-container {
+
         min-height: 550px;
 
-        padding: 50px 20px 100px;
+        padding:
+            50px 20px 100px;
     }
 
+
     .hero-content h1 {
+
         font-size: 38px;
 
         letter-spacing: -1px;
     }
 
+
     .hero-content h2 {
+
         margin-top: 12px;
 
         font-size: 18px;
     }
 
+
     .hero-eyebrow {
+
         font-size: 9px;
 
         letter-spacing: 1.7px;
     }
 
+
     .hero-specialties {
+
         gap: 6px;
 
         font-size: 10px;
@@ -1219,7 +1668,9 @@ button {
         line-height: 1.7;
     }
 
+
     .hero-buttons {
+
         align-items: stretch;
 
         flex-direction: column;
@@ -1231,17 +1682,23 @@ button {
         margin-top: 27px;
     }
 
+
     .button {
+
         width: 100%;
     }
 
+
     .hero-message {
+
         right: 20px;
 
         bottom: 25px;
     }
 
+
     .hero-message p {
+
         font-size: 9px;
 
         letter-spacing: 1px;
@@ -1251,20 +1708,28 @@ button {
     /* HOME FOCUS */
 
     .engineering-focus {
-        padding: 60px 20px 65px;
+
+        padding:
+            60px 20px 65px;
     }
 
+
     .section-label {
+
         font-size: 10px;
 
         letter-spacing: 2.5px;
     }
 
+
     .focus-container h2 {
+
         font-size: 26px;
     }
 
+
     .focus-intro {
+
         font-size: 14px;
 
         line-height: 1.7;
@@ -1273,26 +1738,32 @@ button {
 
     /* =====================================================
        ABOUT
-       STILL LEFT + RIGHT
+       STILL IMAGE LEFT + TEXT RIGHT
        ===================================================== */
 
     .about-main {
+
         display: grid;
 
-        grid-template-columns: 50% 50%;
+        grid-template-columns:
+            50% 50%;
 
         min-height: 520px;
 
         margin-top: 108px;
     }
 
+
     .about-visual {
-        height: auto;
+
+        height: 520px;
 
         min-height: 520px;
     }
 
+
     .about-content {
+
         min-height: 520px;
 
         display: flex;
@@ -1300,82 +1771,147 @@ button {
         align-items: center;
     }
 
+
     .about-content-inner {
-        padding: 35px 18px 35px 8px;
+
+        padding:
+            35px 16px 35px 8px;
     }
 
-    .about-content h1 {
-        font-size: 30px;
 
-        letter-spacing: -0.8px;
-    }
+    .about-label {
 
-    .about-content h2 {
-        font-size: 18px;
-    }
-
-    .about-description {
-        font-size: 11px;
-
-        line-height: 1.7;
-    }
-
-    .about-specialties {
-        gap: 5px;
-
-        margin-top: 18px;
-    }
-
-    .about-specialties span {
-        padding: 5px 6px;
+        margin-bottom: 12px;
 
         font-size: 8px;
+
+        letter-spacing: 2px;
     }
 
-    .about-project-button {
-        margin-top: 20px;
 
-        padding: 0 12px;
+    .about-content h1 {
 
-        min-height: 36px;
+        font-size: 28px;
+
+        letter-spacing: -0.7px;
+    }
+
+
+    .about-line {
+
+        width: 40px;
+
+        margin:
+            18px 0;
+    }
+
+
+    .about-content h2 {
+
+        font-size: 17px;
+    }
+
+
+    .about-role {
 
         font-size: 9px;
     }
 
-    .about-statement {
-        padding: 55px 20px 60px;
+
+    .about-description {
+
+        font-size: 10px;
+
+        line-height: 1.65;
+
+        margin-top: 14px;
     }
 
+
+    .about-specialties {
+
+        gap: 4px;
+
+        margin-top: 15px;
+    }
+
+
+    .about-specialties span {
+
+        padding:
+            5px 6px;
+
+        font-size: 7px;
+    }
+
+
+    .about-project-button {
+
+        min-height: 34px;
+
+        margin-top: 18px;
+
+        padding:
+            0 9px;
+
+        font-size: 8px;
+    }
+
+
+    .about-project-button span {
+
+        font-size: 13px;
+    }
+
+
+    .about-statement {
+
+        padding:
+            55px 20px 60px;
+    }
+
+
     .about-statement h2 {
+
         font-size: 25px;
     }
 
+
     .about-statement-inner > p:last-child {
+
         font-size: 14px;
     }
+
 }
 
 
 /* =========================================================
-   VERY SMALL PHONES
-   STILL LEFT + RIGHT
+   VERY SMALL PHONE
    ========================================================= */
 
 @media (max-width: 400px) {
 
+
     .brand-text small {
+
         display: none;
     }
 
+
     .hero-content h1 {
+
         font-size: 34px;
     }
 
+
     .hero-content h2 {
+
         font-size: 17px;
     }
 
+
     .hero-message {
+
         display: none;
     }
 
@@ -1383,42 +1919,71 @@ button {
     /* ABOUT */
 
     .about-main {
+
         display: grid;
 
-        grid-template-columns: 48% 52%;
+        grid-template-columns:
+            48% 52%;
 
         min-height: 500px;
     }
+
 
     .about-visual {
+
+        height: 500px;
+
         min-height: 500px;
     }
+
 
     .about-content {
+
         min-height: 500px;
     }
 
+
     .about-content-inner {
-        padding: 30px 12px 30px 7px;
+
+        padding:
+            30px 10px 30px 6px;
     }
+
 
     .about-content h1 {
-        font-size: 27px;
+
+        font-size: 25px;
     }
+
 
     .about-content h2 {
-        font-size: 17px;
+
+        font-size: 15px;
     }
+
 
     .about-description {
-        font-size: 10px;
 
-        line-height: 1.6;
+        font-size: 9px;
+
+        line-height: 1.55;
     }
+
 
     .about-specialties span {
+
+        font-size: 6.5px;
+
+        padding:
+            4px 5px;
+    }
+
+
+    .about-project-button {
+
         font-size: 7px;
 
-        padding: 4px 5px;
+        min-height: 31px;
     }
+
 }
