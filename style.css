@@ -40,6 +40,7 @@ button {
     width: 100%;
 
     background: #031426;
+
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -64,6 +65,7 @@ button {
 .brand {
     display: flex;
     align-items: center;
+
     gap: 14px;
 
     color: #ffffff;
@@ -79,15 +81,12 @@ button {
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.65);
-
     background: #031426;
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
 
     overflow: hidden;
 }
-
-
-/* JC */
 
 .logo-j,
 .logo-c {
@@ -156,9 +155,6 @@ button {
     bottom: 16px;
 }
 
-
-/* Nodes */
-
 .node {
     position: absolute;
 
@@ -206,6 +202,7 @@ button {
 
 .brand-text strong {
     font-size: 14px;
+
     letter-spacing: 1.2px;
 }
 
@@ -213,6 +210,7 @@ button {
     margin-top: 4px;
 
     font-size: 10px;
+
     letter-spacing: 0.8px;
 
     color: #9db0c2;
@@ -226,6 +224,7 @@ button {
 .main-nav {
     display: flex;
     align-items: center;
+
     gap: 32px;
 }
 
@@ -241,8 +240,7 @@ button {
 
     padding: 30px 0;
 
-    transition:
-        color 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 .main-nav a:hover {
@@ -260,6 +258,7 @@ button {
 
     left: 0;
     right: 0;
+
     bottom: 19px;
 
     height: 2px;
@@ -285,10 +284,6 @@ button {
     font-size: 17px;
 
     cursor: pointer;
-
-    transition:
-        background 0.25s ease,
-        border 0.25s ease;
 }
 
 .theme-button:hover {
@@ -299,11 +294,12 @@ button {
 
 
 /* =========================================================
-   GENERAL BUTTON
+   BUTTONS
 ========================================================= */
 
 .button {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -333,6 +329,7 @@ button {
 
 .button-primary {
     background: #ffffff;
+
     color: #031426;
 
     border: 1px solid #ffffff;
@@ -340,7 +337,9 @@ button {
 
 .button-primary:hover {
     background: #3ea6ff;
+
     border-color: #3ea6ff;
+
     color: #ffffff;
 }
 
@@ -350,12 +349,6 @@ button {
     color: #ffffff;
 
     border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
-.button-outline:hover {
-    background: rgba(255, 255, 255, 0.08);
-
-    border-color: #ffffff;
 }
 
 
@@ -381,6 +374,7 @@ button {
     background-image: url("images/hero-pcb.PNG");
 
     background-size: cover;
+
     background-position: center;
 
     z-index: 1;
@@ -416,6 +410,7 @@ button {
     margin: 0 auto;
 
     display: flex;
+
     align-items: center;
 }
 
@@ -429,6 +424,7 @@ button {
     color: #69b8ff;
 
     font-size: 12px;
+
     font-weight: 700;
 
     letter-spacing: 2px;
@@ -458,6 +454,7 @@ button {
 
 .hero-specialties {
     display: flex;
+
     flex-wrap: wrap;
 
     align-items: center;
@@ -469,8 +466,6 @@ button {
     color: #c4d2df;
 
     font-size: 12px;
-
-    letter-spacing: 0.5px;
 }
 
 .hero-specialties i {
@@ -481,6 +476,7 @@ button {
 
 .hero-buttons {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 12px;
@@ -490,6 +486,7 @@ button {
     position: absolute;
 
     right: 0;
+
     bottom: 50px;
 
     text-align: right;
@@ -520,7 +517,7 @@ button {
 
 
 /* =========================================================
-   HOME ENGINEERING FOCUS
+   ENGINEERING FOCUS
 ========================================================= */
 
 .engineering-focus {
@@ -577,7 +574,6 @@ button {
 
 /* =========================================================
    ABOUT MAIN
-   FULL IMAGE + TEXT OVERLAY
 ========================================================= */
 
 .about-main {
@@ -605,9 +601,9 @@ button {
     width: 100%;
     height: 100%;
 
-    overflow: hidden;
-
     z-index: 1;
+
+    overflow: hidden;
 }
 
 .about-visual img {
@@ -618,20 +614,16 @@ button {
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
 
-    /*
-       Favors the RIGHT SIDE of the image,
-       where the laptop and hardhat are located.
-    */
     object-position: 75% center;
+
+    display: block;
 }
 
 
 /* =========================================================
-   ABOUT IMAGE TRANSITION
+   IMAGE DARK GRADIENT
 ========================================================= */
 
 .about-visual::after {
@@ -641,40 +633,73 @@ button {
 
     inset: 0;
 
-    width: 100%;
-    height: 100%;
+    z-index: 2;
+
+    pointer-events: none;
 
     background:
         linear-gradient(
             90deg,
 
-            rgba(3, 20, 38, 0.02) 0%,
+            rgba(3, 20, 38, 0.00) 0%,
 
-            rgba(3, 20, 38, 0.03) 20%,
+            rgba(3, 20, 38, 0.00) 25%,
 
-            rgba(3, 20, 38, 0.08) 35%,
+            rgba(3, 20, 38, 0.08) 38%,
 
-            rgba(3, 20, 38, 0.20) 45%,
+            rgba(3, 20, 38, 0.20) 48%,
 
-            rgba(3, 20, 38, 0.42) 55%,
+            rgba(3, 20, 38, 0.40) 58%,
 
-            rgba(3, 20, 38, 0.67) 65%,
+            rgba(3, 20, 38, 0.62) 68%,
 
-            rgba(3, 20, 38, 0.82) 75%,
+            rgba(3, 20, 38, 0.80) 78%,
 
-            rgba(3, 20, 38, 0.93) 87%,
+            rgba(3, 20, 38, 0.92) 89%,
 
             #031426 100%
         );
-
-    z-index: 2;
-
-    pointer-events: none;
 }
 
 
 /* =========================================================
-   ABOUT CONTENT OVER IMAGE
+   SOFT READABILITY LAYER
+   NOT A BOX
+========================================================= */
+
+.about-readability {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 0;
+    right: 0;
+
+    width: 65%;
+    height: 100%;
+
+    pointer-events: none;
+
+    /*
+       Very soft transparent layer.
+       It fades gradually into the image.
+    */
+
+    background:
+        radial-gradient(
+            ellipse at 65% 50%,
+            rgba(3, 20, 38, 0.42) 0%,
+            rgba(3, 20, 38, 0.26) 38%,
+            rgba(3, 20, 38, 0.08) 68%,
+            rgba(3, 20, 38, 0.00) 100%
+        );
+
+    filter: blur(10px);
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
 ========================================================= */
 
 .about-content {
@@ -700,6 +725,7 @@ button {
 
 /* =========================================================
    ABOUT TEXT
+   COMPLETELY TRANSPARENT
 ========================================================= */
 
 .about-content-inner {
@@ -711,21 +737,24 @@ button {
 
     margin-right: 3%;
 
-    padding: 55px 45px 55px 35px;
+    padding: 55px 40px 55px 25px;
 
     /*
-       Transparent glass effect.
-       No solid panel.
+       IMPORTANT:
+       No background.
+       No border.
+       No rectangular glass panel.
     */
-    background: rgba(3, 20, 38, 0.15);
 
-    backdrop-filter: blur(7px);
-
-    -webkit-backdrop-filter: blur(7px);
+    background: transparent;
 
     border: none;
 
-    border-radius: 3px;
+    box-shadow: none;
+
+    backdrop-filter: none;
+
+    -webkit-backdrop-filter: none;
 }
 
 .about-content-inner h1 {
@@ -740,6 +769,7 @@ button {
 
 .about-line {
     width: 55px;
+
     height: 2px;
 
     margin: 17px 0;
@@ -772,7 +802,7 @@ button {
 .about-text {
     margin-bottom: 18px;
 
-    color: #d0dbe5;
+    color: #e0e8ef;
 
     font-size: 14px;
 
@@ -799,11 +829,11 @@ button {
 .about-specialties span {
     padding: 7px 11px;
 
-    color: #cfe7fa;
+    color: #d5ebfc;
 
-    background: rgba(62, 166, 255, 0.10);
+    background: rgba(3, 20, 38, 0.18);
 
-    border: 1px solid rgba(62, 166, 255, 0.22);
+    border: 1px solid rgba(62, 166, 255, 0.25);
 
     font-size: 10px;
 
@@ -842,7 +872,7 @@ button {
 
 
 /* =========================================================
-   RESPONSIVE — TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 1050px) {
@@ -864,12 +894,11 @@ button {
 
         margin-right: 4%;
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 800px) {
@@ -882,10 +911,6 @@ button {
         flex-wrap: wrap;
 
         gap: 15px;
-    }
-
-    .brand {
-        width: auto;
     }
 
     .main-nav {
@@ -908,10 +933,6 @@ button {
         bottom: 0;
     }
 
-    .theme-button {
-        margin-left: auto;
-    }
-
 
     /* HOME */
 
@@ -921,17 +942,6 @@ button {
 
     .hero-container {
         min-height: 620px;
-
-        align-items: center;
-    }
-
-    .hero-overlay {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(3, 20, 38, 0.94),
-                rgba(3, 20, 38, 0.72)
-            );
     }
 
     .hero h1 {
@@ -958,8 +968,6 @@ button {
     .about-content {
         min-height: 720px;
 
-        justify-content: center;
-
         align-items: flex-end;
 
         padding-bottom: 30px;
@@ -972,13 +980,17 @@ button {
 
         margin: 0 auto;
 
-        padding: 35px 28px;
+        padding: 35px 10px;
 
-        background: rgba(3, 20, 38, 0.35);
+        background: transparent;
 
-        backdrop-filter: blur(8px);
+        border: none;
 
-        -webkit-backdrop-filter: blur(8px);
+        box-shadow: none;
+
+        backdrop-filter: none;
+
+        -webkit-backdrop-filter: none;
     }
 
     .about-visual img {
@@ -989,11 +1001,30 @@ button {
         background:
             linear-gradient(
                 180deg,
-                rgba(3, 20, 38, 0.05) 0%,
-                rgba(3, 20, 38, 0.15) 25%,
-                rgba(3, 20, 38, 0.65) 55%,
-                rgba(3, 20, 38, 0.95) 100%
+                rgba(3, 20, 38, 0.00) 0%,
+                rgba(3, 20, 38, 0.08) 20%,
+                rgba(3, 20, 38, 0.42) 48%,
+                rgba(3, 20, 38, 0.78) 72%,
+                rgba(3, 20, 38, 0.96) 100%
             );
+    }
+
+    .about-readability {
+        width: 100%;
+
+        height: 70%;
+
+        top: auto;
+        bottom: 0;
+
+        background:
+            radial-gradient(
+                ellipse at 50% 70%,
+                rgba(3, 20, 38, 0.42),
+                rgba(3, 20, 38, 0.00) 75%
+            );
+
+        filter: blur(15px);
     }
 
     .about-content-inner h1 {
@@ -1003,12 +1034,11 @@ button {
     .about-content-inner h2 {
         font-size: 20px;
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE — SMALL MOBILE
+   SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 500px) {
@@ -1078,7 +1108,7 @@ button {
     .about-content-inner {
         width: 92%;
 
-        padding: 30px 22px;
+        padding: 30px 5px;
     }
 
     .about-content-inner h1 {
@@ -1092,5 +1122,4 @@ button {
     .about-specialties span {
         font-size: 9px;
     }
-
 }
