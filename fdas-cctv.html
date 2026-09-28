@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-
-        /* ========================================
+        /* =========================================================
            FDAS & CCTV PAGE
-        ======================================== */
+           ========================================================= */
 
         .fdas-page {
             background: #f6f8fb;
@@ -20,25 +19,24 @@
             padding-top: 64px;
         }
 
-
-        /* ========================================
+        /* =========================================================
            HERO
-        ======================================== */
+           ========================================================= */
 
         .fdas-hero {
             position: relative;
             min-height: 245px;
-
             display: flex;
             align-items: center;
-            justify-content: center;
-
             overflow: hidden;
 
             background-image:
                 linear-gradient(
-                    rgba(3, 20, 38, 0.70),
-                    rgba(3, 20, 38, 0.78)
+                    90deg,
+                    rgba(3, 20, 38, 0.96) 0%,
+                    rgba(3, 20, 38, 0.84) 45%,
+                    rgba(3, 20, 38, 0.55) 75%,
+                    rgba(3, 20, 38, 0.78) 100%
                 ),
                 url("images/fdas-cctv-hero.jpeg");
 
@@ -48,15 +46,14 @@
 
         .fdas-hero::after {
             content: "";
-
             position: absolute;
             inset: 0;
 
             background:
                 radial-gradient(
-                    circle at center,
-                    rgba(0, 145, 255, 0.16),
-                    transparent 55%
+                    circle at 78% 45%,
+                    rgba(0, 153, 255, 0.20),
+                    transparent 38%
                 );
 
             pointer-events: none;
@@ -67,197 +64,181 @@
             z-index: 2;
 
             width: min(1180px, 92%);
-            text-align: center;
-
-            color: #ffffff;
+            margin: 0 auto;
         }
 
         .fdas-hero-label {
             margin: 0 0 7px;
 
+            color: #75c9ff;
             font-size: 10px;
             font-weight: 700;
-            letter-spacing: 3px;
-
-            color: #63baff;
+            letter-spacing: 2px;
         }
 
         .fdas-hero h1 {
             margin: 0;
 
+            color: #ffffff;
             font-size: 38px;
+            line-height: 1.05;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: -0.8px;
         }
 
         .fdas-hero-subtitle {
-            margin: 7px 0 10px;
+            margin: 9px 0 0;
 
+            color: #dceaf5;
             font-size: 14px;
             font-weight: 500;
-
-            color: #d7e8f7;
         }
 
         .fdas-hero-description {
-            max-width: 720px;
-
-            margin: 0 auto;
-
-            font-size: 12px;
-            line-height: 1.6;
+            max-width: 650px;
+            margin: 12px 0 0;
 
             color: rgba(255, 255, 255, 0.78);
+            font-size: 12px;
+            line-height: 1.6;
         }
 
-        .fdas-tags {
+        .fdas-hero-tags {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-
-            gap: 6px;
-
+            gap: 7px;
             margin-top: 15px;
         }
 
-        .fdas-tags span {
+        .fdas-hero-tags span {
             padding: 5px 9px;
 
-            border: 1px solid rgba(99, 186, 255, 0.40);
+            border: 1px solid rgba(117, 201, 255, 0.38);
             border-radius: 4px;
 
-            background: rgba(0, 110, 190, 0.10);
-
-            color: #cdeaff;
+            color: #d9f1ff;
+            background: rgba(0, 120, 200, 0.10);
 
             font-size: 9px;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
         }
 
-
-        /* ========================================
-           CONTENT
-        ======================================== */
+        /* =========================================================
+           MAIN CONTENT
+           ========================================================= */
 
         .fdas-content {
             width: min(1180px, 92%);
-
             margin: 0 auto;
-
             padding: 25px 0 35px;
         }
 
-        .fdas-section-header {
-            margin-bottom: 12px;
-        }
-
         .fdas-section-label {
-            margin: 0 0 4px;
+            margin: 0 0 5px;
 
-            color: #1688d8;
-
+            color: #1676b8;
             font-size: 9px;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 1.8px;
         }
 
-        .fdas-section-header h2 {
+        .fdas-section-title {
             margin: 0;
 
-            color: #09233d;
-
+            color: #10263d;
             font-size: 23px;
             line-height: 1.2;
         }
 
+        .fdas-section-description {
+            margin: 7px 0 18px;
 
-        /* ========================================
+            color: #667789;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* =========================================================
            CAPABILITIES
-        ======================================== */
+           ========================================================= */
 
         .capabilities-grid {
             display: grid;
-
             grid-template-columns: repeat(4, 1fr);
-
-            gap: 10px;
-
-            margin-bottom: 27px;
+            gap: 12px;
         }
 
         .capability-card {
-            padding: 15px;
+            min-height: 135px;
+
+            padding: 17px;
 
             background: #ffffff;
+            border: 1px solid #dce4eb;
+            border-radius: 8px;
 
-            border: 1px solid #dce5ee;
-            border-radius: 7px;
-
-            transition: border-color 0.2s ease;
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
         }
 
         .capability-card:hover {
-            border-color: #80bce2;
+            transform: translateY(-2px);
+            border-color: #8ecff2;
         }
 
         .capability-number {
             margin-bottom: 9px;
 
-            color: #1688d8;
-
+            color: #1684c6;
             font-size: 9px;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .capability-card h3 {
-            margin: 0 0 6px;
+            margin: 0;
 
-            color: #102d48;
-
+            color: #132b42;
             font-size: 14px;
         }
 
         .capability-card p {
-            margin: 0 0 11px;
+            margin: 7px 0 12px;
 
-            color: #66798c;
-
+            color: #71808e;
             font-size: 10px;
-            line-height: 1.5;
+            line-height: 1.45;
         }
 
         .capability-tags {
             display: flex;
             flex-wrap: wrap;
-
-            gap: 4px;
+            gap: 5px;
         }
 
         .capability-tags span {
             padding: 4px 6px;
 
+            color: #47728f;
             background: #f0f6fa;
+            border: 1px solid #dbeaf2;
+            border-radius: 3px;
 
-            color: #557087;
-
-            font-size: 8px;
+            font-size: 7px;
             font-weight: 700;
             letter-spacing: 0.5px;
-
-            border-radius: 3px;
         }
 
-
-        /* ========================================
+        /* =========================================================
            PORTFOLIO
-        ======================================== */
+           ========================================================= */
 
         .portfolio-heading {
-            text-align: center;
-
+            margin-top: 27px;
             margin-bottom: 12px;
+            text-align: center;
         }
 
         .portfolio-heading .fdas-section-label {
@@ -267,193 +248,191 @@
         .portfolio-heading h2 {
             margin: 0;
 
-            color: #09233d;
-
-            font-size: 23px;
+            color: #10263d;
+            font-size: 21px;
         }
 
         .portfolio-grid {
             display: grid;
-
             grid-template-columns: repeat(2, 1fr);
-
             gap: 14px;
         }
 
         .portfolio-card {
             position: relative;
 
-            padding: 18px;
+            padding: 20px;
 
             background: #ffffff;
-
-            border: 1px solid #dce5ee;
+            border: 1px solid #dce4eb;
             border-radius: 8px;
         }
 
-        .portfolio-card-label {
+        .portfolio-card-number {
             margin-bottom: 8px;
 
-            color: #1688d8;
-
+            color: #1684c6;
             font-size: 9px;
             font-weight: 700;
             letter-spacing: 1.5px;
         }
 
         .portfolio-card h3 {
-            margin: 0 0 7px;
+            margin: 0;
 
-            color: #102d48;
-
-            font-size: 17px;
+            color: #142c43;
+            font-size: 18px;
         }
 
         .portfolio-card p {
-            margin: 0 0 15px;
+            max-width: 520px;
+            margin: 8px 0 15px;
 
-            color: #687b8d;
-
+            color: #6c7d8c;
             font-size: 10px;
-            line-height: 1.6;
+            line-height: 1.55;
         }
 
         .portfolio-button {
             display: inline-flex;
             align-items: center;
-            gap: 7px;
+            gap: 8px;
 
             padding: 8px 12px;
 
-            border: 1px solid #b9d9ed;
+            border: 1px solid #1684c6;
             border-radius: 4px;
 
-            background: #f4faff;
-
-            color: #147fca;
+            color: #1684c6;
+            background: transparent;
 
             font-size: 9px;
             font-weight: 700;
-            letter-spacing: 0.7px;
+            text-decoration: none;
 
             cursor: pointer;
         }
 
         .portfolio-button:hover {
-            background: #eaf6ff;
+            color: #ffffff;
+            background: #1684c6;
         }
 
-
-        /* ========================================
+        /* =========================================================
            MODAL
-        ======================================== */
+           ========================================================= */
 
         .modal-toggle {
             display: none;
         }
 
-        .self-project-modal,
-        .client-project-modal {
+        .modal-overlay {
             position: fixed;
             inset: 0;
-
             z-index: 9999;
 
-            display: none;
-
+            display: flex;
             align-items: center;
             justify-content: center;
 
             padding: 20px;
 
             background: rgba(3, 20, 38, 0.78);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+
+            transition:
+                opacity 0.2s ease,
+                visibility 0.2s ease;
         }
 
-        #selfProjectsToggle:checked ~ .self-project-modal,
-        #clientProjectsToggle:checked ~ .client-project-modal {
-            display: flex;
+        .modal-toggle:checked + .modal-overlay {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
         }
 
         .modal-box {
-            position: relative;
-
-            width: min(900px, 94vw);
+            width: min(1000px, 94vw);
             max-height: 88vh;
 
             overflow-y: auto;
 
-            background: #f6f8fb;
+            padding: 22px;
 
+            background: #f6f8fb;
+            border: 1px solid #d7e1e9;
             border-radius: 10px;
 
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.30);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
         }
 
         .modal-header {
-            position: sticky;
-            top: 0;
-            z-index: 2;
-
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-between;
+            gap: 20px;
 
-            padding: 15px 18px;
-
-            background: #ffffff;
-
-            border-bottom: 1px solid #dce5ee;
+            margin-bottom: 18px;
         }
 
         .modal-header h2 {
             margin: 0;
 
-            color: #09233d;
+            color: #10263d;
+            font-size: 22px;
+        }
 
-            font-size: 18px;
+        .modal-header p {
+            margin: 5px 0 0;
+
+            color: #71808e;
+            font-size: 10px;
         }
 
         .modal-close {
-            width: 30px;
-            height: 30px;
-
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border-radius: 50%;
+            width: 30px;
+            height: 30px;
 
-            background: #edf3f7;
+            flex: 0 0 30px;
 
-            color: #39566d;
+            border: 1px solid #d4dfe7;
+            border-radius: 5px;
+
+            color: #536575;
+            background: #ffffff;
 
             font-size: 18px;
+            line-height: 1;
 
             cursor: pointer;
         }
 
         .modal-close:hover {
-            background: #dfeaf1;
-        }
-
-        .modal-content {
-            padding: 18px;
+            color: #ffffff;
+            background: #1684c6;
+            border-color: #1684c6;
         }
 
         .modal-project-grid {
             display: grid;
-
             grid-template-columns: repeat(2, 1fr);
-
-            gap: 10px;
+            gap: 12px;
         }
 
         .modal-project-card {
-            padding: 15px;
+            padding: 17px;
 
             background: #ffffff;
-
-            border: 1px solid #dce5ee;
+            border: 1px solid #dce4eb;
             border-radius: 7px;
         }
 
@@ -461,165 +440,153 @@
             grid-column: 1 / -1;
         }
 
-        .modal-project-card .project-number {
-            margin-bottom: 7px;
-
-            color: #1688d8;
-
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
         .modal-project-card h3 {
-            margin: 0 0 6px;
+            margin: 0;
 
-            color: #102d48;
-
+            color: #17324a;
             font-size: 15px;
         }
 
         .modal-project-card p {
-            margin: 0 0 10px;
+            margin: 7px 0 13px;
 
-            color: #687b8d;
-
+            color: #6c7d8c;
             font-size: 10px;
-            line-height: 1.55;
+            line-height: 1.5;
         }
 
-        .project-tags {
+        .project-meta {
             display: flex;
             flex-wrap: wrap;
-
-            gap: 4px;
+            gap: 5px;
+            margin-bottom: 13px;
         }
 
-        .project-tags span {
+        .project-meta span {
             padding: 4px 6px;
 
+            color: #47728f;
             background: #f0f6fa;
+            border: 1px solid #dbeaf2;
+            border-radius: 3px;
 
-            color: #557087;
-
-            font-size: 8px;
+            font-size: 7px;
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
-
-        /* ========================================
-           PDF SECTION
-        ======================================== */
+        /* =========================================================
+           PDF DOCUMENTATION
+           ========================================================= */
 
         .pdf-section {
             margin-top: 15px;
-
             padding-top: 13px;
 
-            border-top: 1px solid #e1e8ee;
+            border-top: 1px solid #e1e7ec;
         }
 
         .pdf-section-title {
-            margin: 0 0 8px;
+            margin: 0 0 9px;
 
-            color: #1688d8;
-
+            color: #17324a;
             font-size: 9px;
             font-weight: 700;
-            letter-spacing: 1.4px;
+            letter-spacing: 1.2px;
         }
 
         .pdf-list {
             display: grid;
-
             grid-template-columns: repeat(2, 1fr);
-
-            gap: 6px;
+            gap: 7px;
         }
 
         .pdf-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             gap: 8px;
+
+            min-width: 0;
 
             padding: 8px 9px;
 
-            background: #f7fafc;
-
-            border: 1px solid #e0e8ef;
+            background: #f8fafc;
+            border: 1px solid #dfe7ed;
             border-radius: 4px;
         }
 
-        .pdf-name {
+        .pdf-item-name {
             min-width: 0;
 
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
 
-            color: #304b62;
-
+            color: #3f566a;
             font-size: 9px;
         }
 
-        .pdf-link {
-            flex-shrink: 0;
+        .pdf-item a {
+            flex: 0 0 auto;
 
-            color: #1688d8;
+            padding: 5px 7px;
 
-            font-size: 9px;
+            border: 1px solid #1684c6;
+            border-radius: 3px;
+
+            color: #1684c6;
+            background: #ffffff;
+
+            font-size: 7px;
             font-weight: 700;
-
             text-decoration: none;
         }
 
-        .pdf-link:hover {
-            text-decoration: underline;
+        .pdf-item a:hover {
+            color: #ffffff;
+            background: #1684c6;
         }
 
         .pdf-loading,
         .pdf-error,
         .pdf-empty {
-            grid-column: 1 / -1;
+            padding: 11px;
 
-            padding: 10px;
-
-            color: #6d8091;
-
-            background: #f7fafc;
-
-            border: 1px solid #e0e8ef;
             border-radius: 4px;
 
             font-size: 9px;
             line-height: 1.5;
         }
 
-        .pdf-error {
-            color: #a54c4c;
-
-            border-color: #e6c8c8;
-
-            background: #fff8f8;
+        .pdf-loading {
+            color: #607484;
+            background: #f4f8fb;
+            border: 1px solid #dce7ee;
         }
 
-        .pdf-debug {
-            margin-top: 8px;
+        .pdf-error {
+            color: #8a3434;
+            background: #fff5f5;
+            border: 1px solid #edcccc;
+        }
 
-            padding: 8px;
+        .pdf-empty {
+            color: #697b89;
+            background: #f8fafc;
+            border: 1px solid #dfe7ed;
+        }
 
-            background: #f1f4f7;
+        .pdf-error strong {
+            display: block;
+            margin-bottom: 4px;
+        }
 
-            border: 1px solid #dce5ee;
-            border-radius: 4px;
-
-            color: #52687b;
+        .pdf-error-details {
+            margin-top: 7px;
 
             font-family: monospace;
             font-size: 8px;
-            line-height: 1.5;
 
             word-break: break-word;
         }
@@ -627,60 +594,47 @@
         .pdf-count {
             margin-top: 7px;
 
-            color: #8393a1;
-
+            color: #71808e;
             font-size: 8px;
         }
 
-
-        /* ========================================
+        /* =========================================================
            CLIENT PROJECT PLACEHOLDER
-        ======================================== */
+           ========================================================= */
 
-        .client-project-placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .client-placeholder {
+            margin-top: 12px;
+            padding: 13px;
 
-            min-height: 130px;
+            border: 1px dashed #cbd8e1;
+            border-radius: 6px;
 
-            border: 1px dashed #b9cbd8;
-            border-radius: 7px;
-
-            background: #f8fafc;
-
-            color: #718496;
+            color: #758694;
+            background: #fafcfd;
 
             text-align: center;
-
-            font-size: 10px;
-            line-height: 1.6;
+            font-size: 9px;
         }
 
-
-        /* ========================================
+        /* =========================================================
            FOOTER STRIP
-        ======================================== */
+           ========================================================= */
 
         .fdas-footer-strip {
             margin-top: 25px;
+            padding: 13px 0;
 
-            padding: 12px;
+            border-top: 1px solid #dfe6ec;
 
-            background: #09233d;
-
-            color: rgba(255, 255, 255, 0.65);
-
-            text-align: center;
+            color: #7a8a97;
 
             font-size: 9px;
-            letter-spacing: 0.5px;
+            text-align: center;
         }
 
-
-        /* ========================================
+        /* =========================================================
            RESPONSIVE
-        ======================================== */
+           ========================================================= */
 
         @media (max-width: 1000px) {
 
@@ -688,6 +642,13 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .fdas-content {
+                width: 92%;
+            }
+
+            .fdas-hero-content {
+                width: 92%;
+            }
         }
 
         @media (max-width: 700px) {
@@ -697,6 +658,10 @@
             }
 
             .fdas-content {
+                width: 90%;
+            }
+
+            .fdas-hero-content {
                 width: 90%;
             }
 
@@ -719,7 +684,6 @@
             .pdf-list {
                 grid-template-columns: 1fr;
             }
-
         }
 
         @media (max-width: 500px) {
@@ -738,31 +702,32 @@
 
             .modal-box {
                 width: 96vw;
+                padding: 15px;
             }
 
             .modal-content {
                 padding: 14px;
             }
 
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
         }
-
     </style>
 </head>
 
-
 <body>
 
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
 <header class="site-header">
-
     <div class="header-container">
 
         <a href="index.html" class="brand">
 
-            <div
-                class="brand-logo"
-                aria-label="JC Engineering Logo">
-
+            <div class="brand-logo" aria-label="JC Engineering Logo">
                 <span class="logo-j">J</span>
                 <span class="logo-c">C</span>
 
@@ -775,73 +740,44 @@
                 <span class="node node-bottom"></span>
                 <span class="node node-left"></span>
                 <span class="node node-right"></span>
-
             </div>
 
             <div class="brand-text">
-
-                <strong>
-                    JOHN CARL P. ORTIZ
-                </strong>
-
-                <small>
-                    Electronics Design Engineer
-                </small>
-
+                <strong>JOHN CARL P. ORTIZ</strong>
+                <small>Electronics Design Engineer</small>
             </div>
 
         </a>
 
-
         <nav class="main-nav">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="projects.html">
-                Projects
-            </a>
-
-            <a href="skills.html">
-                Skills
-            </a>
-
-            <a href="resume.html">
-                Resume
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
         </nav>
-
 
         <button
             class="theme-button"
             id="themeButton"
             aria-label="Toggle theme">
-
             ☾
-
         </button>
 
     </div>
-
 </header>
 
 
+<!-- =========================================================
+     PAGE
+     ========================================================= -->
+
 <main class="fdas-page">
 
-
-    <!-- ========================================
+    <!-- =====================================================
          HERO
-    ======================================== -->
+         ===================================================== -->
 
     <section class="fdas-hero">
 
@@ -861,19 +797,17 @@
 
             <p class="fdas-hero-description">
                 Engineering design and documentation for fire detection,
-                CCTV surveillance, and extra-low-voltage systems,
-                including layouts, system planning, documentation,
-                and coordination.
+                CCTV surveillance, structured cabling, and ELV systems.
+                Projects include system layouts, device placement,
+                zoning, riser diagrams, network topology, and CAD documentation.
             </p>
 
-            <div class="fdas-tags">
-
+            <div class="fdas-hero-tags">
                 <span>FDAS</span>
                 <span>CCTV</span>
                 <span>AUTOCAD</span>
                 <span>ELV</span>
                 <span>SYSTEM DESIGN</span>
-
             </div>
 
         </div>
@@ -881,85 +815,90 @@
     </section>
 
 
+    <!-- =====================================================
+         CONTENT
+         ===================================================== -->
+
     <section class="fdas-content">
 
-
-        <!-- ========================================
+        <!-- =================================================
              DESIGN CAPABILITIES
-        ======================================== -->
+             ================================================= -->
 
-        <div class="fdas-section-header">
-
-            <p class="fdas-section-label">
-                DESIGN CAPABILITIES
-            </p>
-
-            <h2>
-                Engineering Systems &amp; Documentation
-            </h2>
-
+        <div class="fdas-section-label">
+            ENGINEERING SERVICES
         </div>
+
+        <h2 class="fdas-section-title">
+            Design Capabilities
+        </h2>
+
+        <p class="fdas-section-description">
+            Core engineering disciplines and documentation capabilities
+            applied to FDAS, CCTV, and ELV system projects.
+        </p>
 
 
         <div class="capabilities-grid">
 
+            <!-- FDAS -->
 
             <article class="capability-card">
 
                 <div class="capability-number">
-                    01
+                    01 / FDAS
                 </div>
 
                 <h3>
-                    FDAS
+                    Fire Detection
                 </h3>
 
                 <p>
-                    Fire detection and alarm system planning,
-                    device layouts, zoning, and system documentation.
+                    Fire alarm device layouts, zoning,
+                    detection coverage, and FACP documentation.
                 </p>
 
                 <div class="capability-tags">
-
                     <span>DEVICE LAYOUT</span>
                     <span>ZONING</span>
                     <span>FACP</span>
-
                 </div>
 
             </article>
 
 
+            <!-- CCTV -->
+
             <article class="capability-card">
 
                 <div class="capability-number">
-                    02
+                    02 / CCTV
                 </div>
 
                 <h3>
-                    CCTV
+                    Surveillance
                 </h3>
 
                 <p>
-                    Surveillance camera planning, coverage layouts,
-                    equipment coordination, and network documentation.
+                    CCTV camera planning, coverage,
+                    network connectivity, and NVR systems.
                 </p>
 
                 <div class="capability-tags">
-
                     <span>CAMERA PLAN</span>
                     <span>COVERAGE</span>
                     <span>NVR</span>
-
                 </div>
 
             </article>
 
 
+            <!-- CAD -->
+
             <article class="capability-card">
 
                 <div class="capability-number">
-                    03
+                    03 / CAD
                 </div>
 
                 <h3>
@@ -967,25 +906,25 @@
                 </h3>
 
                 <p>
-                    Technical drawings, floor plans, system layouts,
-                    details, and engineering documentation.
+                    Engineering drawings, layouts,
+                    details, diagrams, and technical documentation.
                 </p>
 
                 <div class="capability-tags">
-
                     <span>AUTOCAD</span>
                     <span>LAYOUTS</span>
                     <span>DETAILS</span>
-
                 </div>
 
             </article>
 
 
+            <!-- ELV -->
+
             <article class="capability-card">
 
                 <div class="capability-number">
-                    04
+                    04 / ELV
                 </div>
 
                 <h3>
@@ -993,36 +932,33 @@
                 </h3>
 
                 <p>
-                    Low-voltage system coordination involving
-                    networking, riser diagrams, and system integration.
+                    Low-voltage systems, network infrastructure,
+                    riser diagrams, and engineering coordination.
                 </p>
 
                 <div class="capability-tags">
-
                     <span>NETWORKING</span>
                     <span>RISER</span>
                     <span>COORDINATION</span>
-
                 </div>
 
             </article>
 
-
         </div>
 
 
-        <!-- ========================================
-             PROJECT PORTFOLIO
-        ======================================== -->
+        <!-- =================================================
+             PORTFOLIO
+             ================================================= -->
 
         <div class="portfolio-heading">
 
-            <p class="fdas-section-label">
-                PROJECT PORTFOLIO
-            </p>
+            <div class="fdas-section-label">
+                SELECTED WORK
+            </div>
 
             <h2>
-                Selected Engineering Work
+                Project Portfolio
             </h2>
 
         </div>
@@ -1030,13 +966,14 @@
 
         <div class="portfolio-grid">
 
-
-            <!-- SELF-DIRECTED PROJECTS -->
+            <!-- =================================================
+                 SELF-DIRECTED PROJECTS
+                 ================================================= -->
 
             <article class="portfolio-card">
 
-                <div class="portfolio-card-label">
-                    PROJECT CATEGORY
+                <div class="portfolio-card-number">
+                    PORTFOLIO / 01
                 </div>
 
                 <h3>
@@ -1044,28 +981,28 @@
                 </h3>
 
                 <p>
-                    Independent engineering design work,
-                    system studies, layouts, and technical
-                    documentation developed for portfolio presentation.
+                    Engineering design projects developed through
+                    academic work, technical exercises, and independent
+                    system design practice.
                 </p>
 
                 <label
-                    for="selfProjectsToggle"
+                    for="selfDirectedModal"
                     class="portfolio-button">
-
-                    See Projects →
-
+                    View Projects →
                 </label>
 
             </article>
 
 
-            <!-- CLIENT PROJECTS -->
+            <!-- =================================================
+                 CLIENT PROJECTS
+                 ================================================= -->
 
             <article class="portfolio-card">
 
-                <div class="portfolio-card-label">
-                    PROJECT CATEGORY
+                <div class="portfolio-card-number">
+                    PORTFOLIO / 02
                 </div>
 
                 <h3>
@@ -1073,384 +1010,316 @@
                 </h3>
 
                 <p>
-                    Engineering drawings and system documentation
-                    prepared for project-based work and technical
-                    coordination.
+                    Engineering design and documentation work prepared
+                    for project requirements, coordination, and
+                    technical presentation.
                 </p>
 
                 <label
-                    for="clientProjectsToggle"
+                    for="clientProjectsModal"
                     class="portfolio-button">
-
-                    See Projects →
-
+                    View Projects →
                 </label>
 
             </article>
 
+        </div>
 
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <div class="fdas-footer-strip">
+            FDAS • CCTV • ELV • CAD • SYSTEM DESIGN
         </div>
 
     </section>
 
-
-    <!-- ========================================
-         MODAL TOGGLES
-    ======================================== -->
-
-    <input
-        type="checkbox"
-        id="selfProjectsToggle"
-        class="modal-toggle">
-
-    <input
-        type="checkbox"
-        id="clientProjectsToggle"
-        class="modal-toggle">
+</main>
 
 
-    <!-- ========================================
-         SELF-DIRECTED PROJECT MODAL
-    ======================================== -->
+<!-- =========================================================
+     SELF-DIRECTED PROJECT MODAL
+     ========================================================= -->
 
-    <div class="self-project-modal">
+<input
+    type="checkbox"
+    id="selfDirectedModal"
+    class="modal-toggle">
 
-        <div class="modal-box">
 
+<div class="modal-overlay">
 
-            <div class="modal-header">
+    <div class="modal-box">
 
+        <div class="modal-header">
+
+            <div>
                 <h2>
                     Self-Directed Projects
                 </h2>
 
-                <label
-                    for="selfProjectsToggle"
-                    class="modal-close">
-
-                    ×
-
-                </label>
-
+                <p>
+                    Selected FDAS, CCTV, and ELV engineering design work.
+                </p>
             </div>
 
+            <label
+                for="selfDirectedModal"
+                class="modal-close"
+                aria-label="Close">
+                ×
+            </label>
 
-            <div class="modal-content">
-
-                <div class="modal-project-grid">
+        </div>
 
 
-                    <!-- PROJECT 01 -->
+        <div class="modal-project-grid">
 
-                    <article class="modal-project-card">
+            <!-- =================================================
+                 FDAS PROJECT
+                 ================================================= -->
 
-                        <div class="project-number">
-                            PROJECT 01
+            <article class="modal-project-card">
+
+                <h3>
+                    FDAS Design Project
+                </h3>
+
+                <p>
+                    Fire Detection and Alarm System design including
+                    detector placement, notification appliances,
+                    zoning, and engineering layout documentation.
+                </p>
+
+                <div class="project-meta">
+                    <span>FDAS</span>
+                    <span>AUTOCAD</span>
+                    <span>SYSTEM LAYOUT</span>
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 CCTV PROJECT
+                 ================================================= -->
+
+            <article class="modal-project-card modal-project-card-full">
+
+                <h3>
+                    CCTV Design Project
+                </h3>
+
+                <p>
+                    CCTV surveillance system design including camera
+                    placement, coverage planning, network topology,
+                    NVR connectivity, and riser documentation.
+                </p>
+
+                <div class="project-meta">
+                    <span>CCTV</span>
+                    <span>CAMERA LAYOUT</span>
+                    <span>NETWORKING</span>
+                    <span>NVR</span>
+                </div>
+
+
+                <!-- =================================================
+                     AUTOMATIC GITHUB PDF LOADER
+                     ================================================= -->
+
+                <div class="pdf-section">
+
+                    <p class="pdf-section-title">
+                        PROJECT DOCUMENTATION
+                    </p>
+
+                    <div
+                        id="cctvPdfList"
+                        class="pdf-list">
+
+                        <div class="pdf-loading">
+                            Loading CCTV project files...
                         </div>
 
-                        <h3>
-                            FDAS Design Project
-                        </h3>
+                    </div>
 
-                        <p>
-                            Fire detection and alarm system
-                            design focusing on device placement,
-                            zoning, system planning, and technical
-                            documentation.
-                        </p>
-
-                        <div class="project-tags">
-
-                            <span>FDAS</span>
-                            <span>AUTOCAD</span>
-                            <span>LAYOUT</span>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROJECT 02 -->
-
-                    <article
-                        class="modal-project-card modal-project-card-full">
-
-                        <div class="project-number">
-                            PROJECT 02
-                        </div>
-
-                        <h3>
-                            CCTV Design Project
-                        </h3>
-
-                        <p>
-                            CCTV surveillance system design
-                            involving camera layouts, coverage
-                            planning, network topology, riser
-                            diagrams, and technical documentation.
-                        </p>
-
-                        <div class="project-tags">
-
-                            <span>CCTV</span>
-                            <span>CAMERA PLAN</span>
-                            <span>NVR</span>
-                            <span>NETWORKING</span>
-                            <span>AUTOCAD</span>
-
-                        </div>
-
-
-                        <!-- ========================================
-                             AUTOMATIC PDF DOCUMENTATION
-                        ======================================== -->
-
-                        <div class="pdf-section">
-
-                            <p class="pdf-section-title">
-                                PROJECT DOCUMENTATION
-                            </p>
-
-
-                            <div
-                                id="cctvPdfList"
-                                class="pdf-list">
-
-                                <div class="pdf-loading">
-
-                                    Connecting to GitHub...
-
-                                </div>
-
-                            </div>
-
-
-                            <div
-                                id="cctvPdfCount"
-                                class="pdf-count">
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PROJECT 03 -->
-
-                    <article class="modal-project-card">
-
-                        <div class="project-number">
-                            PROJECT 03
-                        </div>
-
-                        <h3>
-                            ELV System Design
-                        </h3>
-
-                        <p>
-                            Extra-low-voltage system planning
-                            including network coordination,
-                            riser diagrams, and technical
-                            system documentation.
-                        </p>
-
-                        <div class="project-tags">
-
-                            <span>ELV</span>
-                            <span>NETWORKING</span>
-                            <span>RISER</span>
-
-                        </div>
-
-                    </article>
-
+                    <div
+                        id="cctvPdfCount"
+                        class="pdf-count">
+                    </div>
 
                 </div>
 
-            </div>
+            </article>
+
+
+            <!-- =================================================
+                 ELV PROJECT
+                 ================================================= -->
+
+            <article class="modal-project-card">
+
+                <h3>
+                    ELV System Design
+                </h3>
+
+                <p>
+                    Low-voltage infrastructure design involving
+                    structured networking, system coordination,
+                    riser diagrams, and technical documentation.
+                </p>
+
+                <div class="project-meta">
+                    <span>ELV</span>
+                    <span>NETWORKING</span>
+                    <span>RISER DIAGRAM</span>
+                </div>
+
+            </article>
 
         </div>
 
     </div>
 
-
-    <!-- ========================================
-         CLIENT PROJECT MODAL
-    ======================================== -->
-
-    <div class="client-project-modal">
-
-        <div class="modal-box">
+</div>
 
 
-            <div class="modal-header">
+<!-- =========================================================
+     CLIENT PROJECT MODAL
+     ========================================================= -->
 
+<input
+    type="checkbox"
+    id="clientProjectsModal"
+    class="modal-toggle">
+
+
+<div class="modal-overlay">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
                 <h2>
                     Client Projects
                 </h2>
 
-                <label
-                    for="clientProjectsToggle"
-                    class="modal-close">
-
-                    ×
-
-                </label>
-
+                <p>
+                    Engineering design and technical documentation.
+                </p>
             </div>
 
+            <label
+                for="clientProjectsModal"
+                class="modal-close"
+                aria-label="Close">
+                ×
+            </label>
 
-            <div class="modal-content">
-
-                <div class="modal-project-grid">
-
-
-                    <article class="modal-project-card">
-
-                        <div class="project-number">
-                            PROJECT 01
-                        </div>
-
-                        <h3>
-                            Project Documentation
-                        </h3>
-
-                        <p>
-                            Project-based engineering documentation,
-                            layouts, and technical drawings.
-                        </p>
-
-                        <div class="project-tags">
-
-                            <span>FDAS</span>
-                            <span>CCTV</span>
-                            <span>CAD</span>
-
-                        </div>
-
-                    </article>
+        </div>
 
 
-                    <article class="modal-project-card">
+        <div class="modal-project-grid">
 
-                        <div class="project-number">
-                            PROJECT 02
-                        </div>
+            <article class="modal-project-card">
 
-                        <h3>
-                            System Design
-                        </h3>
+                <h3>
+                    Client Project 01
+                </h3>
 
-                        <p>
-                            Engineering system layouts and
-                            documentation for project coordination.
-                        </p>
+                <p>
+                    Project information and engineering documentation
+                    can be added here.
+                </p>
 
-                        <div class="project-tags">
-
-                            <span>ELV</span>
-                            <span>NETWORKING</span>
-                            <span>DESIGN</span>
-
-                        </div>
-
-                    </article>
-
-
-                    <article
-                        class="modal-project-card modal-project-card-full">
-
-                        <div class="client-project-placeholder">
-
-                            More Client Projects
-                            <br>
-                            Project documentation will be added here.
-
-                        </div>
-
-                    </article>
-
-
+                <div class="project-meta">
+                    <span>FDAS</span>
+                    <span>CCTV</span>
+                    <span>ELV</span>
                 </div>
 
-            </div>
+            </article>
 
+
+            <article class="modal-project-card">
+
+                <h3>
+                    Client Project 02
+                </h3>
+
+                <p>
+                    Project information and engineering documentation
+                    can be added here.
+                </p>
+
+                <div class="project-meta">
+                    <span>CAD</span>
+                    <span>SYSTEM DESIGN</span>
+                    <span>DOCUMENTATION</span>
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="client-placeholder">
+            More Client Projects
         </div>
 
     </div>
 
-
-    <!-- ========================================
-         FOOTER STRIP
-    ======================================== -->
-
-    <div class="fdas-footer-strip">
-
-        FDAS &amp; CCTV Design • Engineering Portfolio •
-        John Carl P. Ortiz
-
-    </div>
+</div>
 
 
-</main>
-
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
 
 <script src="script.js"></script>
 
-
-<!-- =====================================================
-     STRONG AUTOMATIC GITHUB PDF LOADER
-     
-     ACTUAL GITHUB FOLDER:
-     
-     Files/Cctv/
-     
-     NOT:
-     
-     files/Cctv/
-     
-     ===================================================== -->
-
 <script>
-
-    /* =====================================================
-       GITHUB CONFIGURATION
-       ===================================================== */
-
-    const GITHUB_OWNER = "engrjc";
-
-    const GITHUB_REPOSITORY = "engrjc.github.io";
-
-    const GITHUB_BRANCH = "main";
+document.addEventListener("DOMContentLoaded", function () {
 
     /*
+     * ============================================================
+     * GITHUB CONFIGURATION
+     * ============================================================
+     *
      * IMPORTANT:
      *
-     * GitHub folder is exactly:
+     * GitHub is case-sensitive.
+     *
+     * The correct folder is:
      *
      * Files/Cctv/
      *
-     * Capital F.
+     * NOT:
+     *
+     * files/Cctv/
+     *
+     * NOT:
+     *
+     * Files/cctv/
      */
+
+    const GITHUB_OWNER = "engrjc";
+    const GITHUB_REPOSITORY = "engrjc.github.io";
+    const GITHUB_BRANCH = "main";
 
     const CCTV_FOLDER = "Files/Cctv";
 
 
-    /* =====================================================
-       DOM ELEMENTS
-       ===================================================== */
-
-    const cctvPdfList =
-        document.getElementById("cctvPdfList");
-
-    const cctvPdfCount =
-        document.getElementById("cctvPdfCount");
-
-
-    /* =====================================================
-       GITHUB API URL
-       ===================================================== */
+    /*
+     * GitHub recursive tree API.
+     *
+     * This reads the complete repository tree and searches
+     * automatically for files inside Files/Cctv/.
+     */
 
     const GITHUB_TREE_API =
         "https://api.github.com/repos/" +
@@ -1462,186 +1331,93 @@
         "?recursive=1";
 
 
-    /* =====================================================
-       GITHUB FILE URL
-       ===================================================== */
+    const pdfList =
+        document.getElementById("cctvPdfList");
 
-    function createGitHubFileUrl(path) {
+    const pdfCount =
+        document.getElementById("cctvPdfCount");
 
-        return (
-            "https://github.com/" +
-            GITHUB_OWNER +
-            "/" +
-            GITHUB_REPOSITORY +
-            "/blob/" +
-            GITHUB_BRANCH +
-            "/" +
-            path
-        );
 
+    /*
+     * Stop if the PDF container is not present.
+     */
+
+    if (!pdfList) {
+        return;
     }
 
 
-    /* =====================================================
-       RAW GITHUB FILE URL
-       ===================================================== */
+    /*
+     * ============================================================
+     * DISPLAY ERROR
+     * ============================================================
+     */
 
-    function createGitHubRawUrl(path) {
+    function showPdfError(title, details) {
 
-        return (
-            "https://raw.githubusercontent.com/" +
-            GITHUB_OWNER +
-            "/" +
-            GITHUB_REPOSITORY +
-            "/" +
-            GITHUB_BRANCH +
-            "/" +
-            path
-        );
+        pdfList.innerHTML =
+            '<div class="pdf-error">' +
 
-    }
+                '<strong>' +
+                escapeHtml(title) +
+                '</strong>' +
 
+                '<div>' +
+                'The website could not automatically load the ' +
+                'CCTV PDF files from GitHub.' +
+                '</div>' +
 
-    /* =====================================================
-       DISPLAY ERROR
-       ===================================================== */
+                '<div class="pdf-error-details">' +
+                escapeHtml(details || "") +
+                '</div>' +
 
-    function displayPdfError(
-        title,
-        message,
-        details
-    ) {
-
-        cctvPdfList.innerHTML = "";
-
-        const errorBox =
-            document.createElement("div");
-
-        errorBox.className =
-            "pdf-error";
-
-
-        const titleElement =
-            document.createElement("strong");
-
-        titleElement.textContent =
-            title;
-
-
-        const messageElement =
-            document.createElement("div");
-
-        messageElement.style.marginTop =
-            "6px";
-
-        messageElement.textContent =
-            message;
-
-
-        errorBox.appendChild(
-            titleElement
-        );
-
-        errorBox.appendChild(
-            messageElement
-        );
-
-
-        if (details) {
-
-            const debug =
-                document.createElement("div");
-
-            debug.className =
-                "pdf-debug";
-
-            debug.textContent =
-                details;
-
-            errorBox.appendChild(
-                debug
-            );
-
-        }
-
-
-        cctvPdfList.appendChild(
-            errorBox
-        );
-
-    }
-
-
-    /* =====================================================
-       LOAD CCTV PDF FILES
-       ===================================================== */
-
-    async function loadCctvPdfFiles() {
-
-        if (!cctvPdfList) {
-            return;
-        }
-
-
-        /* ---------------------------------------------
-           Initial loading message
-        --------------------------------------------- */
-
-        cctvPdfList.innerHTML =
-            '<div class="pdf-loading">' +
-            'Connecting to GitHub...' +
-            '<br><br>' +
-            'Checking: ' +
-            CCTV_FOLDER +
-            '/' +
             '</div>';
 
+        if (pdfCount) {
+            pdfCount.textContent = "";
+        }
+    }
 
-        cctvPdfCount.textContent =
-            "";
+
+    /*
+     * ============================================================
+     * ESCAPE HTML
+     * ============================================================
+     *
+     * Prevents filenames from being interpreted as HTML.
+     */
+
+    function escapeHtml(value) {
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
 
 
-        console.log(
-            "========================================"
-        );
+    /*
+     * ============================================================
+     * LOAD PDF FILES
+     * ============================================================
+     */
 
-        console.log(
-            "CCTV PDF LOADER"
-        );
-
-        console.log(
-            "========================================"
-        );
-
-        console.log(
-            "Repository:",
-            GITHUB_OWNER +
-            "/" +
-            GITHUB_REPOSITORY
-        );
-
-        console.log(
-            "Branch:",
-            GITHUB_BRANCH
-        );
-
-        console.log(
-            "Folder:",
-            CCTV_FOLDER
-        );
-
-        console.log(
-            "API:",
-            GITHUB_TREE_API
-        );
-
+    async function loadCctvPdfs() {
 
         try {
 
+            pdfList.innerHTML =
+                '<div class="pdf-loading">' +
+                'Connecting to GitHub and searching ' +
+                '<strong>Files/Cctv/</strong>...' +
+                '</div>';
 
-            /* =============================================
-               REQUEST GITHUB TREE
-               ============================================= */
+
+            /*
+             * Request GitHub repository tree.
+             */
 
             const response =
                 await fetch(
@@ -1649,6 +1425,7 @@
                     {
                         method: "GET",
                         cache: "no-store",
+
                         headers: {
                             "Accept":
                                 "application/vnd.github+json"
@@ -1657,503 +1434,334 @@
                 );
 
 
-            console.log(
-                "GitHub HTTP Status:",
-                response.status
-            );
-
-
-            /* =============================================
-               READ RESPONSE
-               ============================================= */
+            /*
+             * Read response text first so we can show
+             * GitHub's actual error if something goes wrong.
+             */
 
             const responseText =
                 await response.text();
 
 
-            console.log(
-                "GitHub Response:",
-                responseText
-            );
-
-
-            /* =============================================
-               HTTP ERROR
-               ============================================= */
+            /*
+             * GitHub API error.
+             */
 
             if (!response.ok) {
 
-                let errorMessage =
+                showPdfError(
                     "GitHub API returned HTTP " +
-                    response.status +
-                    ".";
-
-
-                try {
-
-                    const errorData =
-                        JSON.parse(
-                            responseText
-                        );
-
-
-                    if (
-                        errorData &&
-                        errorData.message
-                    ) {
-
-                        errorMessage +=
-                            " " +
-                            errorData.message;
-
-                    }
-
-                }
-
-                catch (jsonError) {
-
-                    /* Response wasn't JSON. */
-
-                }
-
-
-                displayPdfError(
-
-                    "Unable to load CCTV project files.",
-
-                    errorMessage,
-
+                    response.status,
                     "Repository: " +
                     GITHUB_OWNER +
                     "/" +
                     GITHUB_REPOSITORY +
-                    "\n" +
-
-                    "Branch: " +
+                    " | Branch: " +
                     GITHUB_BRANCH +
-                    "\n" +
-
-                    "Folder: " +
+                    " | Folder: " +
                     CCTV_FOLDER +
-                    "/\n" +
-
-                    "API URL: " +
+                    " | API: " +
                     GITHUB_TREE_API +
-                    "\n" +
-
-                    "HTTP Status: " +
-                    response.status +
-                    "\n\n" +
-
-                    "GitHub response:\n" +
+                    " | Response: " +
                     responseText
-
                 );
 
-
-                cctvPdfCount.textContent =
-                    "GitHub could not return the repository tree.";
-
                 return;
-
             }
 
 
-            /* =============================================
-               PARSE JSON
-               ============================================= */
+            /*
+             * Convert GitHub response into JSON.
+             */
 
             let data;
 
             try {
 
                 data =
-                    JSON.parse(
-                        responseText
-                    );
+                    JSON.parse(responseText);
 
-            }
+            } catch (jsonError) {
 
-            catch (jsonError) {
-
-                displayPdfError(
-
-                    "GitHub returned an invalid response.",
-
-                    "The repository tree could not be read.",
-
-                    "HTTP Status: " +
-                    response.status +
-                    "\n\n" +
-
-                    "Response:\n" +
+                showPdfError(
+                    "GitHub returned invalid JSON.",
                     responseText
-
                 );
 
                 return;
-
             }
 
 
-            /* =============================================
-               CHECK TREE
-               ============================================= */
+            /*
+             * Check whether GitHub returned a tree.
+             */
 
-            if (
-                !data.tree ||
-                !Array.isArray(data.tree)
-            ) {
+            if (!data.tree || !Array.isArray(data.tree)) {
 
-                displayPdfError(
-
+                showPdfError(
                     "GitHub repository tree was not returned.",
-
-                    "The API response does not contain a valid file tree.",
-
-                    JSON.stringify(
-                        data,
-                        null,
-                        2
-                    )
-
+                    responseText
                 );
 
                 return;
-
             }
 
 
-            console.log(
-                "Total repository tree items:",
-                data.tree.length
-            );
-
-
-            /* =============================================
-               SHOW ALL FILES IN CONSOLE
-               ============================================= */
-
-            console.log(
-                "Repository files:"
-            );
-
-            data.tree.forEach(
-                function(item) {
-
-                    console.log(
-                        item.type,
-                        item.path
-                    );
-
-                }
-            );
-
-
-            /* =============================================
-               FIND FILES INSIDE Files/Cctv/
-               ============================================= */
+            /*
+             * ========================================================
+             * FIND FILES INSIDE Files/Cctv/
+             * ========================================================
+             */
 
             const folderPrefix =
                 CCTV_FOLDER + "/";
 
 
             const folderFiles =
-                data.tree.filter(
-                    function(item) {
+                data.tree.filter(function (item) {
+
+                    const path =
+                        item.path || "";
+
+                    return (
+                        item.type === "blob" &&
+                        path.startsWith(folderPrefix)
+                    );
+
+                });
+
+
+            /*
+             * Find PDF files only.
+             */
+
+            const pdfFiles =
+                folderFiles
+                    .filter(function (item) {
 
                         const path =
                             item.path || "";
 
+                        return path
+                            .toLowerCase()
+                            .endsWith(".pdf");
 
-                        return (
-                            item.type === "blob" &&
-                            path.startsWith(
-                                folderPrefix
-                            )
+                    })
+                    .sort(function (a, b) {
+
+                        return a.path.localeCompare(
+                            b.path,
+                            undefined,
+                            {
+                                numeric: true,
+                                sensitivity: "base"
+                            }
                         );
 
-                    }
-                );
+                    });
 
 
-            console.log(
-                "Files found inside:",
-                CCTV_FOLDER
-            );
+            /*
+             * ========================================================
+             * NO PDF FOUND
+             * ========================================================
+             */
 
-            console.log(
-                folderFiles
-            );
+            if (pdfFiles.length === 0) {
 
-
-            /* =============================================
-               FIND PDF FILES
-               ============================================= */
-
-            const pdfFiles =
-                folderFiles
-                    .filter(
-                        function(item) {
-
-                            const path =
-                                item.path || "";
-
-
-                            return path
-                                .toLowerCase()
-                                .endsWith(".pdf");
-
-                        }
-                    )
-                    .sort(
-                        function(a, b) {
-
-                            return a.path.localeCompare(
-                                b.path,
-                                undefined,
-                                {
-                                    numeric: true,
-                                    sensitivity: "base"
-                                }
-                            );
-
-                        }
-                    );
-
-
-            console.log(
-                "PDF files found:",
-                pdfFiles.length
-            );
-
-
-            console.log(
-                pdfFiles
-            );
-
-
-            /* =============================================
-               NO PDF FILES
-               ============================================= */
-
-            if (
-                pdfFiles.length === 0
-            ) {
-
-
-                let returnedPaths = "";
-
-
-                if (
+                const returnedPaths =
                     folderFiles.length > 0
-                ) {
+                        ? folderFiles
+                            .map(function (item) {
+                                return item.path;
+                            })
+                            .join("\n")
+                        : "No files were returned inside this folder.";
 
-                    returnedPaths =
-                        folderFiles
-                            .map(
-                                function(file) {
-                                    return file.path;
-                                }
-                            )
-                            .join("\n");
-
-                }
-
-                else {
-
-                    returnedPaths =
-                        "No files were returned inside " +
-                        CCTV_FOLDER +
-                        "/";
-
-                }
-
-
-                displayPdfError(
-
-                    "The GitHub folder was reached, but no PDF files were found.",
-
-                    "The loader successfully read the repository tree but could not find any .pdf files under Files/Cctv/.",
-
-                    "Expected folder:\n" +
+                showPdfError(
+                    "No PDF files were found.",
+                    "The GitHub API was reached successfully, but no " +
+                    ".pdf file was found inside:\n\n" +
                     CCTV_FOLDER +
                     "/\n\n" +
-
                     "Files returned from that folder:\n" +
-                    returnedPaths
-
+                    returnedPaths +
+                    "\n\n" +
+                    "Repository tree API:\n" +
+                    GITHUB_TREE_API
                 );
 
-
-                cctvPdfCount.textContent =
-                    "0 PDF files found.";
-
                 return;
-
             }
 
 
-            /* =============================================
-               CLEAR LOADING MESSAGE
-               ============================================= */
+            /*
+             * ========================================================
+             * DISPLAY PDF FILES
+             * ========================================================
+             */
 
-            cctvPdfList.innerHTML =
-                "";
-
-
-            /* =============================================
-               CREATE PDF ITEMS
-               ============================================= */
-
-            pdfFiles.forEach(
-                function(file) {
-
-                    const fileName =
-                        file.path
-                            .split("/")
-                            .pop();
+            pdfList.innerHTML = "";
 
 
-                    const item =
-                        document.createElement(
-                            "div"
-                        );
+            pdfFiles.forEach(function (file) {
 
-                    item.className =
-                        "pdf-item";
+                const path =
+                    file.path;
 
 
-                    const name =
-                        document.createElement(
-                            "span"
-                        );
+                /*
+                 * Encode each path component separately.
+                 *
+                 * This allows filenames containing spaces,
+                 * parentheses, etc. to work correctly.
+                 */
 
-                    name.className =
-                        "pdf-name";
-
-                    name.title =
-                        file.path;
-
-                    name.textContent =
-                        fileName;
-
-
-                    const link =
-                        document.createElement(
-                            "a"
-                        );
-
-                    link.className =
-                        "pdf-link";
-
-                    link.href =
-                        createGitHubFileUrl(
-                            file.path
-                        );
-
-                    link.target =
-                        "_blank";
-
-                    link.rel =
-                        "noopener noreferrer";
-
-                    link.textContent =
-                        "OPEN PDF →";
+                const encodedPath =
+                    path
+                        .split("/")
+                        .map(function (part) {
+                            return encodeURIComponent(part);
+                        })
+                        .join("/");
 
 
-                    item.appendChild(
-                        name
+                const githubRawUrl =
+                    "https://raw.githubusercontent.com/" +
+                    GITHUB_OWNER +
+                    "/" +
+                    GITHUB_REPOSITORY +
+                    "/" +
+                    GITHUB_BRANCH +
+                    "/" +
+                    encodedPath;
+
+
+                const githubPageUrl =
+                    "https://github.com/" +
+                    GITHUB_OWNER +
+                    "/" +
+                    GITHUB_REPOSITORY +
+                    "/blob/" +
+                    GITHUB_BRANCH +
+                    "/" +
+                    encodedPath;
+
+
+                /*
+                 * Create PDF item.
+                 */
+
+                const item =
+                    document.createElement("div");
+
+                item.className =
+                    "pdf-item";
+
+
+                /*
+                 * Filename.
+                 */
+
+                const name =
+                    document.createElement("div");
+
+                name.className =
+                    "pdf-item-name";
+
+                name.title =
+                    path;
+
+                name.textContent =
+                    path.substring(
+                        folderPrefix.length
                     );
 
-                    item.appendChild(
-                        link
-                    );
+
+                /*
+                 * Open button.
+                 */
+
+                const link =
+                    document.createElement("a");
+
+                link.href =
+                    githubPageUrl;
+
+                link.target =
+                    "_blank";
+
+                link.rel =
+                    "noopener noreferrer";
+
+                link.textContent =
+                    "OPEN PDF";
 
 
-                    cctvPdfList.appendChild(
-                        item
-                    );
+                /*
+                 * Assemble item.
+                 */
 
-                }
+                item.appendChild(name);
+                item.appendChild(link);
+
+                pdfList.appendChild(item);
+
+            });
+
+
+            /*
+             * ========================================================
+             * COUNT
+             * ========================================================
+             */
+
+            if (pdfCount) {
+
+                pdfCount.textContent =
+                    pdfFiles.length +
+                    (
+                        pdfFiles.length === 1
+                            ? " PDF file"
+                            : " PDF files"
+                    ) +
+                    " loaded automatically from Files/Cctv/.";
+
+            }
+
+        } catch (error) {
+
+            /*
+             * Network / browser / CORS / connection error.
+             */
+
+            showPdfError(
+                "Unable to connect to GitHub.",
+                "Technical error: " +
+                error.message +
+                "\n\nAPI:\n" +
+                GITHUB_TREE_API
             );
-
-
-            /* =============================================
-               UPDATE COUNT
-               ============================================= */
-
-            cctvPdfCount.textContent =
-                pdfFiles.length +
-                (
-                    pdfFiles.length === 1
-                        ? " PDF file found automatically."
-                        : " PDF files found automatically."
-                );
-
-
-            console.log(
-                "CCTV PDF loading completed successfully."
-            );
-
-        }
-
-
-        catch (error) {
-
 
             console.error(
                 "CCTV PDF loader error:",
                 error
             );
-
-
-            displayPdfError(
-
-                "Unable to connect to GitHub.",
-
-                "The website could not read the GitHub repository tree.",
-
-                "Repository: " +
-                GITHUB_OWNER +
-                "/" +
-                GITHUB_REPOSITORY +
-                "\n" +
-
-                "Branch: " +
-                GITHUB_BRANCH +
-                "\n" +
-
-                "Folder: " +
-                CCTV_FOLDER +
-                "/\n\n" +
-
-                "API URL:\n" +
-                GITHUB_TREE_API +
-                "\n\n" +
-
-                "Technical error:\n" +
-                error.message
-
-            );
-
-
-            cctvPdfCount.textContent =
-                "";
-
         }
 
     }
 
 
-    /* =====================================================
-       START LOADER
-       ===================================================== */
+    /*
+     * ============================================================
+     * START LOADER
+     * ============================================================
+     */
 
-    loadCctvPdfFiles();
+    loadCctvPdfs();
 
+});
 </script>
-
 
 </body>
 </html>
