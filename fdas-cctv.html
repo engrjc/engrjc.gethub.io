@@ -18,7 +18,6 @@
             background: #f6f8fb;
             min-height: 100vh;
             padding-top: 64px;
-            color: #102235;
         }
 
 
@@ -36,8 +35,8 @@
 
             background-image:
                 linear-gradient(
-                    rgba(2, 15, 28, 0.68),
-                    rgba(2, 15, 28, 0.78)
+                    rgba(3, 20, 38, 0.70),
+                    rgba(3, 20, 38, 0.78)
                 ),
                 url("images/fdas-cctv-hero.jpeg");
 
@@ -53,7 +52,7 @@
             background:
                 radial-gradient(
                     circle at center,
-                    rgba(45, 148, 214, 0.18),
+                    rgba(40, 150, 220, 0.18),
                     transparent 60%
                 );
 
@@ -63,67 +62,123 @@
         .fdas-hero-content {
             position: relative;
             z-index: 2;
-            width: min(900px, 92%);
+
+            width: min(900px, 90%);
             text-align: center;
             color: white;
-            padding: 25px 20px;
         }
 
-        .fdas-eyebrow {
-            margin: 0 0 7px;
-            font-size: 9px;
-            letter-spacing: 2.8px;
-            font-weight: 700;
-            color: #74c8ff;
+        .fdas-hero-label {
+            margin: 0 0 8px;
+
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+
+            color: #8ec9eb;
         }
 
-        .fdas-hero-content h1 {
+        .fdas-hero h1 {
             margin: 0;
 
-            font-size: clamp(28px, 4vw, 45px);
-            line-height: 1.05;
-            letter-spacing: -0.7px;
-            font-weight: 700;
+            font-size: clamp(30px, 5vw, 48px);
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
-        .fdas-subtitle {
-            margin: 9px 0 10px;
+        .fdas-hero-subtitle {
+            margin: 9px 0 14px;
 
             font-size: 13px;
+            font-weight: 600;
             letter-spacing: 0.5px;
-            color: #dcecf7;
+
+            color: #d8e9f4;
         }
 
-        .fdas-description {
-            max-width: 670px;
-            margin: 0 auto 13px;
+        .fdas-hero-description {
+            max-width: 680px;
+            margin: 0 auto;
+
+            font-size: 12px;
+            line-height: 1.65;
+
+            color: #c6d8e5;
+        }
+
+        .fdas-hero-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 7px;
+
+            margin-top: 18px;
+        }
+
+        .fdas-hero-tags span {
+            padding: 5px 9px;
+
+            border: 1px solid rgba(142, 201, 235, 0.45);
+            border-radius: 4px;
+
+            background: rgba(255, 255, 255, 0.06);
+
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+
+            color: #d9edf9;
+        }
+
+
+        /* =========================================================
+           MAIN CONTENT
+        ========================================================= */
+
+        .fdas-content {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+
+            padding: 25px 0 35px;
+        }
+
+
+        /* =========================================================
+           SECTION HEADERS
+        ========================================================= */
+
+        .fdas-section-header {
+            margin-bottom: 14px;
+        }
+
+        .fdas-section-label {
+            margin: 0 0 5px;
+
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+
+            color: #39749e;
+        }
+
+        .fdas-section-header h2 {
+            margin: 0;
+
+            font-size: 23px;
+            line-height: 1.15;
+
+            color: #0b2033;
+        }
+
+        .fdas-section-header p {
+            max-width: 700px;
+
+            margin: 7px 0 0;
 
             font-size: 11px;
             line-height: 1.55;
-            color: #c8d8e4;
-        }
 
-        .fdas-tags {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .fdas-tags span {
-            padding: 5px 8px;
-
-            border: 1px solid rgba(116, 200, 255, 0.45);
-            border-radius: 4px;
-
-            background: rgba(8, 34, 55, 0.45);
-
-            color: #bce5ff;
-
-            font-size: 7px;
-            font-weight: 700;
-            letter-spacing: 1px;
+            color: #637484;
         }
 
 
@@ -131,108 +186,88 @@
            DESIGN CAPABILITIES
         ========================================================= */
 
-        .capabilities-section {
-            width: min(1120px, 92%);
-            margin: 0 auto;
-
-            padding: 25px 0 18px;
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 16px;
-        }
-
-        .section-heading span {
-            display: block;
-
-            margin-bottom: 5px;
-
-            color: #4285b4;
-
-            font-size: 8px;
-            font-weight: 800;
-            letter-spacing: 2px;
-        }
-
-        .section-heading h2 {
-            margin: 0;
-
-            color: #102235;
-
-            font-size: 21px;
-            line-height: 1.15;
-        }
-
-        .section-heading p {
-            max-width: 600px;
-            margin: 7px auto 0;
-
-            color: #71808e;
-
-            font-size: 10px;
-            line-height: 1.5;
-        }
-
         .capabilities-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+
             gap: 10px;
+
+            margin-bottom: 27px;
         }
 
         .capability-card {
             position: relative;
 
-            min-height: 145px;
-            padding: 15px;
+            padding: 17px 16px;
 
             background: white;
 
-            border: 1px solid #dce4eb;
-            border-radius: 8px;
+            border: 1px solid #dce5eb;
 
-            transition:
-                transform 0.2s ease,
-                border-color 0.2s ease;
+            border-radius: 7px;
+
+            overflow: hidden;
         }
 
-        .capability-card:hover {
-            transform: translateY(-2px);
-            border-color: #9bc9e6;
+        .capability-card::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 3px;
+
+            background: #4c8fb7;
         }
 
         .capability-number {
-            color: #83b9d8;
+            margin-bottom: 9px;
 
-            font-size: 8px;
+            font-size: 9px;
             font-weight: 800;
             letter-spacing: 1px;
+
+            color: #7d91a0;
         }
 
         .capability-card h3 {
-            margin: 9px 0 7px;
-
-            color: #17324a;
+            margin: 0 0 6px;
 
             font-size: 15px;
+
+            color: #102b40;
         }
 
         .capability-card p {
             margin: 0;
 
-            color: #6e7d89;
+            font-size: 10px;
+            line-height: 1.55;
 
-            font-size: 9px;
-            line-height: 1.5;
+            color: #687b89;
         }
 
-        .capability-line {
-            width: 28px;
-            height: 2px;
+        .capability-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
 
             margin-top: 12px;
+        }
 
-            background: #4e9bca;
+        .capability-tags span {
+            padding: 4px 6px;
+
+            border-radius: 3px;
+
+            background: #eef5f9;
+
+            font-size: 7px;
+            font-weight: 800;
+
+            color: #47728e;
         }
 
 
@@ -240,120 +275,144 @@
            PROJECT PORTFOLIO
         ========================================================= */
 
-        .portfolio-section {
-            width: min(1120px, 92%);
-            margin: 0 auto;
-
-            padding: 12px 0 25px;
-        }
-
-        .portfolio-heading {
+        .portfolio-header {
             text-align: center;
-            margin-bottom: 14px;
+            margin-bottom: 15px;
         }
 
-        .portfolio-heading span {
-            display: block;
-
-            margin-bottom: 5px;
-
-            color: #4285b4;
-
-            font-size: 8px;
-            font-weight: 800;
-            letter-spacing: 2px;
+        .portfolio-header .fdas-section-label {
+            margin-bottom: 4px;
         }
 
-        .portfolio-heading h2 {
+        .portfolio-header h2 {
             margin: 0;
 
-            color: #102235;
+            font-size: 24px;
 
-            font-size: 21px;
+            color: #0b2033;
         }
 
-        .portfolio-heading p {
-            margin: 6px auto 0;
+        .portfolio-header p {
+            max-width: 600px;
 
-            max-width: 560px;
+            margin: 7px auto 0;
 
-            color: #71808e;
+            font-size: 11px;
+            line-height: 1.5;
 
-            font-size: 10px;
+            color: #687b89;
         }
-
-
-        /* =========================================================
-           PROJECT CATEGORY CARDS
-        ========================================================= */
 
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+
+            gap: 14px;
         }
 
         .portfolio-card {
             position: relative;
 
-            padding: 17px;
+            padding: 20px;
 
             background: white;
 
-            border: 1px solid #dce4eb;
-            border-radius: 9px;
+            border: 1px solid #dce5eb;
+
+            border-radius: 7px;
+
+            overflow: hidden;
+        }
+
+        .portfolio-card::before {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            width: 3px;
+            height: 100%;
+
+            background: #4c8fb7;
         }
 
         .portfolio-card-top {
             display: flex;
             align-items: flex-start;
-            gap: 11px;
+            gap: 12px;
         }
 
-        .portfolio-icon {
-            width: 36px;
-            height: 36px;
-
-            flex: 0 0 36px;
+        .portfolio-number {
+            min-width: 34px;
+            height: 34px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border: 1px solid #cfe1ed;
-            border-radius: 7px;
+            border: 1px solid #bcd8e8;
 
-            background: #f5faff;
+            border-radius: 5px;
 
-            color: #3f88b8;
+            background: #f4f9fc;
 
-            font-size: 13px;
+            font-size: 10px;
             font-weight: 800;
+
+            color: #39749e;
         }
 
-        .portfolio-card h3 {
-            margin: 0 0 4px;
-
-            color: #17324a;
-
-            font-size: 15px;
+        .portfolio-info {
+            flex: 1;
         }
 
-        .portfolio-card small {
-            color: #79909f;
+        .portfolio-type {
+            margin-bottom: 3px;
 
             font-size: 8px;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 1px;
+
+            color: #7b8d9a;
         }
 
-        .portfolio-card p {
-            margin: 11px 0 13px;
+        .portfolio-info h3 {
+            margin: 0;
 
-            color: #6b7b87;
+            font-size: 17px;
 
-            font-size: 9px;
-            line-height: 1.5;
+            color: #102b40;
+        }
+
+        .portfolio-description {
+            margin: 14px 0;
+
+            font-size: 10px;
+            line-height: 1.6;
+
+            color: #657886;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+
+            margin-bottom: 14px;
+        }
+
+        .portfolio-tags span {
+            padding: 4px 6px;
+
+            border-radius: 3px;
+
+            background: #eef5f9;
+
+            font-size: 7px;
+            font-weight: 800;
+
+            color: #47728e;
         }
 
         .portfolio-open {
@@ -361,22 +420,20 @@
             align-items: center;
             gap: 7px;
 
+            cursor: pointer;
+
             padding: 7px 10px;
 
-            border: 1px solid #bfd9e9;
-            border-radius: 5px;
+            border: 1px solid #a9c8da;
+            border-radius: 4px;
 
             background: #f7fbfe;
-
-            color: #39749e;
 
             font-size: 8px;
             font-weight: 800;
             letter-spacing: 0.4px;
 
-            cursor: pointer;
-
-            user-select: none;
+            color: #39749e;
 
             transition:
                 background 0.2s ease,
@@ -385,34 +442,23 @@
 
         .portfolio-open:hover {
             background: #edf7fc;
-            border-color: #8fc0dd;
-        }
-
-        .portfolio-open span {
-            font-size: 11px;
+            border-color: #82b5d1;
         }
 
 
         /* =========================================================
-           CSS-ONLY POPUP
+           POPUP SYSTEM
         ========================================================= */
 
         .modal-toggle {
-            position: absolute;
-
-            width: 1px;
-            height: 1px;
-
-            opacity: 0;
-
-            pointer-events: none;
+            display: none;
         }
 
         .project-modal {
             position: fixed;
             inset: 0;
 
-            z-index: 99999;
+            z-index: 9999;
 
             display: none;
 
@@ -421,239 +467,361 @@
 
             padding: 20px;
 
-            background: rgba(2, 12, 23, 0.80);
+            background: rgba(3, 16, 29, 0.72);
 
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
         }
 
-        #selfProjectsToggle:checked ~ .self-project-modal {
-            display: flex;
-        }
-
+        #selfProjectsToggle:checked ~ .self-project-modal,
         #clientProjectsToggle:checked ~ .client-project-modal {
             display: flex;
         }
 
-        .project-modal-box {
-            width: min(920px, 100%);
+        .modal-box {
+            width: min(850px, 94vw);
             max-height: 88vh;
 
             overflow-y: auto;
 
-            background: #f6f8fb;
+            background: #f7f9fb;
 
-            border: 1px solid #cdd9e3;
-            border-radius: 11px;
+            border: 1px solid #cfdde6;
 
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+            border-radius: 10px;
 
-            animation: modalOpen 0.18s ease-out;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.30);
         }
 
-        @keyframes modalOpen {
-            from {
-                opacity: 0;
-                transform: translateY(8px) scale(0.985);
-            }
+        .modal-header {
+            position: sticky;
+            top: 0;
+            z-index: 5;
 
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .project-modal-header {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
 
-            gap: 20px;
+            padding: 17px 20px;
 
-            padding: 17px 18px 14px;
+            background: #f7f9fb;
 
-            background: #102235;
-
-            color: white;
+            border-bottom: 1px solid #dce5eb;
         }
 
-        .modal-header-text small {
-            color: #75c6f7;
+        .modal-header-label {
+            margin-bottom: 4px;
 
-            font-size: 7px;
+            font-size: 8px;
             font-weight: 800;
-            letter-spacing: 1.8px;
+            letter-spacing: 1.4px;
+
+            color: #39749e;
         }
 
-        .modal-header-text h2 {
-            margin: 4px 0 3px;
-
-            font-size: 19px;
-            line-height: 1.15;
-        }
-
-        .modal-header-text p {
+        .modal-header h2 {
             margin: 0;
 
-            color: #bdcfdb;
+            font-size: 20px;
 
-            font-size: 9px;
+            color: #102b40;
         }
 
         .modal-close {
-            width: 29px;
-            height: 29px;
-
-            flex: 0 0 29px;
+            width: 32px;
+            height: 32px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border: 1px solid rgba(255,255,255,0.22);
+            cursor: pointer;
+
+            border: 1px solid #ccd9e1;
             border-radius: 5px;
 
-            color: white;
-            background: rgba(255,255,255,0.06);
+            background: white;
 
             font-size: 20px;
             line-height: 1;
 
-            cursor: pointer;
-
-            user-select: none;
+            color: #536775;
         }
 
         .modal-close:hover {
-            background: rgba(255,255,255,0.13);
+            background: #edf5f9;
+            color: #1d5577;
         }
 
-        .project-modal-content {
-            padding: 14px;
+        .modal-content {
+            padding: 18px 20px 20px;
         }
 
         .modal-project-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 9px;
+
+            gap: 10px;
         }
 
         .modal-project-card {
-            padding: 12px 13px;
+            padding: 15px;
 
             background: white;
 
-            border: 1px solid #dce4ec;
-            border-radius: 8px;
+            border: 1px solid #dce5eb;
+
+            border-radius: 6px;
+        }
+
+        .modal-project-card-full {
+            grid-column: 1 / -1;
         }
 
         .modal-project-top {
             display: flex;
             align-items: flex-start;
-
-            gap: 9px;
+            gap: 10px;
         }
 
         .modal-project-number {
-            width: 25px;
-            height: 25px;
+            width: 30px;
+            height: 30px;
 
-            flex: 0 0 25px;
+            flex-shrink: 0;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border-radius: 5px;
+            border-radius: 4px;
 
-            background: #edf6fb;
-            border: 1px solid #cfe2ee;
+            background: #edf5f9;
 
-            color: #4387b1;
-
-            font-size: 8px;
+            font-size: 9px;
             font-weight: 800;
+
+            color: #39749e;
         }
 
         .modal-project-info {
-            min-width: 0;
+            flex: 1;
         }
 
         .modal-project-type {
             margin-bottom: 3px;
 
-            color: #7d99aa;
-
             font-size: 7px;
             font-weight: 800;
             letter-spacing: 1px;
+
+            color: #7c8e9b;
         }
 
         .modal-project-info h3 {
             margin: 0;
 
-            color: #17324a;
+            font-size: 14px;
 
-            font-size: 13px;
-            line-height: 1.25;
+            color: #102b40;
         }
 
         .modal-project-description {
-            margin: 7px 0 9px;
+            margin: 11px 0;
 
-            color: #6c7d89;
+            font-size: 9px;
+            line-height: 1.55;
 
-            font-size: 10px;
-            line-height: 1.45;
+            color: #687b89;
         }
 
         .modal-project-files {
             display: flex;
             flex-wrap: wrap;
-
             gap: 5px;
-
-            padding-top: 8px;
-
-            border-top: 1px solid #edf0f4;
         }
 
         .file-tag {
-            display: inline-flex;
-            align-items: center;
+            padding: 4px 6px;
 
-            padding: 4px 7px;
+            border-radius: 3px;
 
-            border: 1px solid #d8e4ef;
-            border-radius: 4px;
+            background: #eef5f9;
 
-            background: #f7fbfe;
+            font-size: 7px;
+            font-weight: 800;
 
-            color: #39749e;
-
-            font-size: 8px;
-            font-weight: 700;
+            color: #47728e;
         }
 
         .file-status {
-            margin-left: auto;
+            padding: 4px 6px;
 
-            color: #98a3ae;
+            border-radius: 3px;
+
+            background: #fff7e8;
 
             font-size: 7px;
+            font-weight: 800;
+
+            color: #9a722d;
         }
 
-        .project-modal-footer {
-            padding: 10px 14px;
 
-            border-top: 1px solid #dfe6ec;
+        /* =========================================================
+           AUTOMATIC PDF FILE LIST
+        ========================================================= */
 
-            background: #f0f4f7;
+        .pdf-section {
+            margin-top: 13px;
 
-            color: #87939d;
+            padding-top: 12px;
+
+            border-top: 1px solid #e3e9ed;
+        }
+
+        .pdf-section-title {
+            margin: 0 0 8px;
 
             font-size: 8px;
+            font-weight: 800;
+            letter-spacing: 1px;
+
+            color: #39749e;
+        }
+
+        .pdf-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 6px;
+        }
+
+        .pdf-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+
+            min-width: 0;
+
+            padding: 8px 9px;
+
+            border: 1px solid #d7e2e9;
+            border-radius: 4px;
+
+            background: #f9fbfc;
+
+            text-decoration: none;
+
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .pdf-link:hover {
+            background: #edf7fc;
+            border-color: #9ec5da;
+        }
+
+        .pdf-file-name {
+            min-width: 0;
+
+            overflow: hidden;
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            font-size: 8px;
+            font-weight: 700;
+
+            color: #34566d;
+        }
+
+        .pdf-arrow {
+            flex-shrink: 0;
+
+            font-size: 9px;
+            font-weight: 800;
+
+            color: #39749e;
+        }
+
+        .pdf-loading {
+            padding: 12px;
+
+            border: 1px dashed #cbd9e2;
+            border-radius: 4px;
+
+            background: #f9fbfc;
+
             text-align: center;
+
+            font-size: 9px;
+
+            color: #71828e;
+        }
+
+        .pdf-error {
+            padding: 12px;
+
+            border: 1px solid #ead6d6;
+            border-radius: 4px;
+
+            background: #fff8f8;
+
+            font-size: 9px;
+            line-height: 1.5;
+
+            color: #875d5d;
+        }
+
+
+        /* =========================================================
+           CLIENT PROJECT PLACEHOLDER
+        ========================================================= */
+
+        .client-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 100px;
+
+            border: 1px dashed #cbd9e2;
+            border-radius: 6px;
+
+            background: #f9fbfc;
+
+            text-align: center;
+        }
+
+        .client-placeholder-content {
+            padding: 15px;
+        }
+
+        .client-placeholder-icon {
+            margin-bottom: 7px;
+
+            font-size: 22px;
+
+            color: #7c9caf;
+        }
+
+        .client-placeholder h3 {
+            margin: 0 0 4px;
+
+            font-size: 12px;
+
+            color: #40596a;
+        }
+
+        .client-placeholder p {
+            margin: 0;
+
+            font-size: 9px;
+
+            color: #7b8b96;
         }
 
 
@@ -661,70 +829,45 @@
            FOOTER STRIP
         ========================================================= */
 
-        .fdas-footer-strip {
-            border-top: 1px solid #dce4eb;
-
+        .fdas-footer {
             padding: 12px 20px;
 
-            background: #eef3f7;
+            background: #0b2033;
 
             text-align: center;
 
-            color: #81909c;
-
             font-size: 8px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
+
+            color: #91a9b8;
         }
 
 
         /* =========================================================
-           TABLET
+           RESPONSIVE
         ========================================================= */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
 
             .capabilities-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .modal-project-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
 
-        /* =========================================================
-           MOBILE
-        ========================================================= */
-
-        @media (max-width: 600px) {
-
-            .fdas-page {
-                padding-top: 64px;
-            }
+        @media (max-width: 700px) {
 
             .fdas-hero {
-                min-height: 270px;
+                min-height: 260px;
             }
 
-            .fdas-hero-content {
-                padding: 25px 15px;
-            }
-
-            .fdas-hero-content h1 {
-                font-size: 29px;
-            }
-
-            .capabilities-section {
-                padding-top: 22px;
+            .fdas-content {
+                width: 90%;
             }
 
             .capabilities-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .portfolio-grid {
@@ -735,52 +878,47 @@
                 grid-template-columns: 1fr;
             }
 
-            .project-modal {
-                padding: 10px;
+            .modal-project-card-full {
+                grid-column: auto;
             }
 
-            .project-modal-box {
-                max-height: 92vh;
+            .pdf-list {
+                grid-template-columns: 1fr;
             }
 
-            .project-modal-content {
-                padding: 10px;
-            }
         }
 
 
-        /* =========================================================
-           SMALL PHONES
-        ========================================================= */
+        @media (max-width: 500px) {
 
-        @media (max-width: 400px) {
-
-            .fdas-hero-content h1 {
-                font-size: 26px;
+            .capabilities-grid {
+                grid-template-columns: 1fr;
             }
 
-            .fdas-subtitle {
+            .fdas-hero h1 {
+                font-size: 30px;
+            }
+
+            .fdas-hero-description {
                 font-size: 11px;
             }
 
-            .section-heading h2,
-            .portfolio-heading h2 {
-                font-size: 19px;
+            .modal-box {
+                width: 96vw;
             }
 
-            .portfolio-card {
+            .modal-content {
                 padding: 14px;
             }
+
         }
 
     </style>
 </head>
 
-
 <body>
 
 <header class="site-header">
-
     <div class="header-container">
 
         <a href="index.html" class="brand">
@@ -803,65 +941,35 @@
             </div>
 
             <div class="brand-text">
-
                 <strong>JOHN CARL P. ORTIZ</strong>
-
                 <small>Electronics Design Engineer</small>
-
             </div>
 
         </a>
 
-
         <nav class="main-nav">
 
             <a href="index.html">Home</a>
-
             <a href="about.html">About</a>
-
             <a href="projects.html">Projects</a>
-
             <a href="skills.html">Skills</a>
-
             <a href="resume.html">Resume</a>
-
             <a href="contact.html">Contact</a>
 
         </nav>
 
-
         <button
             class="theme-button"
             id="themeButton"
-            aria-label="Toggle theme"
-        >
+            aria-label="Toggle theme">
             ☾
         </button>
 
     </div>
-
 </header>
 
 
 <main class="fdas-page">
-
-
-    <!-- =========================================================
-         HIDDEN POPUP CONTROLS
-    ========================================================== -->
-
-    <input
-        type="checkbox"
-        id="selfProjectsToggle"
-        class="modal-toggle"
-    >
-
-    <input
-        type="checkbox"
-        id="clientProjectsToggle"
-        class="modal-toggle"
-    >
-
 
     <!-- =========================================================
          HERO
@@ -871,25 +979,26 @@
 
         <div class="fdas-hero-content">
 
-            <p class="fdas-eyebrow">
+            <p class="fdas-hero-label">
                 ENGINEERING PORTFOLIO / 04
             </p>
 
             <h1>
-                FDAS &amp; CCTV DESIGN
+                FDAS & CCTV DESIGN
             </h1>
 
-            <p class="fdas-subtitle">
+            <p class="fdas-hero-subtitle">
                 Fire Detection • Surveillance • ELV Systems
             </p>
 
-            <p class="fdas-description">
-                Engineering design capabilities focused on fire detection,
-                CCTV surveillance, CAD documentation, and ELV system
-                planning for practical building applications.
+            <p class="fdas-hero-description">
+                Engineering design and documentation for fire detection,
+                CCTV surveillance, and extra-low-voltage systems,
+                with emphasis on practical layouts, system coordination,
+                and technical documentation.
             </p>
 
-            <div class="fdas-tags">
+            <div class="fdas-hero-tags">
 
                 <span>FDAS</span>
                 <span>CCTV</span>
@@ -905,22 +1014,29 @@
 
 
     <!-- =========================================================
-         DESIGN CAPABILITIES
+         MAIN CONTENT
     ========================================================== -->
 
-    <section class="capabilities-section">
+    <section class="fdas-content">
 
-        <div class="section-heading">
 
-            <span>ENGINEERING CAPABILITIES</span>
+        <!-- =====================================================
+             DESIGN CAPABILITIES
+        ====================================================== -->
+
+        <div class="fdas-section-header">
+
+            <p class="fdas-section-label">
+                DESIGN CAPABILITIES
+            </p>
 
             <h2>
-                Design Capabilities
+                Engineering Systems I Can Design
             </h2>
 
             <p>
-                Core design areas developed through engineering studies,
-                CAD practice, technical research, and self-directed projects.
+                Practical design capabilities covering fire detection,
+                surveillance, CAD documentation, and ELV system planning.
             </p>
 
         </div>
@@ -928,6 +1044,8 @@
 
         <div class="capabilities-grid">
 
+
+            <!-- FDAS -->
 
             <article class="capability-card">
 
@@ -940,15 +1058,20 @@
                 </h3>
 
                 <p>
-                    Fire detection and alarm system layouts including
-                    detector placement, manual stations, notification
-                    devices, zoning, and system documentation.
+                    Fire Detection and Alarm System design including
+                    device layout, zoning, and system documentation.
                 </p>
 
-                <div class="capability-line"></div>
+                <div class="capability-tags">
+                    <span>DEVICE LAYOUT</span>
+                    <span>ZONING</span>
+                    <span>FACP</span>
+                </div>
 
             </article>
 
+
+            <!-- CCTV -->
 
             <article class="capability-card">
 
@@ -961,15 +1084,20 @@
                 </h3>
 
                 <p>
-                    CCTV surveillance planning including camera placement,
-                    coverage considerations, viewing areas, equipment
-                    selection, and documentation.
+                    CCTV surveillance planning focused on camera
+                    placement, coverage, networking, and recording.
                 </p>
 
-                <div class="capability-line"></div>
+                <div class="capability-tags">
+                    <span>CAMERA PLAN</span>
+                    <span>COVERAGE</span>
+                    <span>NVR</span>
+                </div>
 
             </article>
 
+
+            <!-- CAD -->
 
             <article class="capability-card">
 
@@ -978,19 +1106,24 @@
                 </div>
 
                 <h3>
-                    CAD &amp; Documentation
+                    CAD & Documentation
                 </h3>
 
                 <p>
-                    Technical drawings, floor-plan layouts, symbols,
-                    equipment schedules, annotations, and organized
-                    engineering documentation.
+                    Technical drawings and documentation for
+                    engineering layouts and system coordination.
                 </p>
 
-                <div class="capability-line"></div>
+                <div class="capability-tags">
+                    <span>AUTOCAD</span>
+                    <span>LAYOUTS</span>
+                    <span>DETAILS</span>
+                </div>
 
             </article>
 
+
+            <!-- ELV -->
 
             <article class="capability-card">
 
@@ -1003,39 +1136,38 @@
                 </h3>
 
                 <p>
-                    Low-voltage system planning covering structured
-                    layouts, device coordination, pathways, and
-                    integrated building technologies.
+                    Planning and documentation of low-voltage systems
+                    and their supporting infrastructure.
                 </p>
 
-                <div class="capability-line"></div>
+                <div class="capability-tags">
+                    <span>NETWORKING</span>
+                    <span>RISER</span>
+                    <span>COORDINATION</span>
+                </div>
 
             </article>
 
-
         </div>
 
-    </section>
 
+        <!-- =====================================================
+             PROJECT PORTFOLIO
+        ====================================================== -->
 
-    <!-- =========================================================
-         PROJECT PORTFOLIO
-    ========================================================== -->
+        <div class="portfolio-header">
 
-    <section class="portfolio-section">
-
-        <div class="portfolio-heading">
-
-            <span>ENGINEERING WORK</span>
+            <p class="fdas-section-label">
+                PROJECT PORTFOLIO
+            </p>
 
             <h2>
-                Project Portfolio
+                Engineering Work & Documentation
             </h2>
 
             <p>
-                A growing collection of engineering design work,
-                beginning with self-directed projects and expanding
-                toward future professional client work.
+                Selected design work, technical documentation,
+                and future project development.
             </p>
 
         </div>
@@ -1044,91 +1176,109 @@
         <div class="portfolio-grid">
 
 
-            <!-- SELF-DIRECTED -->
+            <!-- =================================================
+                 SELF-DIRECTED PROJECTS
+            ================================================== -->
 
             <article class="portfolio-card">
 
                 <div class="portfolio-card-top">
 
-                    <div class="portfolio-icon">
-                        SD
+                    <div class="portfolio-number">
+                        01
                     </div>
 
-                    <div>
+                    <div class="portfolio-info">
+
+                        <div class="portfolio-type">
+                            SELF-DIRECTED
+                        </div>
 
                         <h3>
                             Self-Directed Projects
                         </h3>
 
-                        <small>
-                            PERSONAL ENGINEERING WORK
-                        </small>
-
                     </div>
 
                 </div>
 
-
-                <p>
-                    Independent engineering projects created to demonstrate
-                    practical design skills, CAD documentation, system
-                    planning, and technical problem-solving.
+                <p class="portfolio-description">
+                    Independent engineering projects created to
+                    demonstrate practical FDAS, CCTV, CAD, and
+                    ELV design capabilities.
                 </p>
 
+                <div class="portfolio-tags">
+
+                    <span>FDAS</span>
+                    <span>CCTV</span>
+                    <span>AUTOCAD</span>
+                    <span>ELV</span>
+
+                </div>
 
                 <label
                     for="selfProjectsToggle"
-                    class="portfolio-open"
-                >
+                    class="portfolio-open">
+
                     See Projects
                     <span>→</span>
+
                 </label>
 
             </article>
 
 
-            <!-- CLIENT -->
+            <!-- =================================================
+                 CLIENT PROJECTS
+            ================================================== -->
 
             <article class="portfolio-card">
 
                 <div class="portfolio-card-top">
 
-                    <div class="portfolio-icon">
-                        CP
+                    <div class="portfolio-number">
+                        02
                     </div>
 
-                    <div>
+                    <div class="portfolio-info">
+
+                        <div class="portfolio-type">
+                            PROFESSIONAL
+                        </div>
 
                         <h3>
                             Client Projects
                         </h3>
 
-                        <small>
-                            FUTURE PROFESSIONAL WORK
-                        </small>
-
                     </div>
 
                 </div>
 
-
-                <p>
-                    Reserved for future professional projects, client
-                    deliverables, engineering drawings, calculations,
-                    and documented system designs.
+                <p class="portfolio-description">
+                    Space reserved for future engineering projects
+                    completed for clients, organizations, or
+                    professional engagements.
                 </p>
 
+                <div class="portfolio-tags">
+
+                    <span>CLIENT WORK</span>
+                    <span>DOCUMENTATION</span>
+                    <span>DESIGN</span>
+
+                </div>
 
                 <label
                     for="clientProjectsToggle"
-                    class="portfolio-open"
-                >
+                    class="portfolio-open">
+
                     See Projects
                     <span>→</span>
+
                 </label>
 
             </article>
-
 
         </div>
 
@@ -1136,50 +1286,61 @@
 
 
     <!-- =========================================================
-         SELF-DIRECTED PROJECT POPUP
+         HIDDEN MODAL CONTROLS
+    ========================================================== -->
+
+    <input
+        type="checkbox"
+        id="selfProjectsToggle"
+        class="modal-toggle">
+
+    <input
+        type="checkbox"
+        id="clientProjectsToggle"
+        class="modal-toggle">
+
+
+    <!-- =========================================================
+         SELF-DIRECTED PROJECT MODAL
     ========================================================== -->
 
     <div class="project-modal self-project-modal">
 
-        <div class="project-modal-box">
+        <div class="modal-box">
 
+            <div class="modal-header">
 
-            <div class="project-modal-header">
+                <div>
 
-                <div class="modal-header-text">
-
-                    <small>
-                        PROJECT PORTFOLIO
-                    </small>
+                    <div class="modal-header-label">
+                        SELF-DIRECTED PROJECTS
+                    </div>
 
                     <h2>
-                        Self-Directed Projects
+                        FDAS & CCTV Design
                     </h2>
-
-                    <p>
-                        Independent FDAS &amp; CCTV engineering work
-                    </p>
 
                 </div>
 
-
                 <label
                     for="selfProjectsToggle"
-                    class="modal-close"
-                    aria-label="Close"
-                >
+                    class="modal-close">
+
                     ×
+
                 </label>
 
             </div>
 
 
-            <div class="project-modal-content">
+            <div class="modal-content">
 
                 <div class="modal-project-grid">
 
 
-                    <!-- PROJECT 01 -->
+                    <!-- =================================================
+                         PROJECT 01
+                    ================================================== -->
 
                     <article class="modal-project-card">
 
@@ -1203,35 +1364,25 @@
 
                         </div>
 
-
                         <p class="modal-project-description">
-                            Independent fire detection and alarm system
-                            design project focused on floor-plan layout,
-                            device placement, zoning, and technical
-                            documentation.
+                            Independent Fire Detection and Alarm
+                            System design project focused on
+                            device placement, zoning, system
+                            planning, and technical documentation.
                         </p>
-
 
                         <div class="modal-project-files">
 
                             <span class="file-tag">
-                                FLOOR PLAN
+                                FDAS
                             </span>
 
                             <span class="file-tag">
-                                SYSTEM LAYOUT
+                                DEVICE LAYOUT
                             </span>
 
                             <span class="file-tag">
-                                DEVICE SCHEDULE
-                            </span>
-
-                            <span class="file-tag">
-                                PDF
-                            </span>
-
-                            <span class="file-tag">
-                                DWG
+                                ZONING
                             </span>
 
                             <span class="file-status">
@@ -1243,9 +1394,12 @@
                     </article>
 
 
-                    <!-- PROJECT 02 -->
+                    <!-- =================================================
+                         PROJECT 02 — CCTV
+                         AUTOMATIC GITHUB FILE SYSTEM
+                    ================================================== -->
 
-                    <article class="modal-project-card">
+                    <article class="modal-project-card modal-project-card-full">
 
                         <div class="modal-project-top">
 
@@ -1267,11 +1421,11 @@
 
                         </div>
 
-
                         <p class="modal-project-description">
-                            Independent CCTV surveillance design project
-                            focused on camera placement, coverage planning,
-                            equipment scheduling, and documentation.
+                            CCTV surveillance design documentation
+                            focused on camera placement, coverage
+                            planning, networking, equipment, and
+                            technical system documentation.
                         </p>
 
 
@@ -1286,27 +1440,48 @@
                             </span>
 
                             <span class="file-tag">
-                                EQUIPMENT SCHEDULE
+                                RISER DIAGRAM
+                            </span>
+
+                            <span class="file-tag">
+                                NETWORK
                             </span>
 
                             <span class="file-tag">
                                 PDF
                             </span>
 
-                            <span class="file-tag">
-                                DWG
-                            </span>
+                        </div>
 
-                            <span class="file-status">
-                                IN DEVELOPMENT
-                            </span>
+
+                        <!-- =============================================
+                             AUTOMATIC PDF FILE LIST
+                        ============================================== -->
+
+                        <div class="pdf-section">
+
+                            <p class="pdf-section-title">
+                                PROJECT DOCUMENTATION
+                            </p>
+
+                            <div
+                                id="cctvPdfList"
+                                class="pdf-list">
+
+                                <div class="pdf-loading">
+                                    Loading CCTV project files...
+                                </div>
+
+                            </div>
 
                         </div>
 
                     </article>
 
 
-                    <!-- PROJECT 03 -->
+                    <!-- =================================================
+                         PROJECT 03
+                    ================================================== -->
 
                     <article class="modal-project-card">
 
@@ -1323,41 +1498,31 @@
                                 </div>
 
                                 <h3>
-                                    FDAS &amp; CCTV Integrated Design
+                                    ELV System Design
                                 </h3>
 
                             </div>
 
                         </div>
 
-
                         <p class="modal-project-description">
-                            Independent integrated ELV design project
-                            combining fire detection and CCTV layouts
-                            into a coordinated building system.
+                            Independent ELV system planning project
+                            covering system coordination, networking,
+                            documentation, and engineering layouts.
                         </p>
-
 
                         <div class="modal-project-files">
 
                             <span class="file-tag">
-                                SYSTEM DRAWING
+                                ELV
                             </span>
 
                             <span class="file-tag">
-                                FLOOR PLAN
+                                NETWORKING
                             </span>
 
                             <span class="file-tag">
-                                RISER DIAGRAM
-                            </span>
-
-                            <span class="file-tag">
-                                PDF
-                            </span>
-
-                            <span class="file-tag">
-                                DWG
+                                RISER
                             </span>
 
                             <span class="file-status">
@@ -1373,65 +1538,48 @@
 
             </div>
 
-
-            <div class="project-modal-footer">
-
-                Project files will be added as the portfolio projects
-                are developed.
-
-            </div>
-
-
         </div>
 
     </div>
 
 
     <!-- =========================================================
-         CLIENT PROJECT POPUP
+         CLIENT PROJECT MODAL
     ========================================================== -->
 
     <div class="project-modal client-project-modal">
 
-        <div class="project-modal-box">
+        <div class="modal-box">
 
+            <div class="modal-header">
 
-            <div class="project-modal-header">
+                <div>
 
-                <div class="modal-header-text">
-
-                    <small>
-                        PROJECT PORTFOLIO
-                    </small>
+                    <div class="modal-header-label">
+                        PROFESSIONAL PROJECTS
+                    </div>
 
                     <h2>
                         Client Projects
                     </h2>
 
-                    <p>
-                        Future professional engineering work
-                    </p>
-
                 </div>
-
 
                 <label
                     for="clientProjectsToggle"
-                    class="modal-close"
-                    aria-label="Close"
-                >
+                    class="modal-close">
+
                     ×
+
                 </label>
 
             </div>
 
 
-            <div class="project-modal-content">
+            <div class="modal-content">
 
                 <div class="modal-project-grid">
 
-
-                    <!-- CLIENT PROJECT 01 -->
 
                     <article class="modal-project-card">
 
@@ -1448,52 +1596,20 @@
                                 </div>
 
                                 <h3>
-                                    Future Client Project
+                                    Project Slot
                                 </h3>
 
                             </div>
 
                         </div>
 
-
                         <p class="modal-project-description">
-                            Reserved for future professional engineering
-                            work and documented client deliverables.
+                            Future professional engineering project
+                            documentation.
                         </p>
-
-
-                        <div class="modal-project-files">
-
-                            <span class="file-tag">
-                                PROJECT DRAWINGS
-                            </span>
-
-                            <span class="file-tag">
-                                CALCULATIONS
-                            </span>
-
-                            <span class="file-tag">
-                                DOCUMENTATION
-                            </span>
-
-                            <span class="file-tag">
-                                PDF
-                            </span>
-
-                            <span class="file-tag">
-                                DWG
-                            </span>
-
-                            <span class="file-status">
-                                RESERVED
-                            </span>
-
-                        </div>
 
                     </article>
 
-
-                    <!-- CLIENT PROJECT 02 -->
 
                     <article class="modal-project-card">
 
@@ -1510,108 +1626,41 @@
                                 </div>
 
                                 <h3>
-                                    Future FDAS Project
+                                    Project Slot
                                 </h3>
 
                             </div>
 
                         </div>
 
-
                         <p class="modal-project-description">
-                            Reserved for future FDAS design work including
-                            layouts, schedules, diagrams, and documentation.
+                            Future professional engineering project
+                            documentation.
                         </p>
-
-
-                        <div class="modal-project-files">
-
-                            <span class="file-tag">
-                                FDAS PLAN
-                            </span>
-
-                            <span class="file-tag">
-                                DEVICE SCHEDULE
-                            </span>
-
-                            <span class="file-tag">
-                                SYSTEM DIAGRAM
-                            </span>
-
-                            <span class="file-tag">
-                                PDF
-                            </span>
-
-                            <span class="file-tag">
-                                DWG
-                            </span>
-
-                            <span class="file-status">
-                                RESERVED
-                            </span>
-
-                        </div>
 
                     </article>
 
 
-                    <!-- CLIENT PROJECT 03 -->
+                    <article class="modal-project-card modal-project-card-full">
 
-                    <article class="modal-project-card">
+                        <div class="client-placeholder">
 
-                        <div class="modal-project-top">
+                            <div class="client-placeholder-content">
 
-                            <div class="modal-project-number">
-                                03
-                            </div>
-
-                            <div class="modal-project-info">
-
-                                <div class="modal-project-type">
-                                    CLIENT PROJECT
+                                <div class="client-placeholder-icon">
+                                    +
                                 </div>
 
                                 <h3>
-                                    Future CCTV Project
+                                    More Client Projects
                                 </h3>
 
+                                <p>
+                                    New professional projects can be
+                                    added here as your portfolio grows.
+                                </p>
+
                             </div>
-
-                        </div>
-
-
-                        <p class="modal-project-description">
-                            Reserved for future CCTV design work including
-                            camera layouts, coverage planning, and equipment
-                            documentation.
-                        </p>
-
-
-                        <div class="modal-project-files">
-
-                            <span class="file-tag">
-                                CAMERA PLAN
-                            </span>
-
-                            <span class="file-tag">
-                                COVERAGE
-                            </span>
-
-                            <span class="file-tag">
-                                EQUIPMENT SCHEDULE
-                            </span>
-
-                            <span class="file-tag">
-                                PDF
-                            </span>
-
-                            <span class="file-tag">
-                                DWG
-                            </span>
-
-                            <span class="file-status">
-                                RESERVED
-                            </span>
 
                         </div>
 
@@ -1622,15 +1671,6 @@
 
             </div>
 
-
-            <div class="project-modal-footer">
-
-                Client project space is reserved for future professional
-                engineering work.
-
-            </div>
-
-
         </div>
 
     </div>
@@ -1640,18 +1680,234 @@
          FOOTER
     ========================================================== -->
 
-    <div class="fdas-footer-strip">
+    <div class="fdas-footer">
 
-        FDAS &amp; CCTV Design • Electronics Engineering Portfolio •
-        John Carl P. Ortiz
+        JOHN CARL P. ORTIZ
+        &nbsp;•&nbsp;
+        ELECTRONICS DESIGN ENGINEER
+        &nbsp;•&nbsp;
+        FDAS & CCTV DESIGN
 
     </div>
-
 
 </main>
 
 
 <script src="script.js"></script>
+
+
+<!-- =============================================================
+     AUTOMATIC GITHUB FOLDER LOADER
+============================================================== -->
+
+<script>
+
+    /*
+     * ============================================================
+     * CCTV PROJECT FILE LOADER
+     * ============================================================
+     *
+     * This automatically reads:
+     *
+     * files/Cctv/
+     *
+     * from the GitHub repository:
+     *
+     * engrjc/engrjc.github.io
+     *
+     * Only PDF files are displayed.
+     *
+     * Therefore, when you upload another PDF to the Cctv folder,
+     * it will automatically appear here after refreshing the page.
+     *
+     * No changes to this HTML file are required.
+     */
+
+
+    const cctvPdfList = document.getElementById("cctvPdfList");
+
+
+    async function loadCctvFiles() {
+
+        if (!cctvPdfList) {
+            return;
+        }
+
+
+        /*
+         * GitHub API folder location
+         */
+
+        const githubApiUrl =
+            "https://api.github.com/repos/engrjc/engrjc.github.io/contents/files/Cctv";
+
+
+        try {
+
+            const response = await fetch(githubApiUrl);
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "GitHub returned HTTP " + response.status
+                );
+
+            }
+
+
+            const files = await response.json();
+
+
+            /*
+             * Keep only PDF files.
+             */
+
+            const pdfFiles = files
+                .filter(file => {
+
+                    return (
+                        file.type === "file" &&
+                        file.name.toLowerCase().endsWith(".pdf")
+                    );
+
+                })
+                .sort((a, b) => {
+
+                    return a.name.localeCompare(
+                        b.name,
+                        undefined,
+                        {
+                            numeric: true,
+                            sensitivity: "base"
+                        }
+                    );
+
+                });
+
+
+            /*
+             * Remove loading message.
+             */
+
+            cctvPdfList.innerHTML = "";
+
+
+            /*
+             * No PDF files found.
+             */
+
+            if (pdfFiles.length === 0) {
+
+                const emptyMessage =
+                    document.createElement("div");
+
+                emptyMessage.className = "pdf-loading";
+
+                emptyMessage.textContent =
+                    "No PDF project files found in the Cctv folder.";
+
+                cctvPdfList.appendChild(emptyMessage);
+
+                return;
+            }
+
+
+            /*
+             * Create a link for every PDF.
+             */
+
+            pdfFiles.forEach(file => {
+
+                const link =
+                    document.createElement("a");
+
+
+                link.className = "pdf-link";
+
+                link.href = file.html_url;
+
+                link.target = "_blank";
+
+                link.rel = "noopener noreferrer";
+
+
+                /*
+                 * File name
+                 */
+
+                const fileName =
+                    document.createElement("span");
+
+                fileName.className =
+                    "pdf-file-name";
+
+                fileName.textContent =
+                    "PDF • " + file.name;
+
+
+                /*
+                 * Arrow
+                 */
+
+                const arrow =
+                    document.createElement("span");
+
+                arrow.className =
+                    "pdf-arrow";
+
+                arrow.textContent =
+                    "VIEW →";
+
+
+                link.appendChild(fileName);
+
+                link.appendChild(arrow);
+
+                cctvPdfList.appendChild(link);
+
+            });
+
+        }
+
+
+        catch (error) {
+
+            console.error(
+                "Unable to load CCTV project files:",
+                error
+            );
+
+
+            cctvPdfList.innerHTML = "";
+
+
+            const errorMessage =
+                document.createElement("div");
+
+            errorMessage.className =
+                "pdf-error";
+
+            errorMessage.innerHTML =
+                "Unable to load the project files automatically. " +
+                "Please check that the <strong>files/Cctv/</strong> " +
+                "folder exists in the GitHub repository.";
+
+
+            cctvPdfList.appendChild(errorMessage);
+
+        }
+
+    }
+
+
+    /*
+     * Load the files when the page opens.
+     */
+
+    loadCctvFiles();
+
+</script>
 
 </body>
 </html>
