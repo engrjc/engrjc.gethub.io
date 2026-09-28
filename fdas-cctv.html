@@ -28,9 +28,11 @@
         .fdas-hero {
             position: relative;
             min-height: 245px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             overflow: hidden;
 
             background-image:
@@ -46,6 +48,7 @@
 
         .fdas-hero::after {
             content: "";
+
             position: absolute;
             inset: 0;
 
@@ -64,7 +67,9 @@
             z-index: 2;
 
             width: min(900px, 90%);
+
             text-align: center;
+
             color: white;
         }
 
@@ -83,6 +88,7 @@
 
             font-size: clamp(30px, 5vw, 48px);
             font-weight: 800;
+
             letter-spacing: -1px;
         }
 
@@ -98,6 +104,7 @@
 
         .fdas-hero-description {
             max-width: 680px;
+
             margin: 0 auto;
 
             font-size: 12px;
@@ -110,6 +117,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+
             gap: 7px;
 
             margin-top: 18px;
@@ -137,6 +145,7 @@
 
         .fdas-content {
             width: min(1180px, 92%);
+
             margin: 0 auto;
 
             padding: 25px 0 35px;
@@ -188,6 +197,7 @@
 
         .capabilities-grid {
             display: grid;
+
             grid-template-columns: repeat(4, 1fr);
 
             gap: 10px;
@@ -213,6 +223,7 @@
             content: "";
 
             position: absolute;
+
             top: 0;
             left: 0;
 
@@ -252,6 +263,7 @@
         .capability-tags {
             display: flex;
             flex-wrap: wrap;
+
             gap: 5px;
 
             margin-top: 12px;
@@ -277,6 +289,7 @@
 
         .portfolio-header {
             text-align: center;
+
             margin-bottom: 15px;
         }
 
@@ -305,6 +318,7 @@
 
         .portfolio-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
 
             gap: 14px;
@@ -328,6 +342,7 @@
             content: "";
 
             position: absolute;
+
             left: 0;
             top: 0;
 
@@ -340,6 +355,7 @@
         .portfolio-card-top {
             display: flex;
             align-items: flex-start;
+
             gap: 12px;
         }
 
@@ -397,6 +413,7 @@
         .portfolio-tags {
             display: flex;
             flex-wrap: wrap;
+
             gap: 5px;
 
             margin-bottom: 14px;
@@ -418,6 +435,7 @@
         .portfolio-open {
             display: inline-flex;
             align-items: center;
+
             gap: 7px;
 
             cursor: pointer;
@@ -442,6 +460,7 @@
 
         .portfolio-open:hover {
             background: #edf7fc;
+
             border-color: #82b5d1;
         }
 
@@ -456,6 +475,7 @@
 
         .project-modal {
             position: fixed;
+
             inset: 0;
 
             z-index: 9999;
@@ -480,6 +500,7 @@
 
         .modal-box {
             width: min(850px, 94vw);
+
             max-height: 88vh;
 
             overflow-y: auto;
@@ -490,12 +511,15 @@
 
             border-radius: 10px;
 
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.30);
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.30);
         }
 
         .modal-header {
             position: sticky;
+
             top: 0;
+
             z-index: 5;
 
             display: flex;
@@ -550,6 +574,7 @@
 
         .modal-close:hover {
             background: #edf5f9;
+
             color: #1d5577;
         }
 
@@ -559,6 +584,7 @@
 
         .modal-project-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
 
             gap: 10px;
@@ -581,6 +607,7 @@
         .modal-project-top {
             display: flex;
             align-items: flex-start;
+
             gap: 10px;
         }
 
@@ -638,6 +665,7 @@
         .modal-project-files {
             display: flex;
             flex-wrap: wrap;
+
             gap: 5px;
         }
 
@@ -669,7 +697,7 @@
 
 
         /* =========================================================
-           AUTOMATIC PDF FILE LIST
+           AUTOMATIC PDF FILE AREA
         ========================================================= */
 
         .pdf-section {
@@ -692,6 +720,7 @@
 
         .pdf-list {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
 
             gap: 6px;
@@ -701,6 +730,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+
             gap: 8px;
 
             min-width: 0;
@@ -721,6 +751,7 @@
 
         .pdf-link:hover {
             background: #edf7fc;
+
             border-color: #9ec5da;
         }
 
@@ -730,6 +761,7 @@
             overflow: hidden;
 
             white-space: nowrap;
+
             text-overflow: ellipsis;
 
             font-size: 8px;
@@ -748,7 +780,9 @@
         }
 
         .pdf-loading {
-            padding: 12px;
+            grid-column: 1 / -1;
+
+            padding: 13px;
 
             border: 1px dashed #cbd9e2;
             border-radius: 4px;
@@ -763,17 +797,31 @@
         }
 
         .pdf-error {
-            padding: 12px;
+            grid-column: 1 / -1;
 
-            border: 1px solid #ead6d6;
+            padding: 13px;
+
+            border: 1px solid #e2caca;
             border-radius: 4px;
 
             background: #fff8f8;
 
             font-size: 9px;
-            line-height: 1.5;
+            line-height: 1.6;
 
-            color: #875d5d;
+            color: #805858;
+        }
+
+        .pdf-error strong {
+            color: #654545;
+        }
+
+        .pdf-count {
+            margin-top: 8px;
+
+            font-size: 8px;
+
+            color: #7b8b96;
         }
 
 
@@ -826,7 +874,7 @@
 
 
         /* =========================================================
-           FOOTER STRIP
+           FOOTER
         ========================================================= */
 
         .fdas-footer {
@@ -916,14 +964,23 @@
     </style>
 </head>
 
+
 <body>
 
+
+<!-- =============================================================
+     HEADER
+============================================================== -->
+
 <header class="site-header">
+
     <div class="header-container">
 
         <a href="index.html" class="brand">
 
-            <div class="brand-logo" aria-label="JC Engineering Logo">
+            <div
+                class="brand-logo"
+                aria-label="JC Engineering Logo">
 
                 <span class="logo-j">J</span>
                 <span class="logo-c">C</span>
@@ -940,36 +997,71 @@
 
             </div>
 
+
             <div class="brand-text">
-                <strong>JOHN CARL P. ORTIZ</strong>
-                <small>Electronics Design Engineer</small>
+
+                <strong>
+                    JOHN CARL P. ORTIZ
+                </strong>
+
+                <small>
+                    Electronics Design Engineer
+                </small>
+
             </div>
 
         </a>
 
+
         <nav class="main-nav">
 
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="skills.html">Skills</a>
-            <a href="resume.html">Resume</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="projects.html">
+                Projects
+            </a>
+
+            <a href="skills.html">
+                Skills
+            </a>
+
+            <a href="resume.html">
+                Resume
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
 
         </nav>
+
 
         <button
             class="theme-button"
             id="themeButton"
             aria-label="Toggle theme">
+
             ☾
+
         </button>
 
     </div>
+
 </header>
 
 
+<!-- =============================================================
+     MAIN PAGE
+============================================================== -->
+
 <main class="fdas-page">
+
 
     <!-- =========================================================
          HERO
@@ -983,28 +1075,48 @@
                 ENGINEERING PORTFOLIO / 04
             </p>
 
+
             <h1>
                 FDAS & CCTV DESIGN
             </h1>
+
 
             <p class="fdas-hero-subtitle">
                 Fire Detection • Surveillance • ELV Systems
             </p>
 
+
             <p class="fdas-hero-description">
+
                 Engineering design and documentation for fire detection,
                 CCTV surveillance, and extra-low-voltage systems,
                 with emphasis on practical layouts, system coordination,
                 and technical documentation.
+
             </p>
+
 
             <div class="fdas-hero-tags">
 
-                <span>FDAS</span>
-                <span>CCTV</span>
-                <span>AUTOCAD</span>
-                <span>ELV</span>
-                <span>SYSTEM DESIGN</span>
+                <span>
+                    FDAS
+                </span>
+
+                <span>
+                    CCTV
+                </span>
+
+                <span>
+                    AUTOCAD
+                </span>
+
+                <span>
+                    ELV
+                </span>
+
+                <span>
+                    SYSTEM DESIGN
+                </span>
 
             </div>
 
@@ -1014,7 +1126,7 @@
 
 
     <!-- =========================================================
-         MAIN CONTENT
+         CONTENT
     ========================================================== -->
 
     <section class="fdas-content">
@@ -1030,9 +1142,11 @@
                 DESIGN CAPABILITIES
             </p>
 
+
             <h2>
                 Engineering Systems I Can Design
             </h2>
+
 
             <p>
                 Practical design capabilities covering fire detection,
@@ -1044,8 +1158,6 @@
 
         <div class="capabilities-grid">
 
-
-            <!-- FDAS -->
 
             <article class="capability-card">
 
@@ -1063,15 +1175,23 @@
                 </p>
 
                 <div class="capability-tags">
-                    <span>DEVICE LAYOUT</span>
-                    <span>ZONING</span>
-                    <span>FACP</span>
+
+                    <span>
+                        DEVICE LAYOUT
+                    </span>
+
+                    <span>
+                        ZONING
+                    </span>
+
+                    <span>
+                        FACP
+                    </span>
+
                 </div>
 
             </article>
 
-
-            <!-- CCTV -->
 
             <article class="capability-card">
 
@@ -1089,15 +1209,23 @@
                 </p>
 
                 <div class="capability-tags">
-                    <span>CAMERA PLAN</span>
-                    <span>COVERAGE</span>
-                    <span>NVR</span>
+
+                    <span>
+                        CAMERA PLAN
+                    </span>
+
+                    <span>
+                        COVERAGE
+                    </span>
+
+                    <span>
+                        NVR
+                    </span>
+
                 </div>
 
             </article>
 
-
-            <!-- CAD -->
 
             <article class="capability-card">
 
@@ -1115,15 +1243,23 @@
                 </p>
 
                 <div class="capability-tags">
-                    <span>AUTOCAD</span>
-                    <span>LAYOUTS</span>
-                    <span>DETAILS</span>
+
+                    <span>
+                        AUTOCAD
+                    </span>
+
+                    <span>
+                        LAYOUTS
+                    </span>
+
+                    <span>
+                        DETAILS
+                    </span>
+
                 </div>
 
             </article>
 
-
-            <!-- ELV -->
 
             <article class="capability-card">
 
@@ -1141,12 +1277,23 @@
                 </p>
 
                 <div class="capability-tags">
-                    <span>NETWORKING</span>
-                    <span>RISER</span>
-                    <span>COORDINATION</span>
+
+                    <span>
+                        NETWORKING
+                    </span>
+
+                    <span>
+                        RISER
+                    </span>
+
+                    <span>
+                        COORDINATION
+                    </span>
+
                 </div>
 
             </article>
+
 
         </div>
 
@@ -1202,27 +1349,46 @@
 
                 </div>
 
+
                 <p class="portfolio-description">
+
                     Independent engineering projects created to
                     demonstrate practical FDAS, CCTV, CAD, and
                     ELV design capabilities.
+
                 </p>
+
 
                 <div class="portfolio-tags">
 
-                    <span>FDAS</span>
-                    <span>CCTV</span>
-                    <span>AUTOCAD</span>
-                    <span>ELV</span>
+                    <span>
+                        FDAS
+                    </span>
+
+                    <span>
+                        CCTV
+                    </span>
+
+                    <span>
+                        AUTOCAD
+                    </span>
+
+                    <span>
+                        ELV
+                    </span>
 
                 </div>
+
 
                 <label
                     for="selfProjectsToggle"
                     class="portfolio-open">
 
                     See Projects
-                    <span>→</span>
+
+                    <span>
+                        →
+                    </span>
 
                 </label>
 
@@ -1255,30 +1421,47 @@
 
                 </div>
 
+
                 <p class="portfolio-description">
+
                     Space reserved for future engineering projects
                     completed for clients, organizations, or
                     professional engagements.
+
                 </p>
+
 
                 <div class="portfolio-tags">
 
-                    <span>CLIENT WORK</span>
-                    <span>DOCUMENTATION</span>
-                    <span>DESIGN</span>
+                    <span>
+                        CLIENT WORK
+                    </span>
+
+                    <span>
+                        DOCUMENTATION
+                    </span>
+
+                    <span>
+                        DESIGN
+                    </span>
 
                 </div>
+
 
                 <label
                     for="clientProjectsToggle"
                     class="portfolio-open">
 
                     See Projects
-                    <span>→</span>
+
+                    <span>
+                        →
+                    </span>
 
                 </label>
 
             </article>
+
 
         </div>
 
@@ -1286,13 +1469,14 @@
 
 
     <!-- =========================================================
-         HIDDEN MODAL CONTROLS
+         MODAL CONTROLS
     ========================================================== -->
 
     <input
         type="checkbox"
         id="selfProjectsToggle"
         class="modal-toggle">
+
 
     <input
         type="checkbox"
@@ -1308,6 +1492,7 @@
 
         <div class="modal-box">
 
+
             <div class="modal-header">
 
                 <div>
@@ -1321,6 +1506,7 @@
                     </h2>
 
                 </div>
+
 
                 <label
                     for="selfProjectsToggle"
@@ -1338,9 +1524,9 @@
                 <div class="modal-project-grid">
 
 
-                    <!-- =================================================
+                    <!-- =============================================
                          PROJECT 01
-                    ================================================== -->
+                    ============================================== -->
 
                     <article class="modal-project-card">
 
@@ -1364,12 +1550,16 @@
 
                         </div>
 
+
                         <p class="modal-project-description">
+
                             Independent Fire Detection and Alarm
                             System design project focused on
                             device placement, zoning, system
                             planning, and technical documentation.
+
                         </p>
+
 
                         <div class="modal-project-files">
 
@@ -1394,18 +1584,19 @@
                     </article>
 
 
-                    <!-- =================================================
+                    <!-- =============================================
                          PROJECT 02 — CCTV
-                         AUTOMATIC GITHUB FILE SYSTEM
-                    ================================================== -->
+                    ============================================== -->
 
-                    <article class="modal-project-card modal-project-card-full">
+                    <article
+                        class="modal-project-card modal-project-card-full">
 
                         <div class="modal-project-top">
 
                             <div class="modal-project-number">
                                 02
                             </div>
+
 
                             <div class="modal-project-info">
 
@@ -1421,11 +1612,14 @@
 
                         </div>
 
+
                         <p class="modal-project-description">
+
                             CCTV surveillance design documentation
                             focused on camera placement, coverage
                             planning, networking, equipment, and
                             technical system documentation.
+
                         </p>
 
 
@@ -1454,15 +1648,16 @@
                         </div>
 
 
-                        <!-- =============================================
-                             AUTOMATIC PDF FILE LIST
-                        ============================================== -->
+                        <!-- =========================================
+                             AUTOMATIC PDF LIST
+                        ========================================== -->
 
                         <div class="pdf-section">
 
                             <p class="pdf-section-title">
                                 PROJECT DOCUMENTATION
                             </p>
+
 
                             <div
                                 id="cctvPdfList"
@@ -1474,14 +1669,20 @@
 
                             </div>
 
+
+                            <div
+                                id="cctvPdfCount"
+                                class="pdf-count">
+                            </div>
+
                         </div>
 
                     </article>
 
 
-                    <!-- =================================================
+                    <!-- =============================================
                          PROJECT 03
-                    ================================================== -->
+                    ============================================== -->
 
                     <article class="modal-project-card">
 
@@ -1505,11 +1706,15 @@
 
                         </div>
 
+
                         <p class="modal-project-description">
+
                             Independent ELV system planning project
                             covering system coordination, networking,
                             documentation, and engineering layouts.
+
                         </p>
+
 
                         <div class="modal-project-files">
 
@@ -1551,6 +1756,7 @@
 
         <div class="modal-box">
 
+
             <div class="modal-header">
 
                 <div>
@@ -1564,6 +1770,7 @@
                     </h2>
 
                 </div>
+
 
                 <label
                     for="clientProjectsToggle"
@@ -1603,9 +1810,10 @@
 
                         </div>
 
+
                         <p class="modal-project-description">
-                            Future professional engineering project
-                            documentation.
+                            Future professional engineering
+                            project documentation.
                         </p>
 
                     </article>
@@ -1633,15 +1841,17 @@
 
                         </div>
 
+
                         <p class="modal-project-description">
-                            Future professional engineering project
-                            documentation.
+                            Future professional engineering
+                            project documentation.
                         </p>
 
                     </article>
 
 
-                    <article class="modal-project-card modal-project-card-full">
+                    <article
+                        class="modal-project-card modal-project-card-full">
 
                         <div class="client-placeholder">
 
@@ -1683,12 +1893,17 @@
     <div class="fdas-footer">
 
         JOHN CARL P. ORTIZ
+
         &nbsp;•&nbsp;
+
         ELECTRONICS DESIGN ENGINEER
+
         &nbsp;•&nbsp;
+
         FDAS & CCTV DESIGN
 
     </div>
+
 
 </main>
 
@@ -1697,35 +1912,99 @@
 
 
 <!-- =============================================================
-     AUTOMATIC GITHUB FOLDER LOADER
+     AUTOMATIC GITHUB PDF FILE LOADER
 ============================================================== -->
 
 <script>
 
     /*
      * ============================================================
-     * CCTV PROJECT FILE LOADER
+     * AUTOMATIC CCTV PDF LOADER
      * ============================================================
      *
-     * This automatically reads:
-     *
-     * files/Cctv/
-     *
-     * from the GitHub repository:
+     * Repository:
      *
      * engrjc/engrjc.github.io
      *
-     * Only PDF files are displayed.
+     * Folder:
      *
-     * Therefore, when you upload another PDF to the Cctv folder,
-     * it will automatically appear here after refreshing the page.
+     * files/Cctv/
      *
-     * No changes to this HTML file are required.
+     * This uses the GitHub Git Trees API.
+     *
+     * Any PDF added to files/Cctv/ will automatically appear
+     * in the CCTV Design Project popup after the website reloads.
+     *
      */
 
 
-    const cctvPdfList = document.getElementById("cctvPdfList");
+    const cctvPdfList =
+        document.getElementById("cctvPdfList");
 
+
+    const cctvPdfCount =
+        document.getElementById("cctvPdfCount");
+
+
+    /*
+     * GitHub repository information
+     */
+
+    const GITHUB_OWNER =
+        "engrjc";
+
+
+    const GITHUB_REPOSITORY =
+        "engrjc.github.io";
+
+
+    const GITHUB_BRANCH =
+        "main";
+
+
+    const CCTV_FOLDER =
+        "files/Cctv";
+
+
+    /*
+     * GitHub API endpoint.
+     *
+     * This gets the complete repository tree.
+     */
+
+    const GITHUB_TREE_API =
+        "https://api.github.com/repos/" +
+        GITHUB_OWNER +
+        "/" +
+        GITHUB_REPOSITORY +
+        "/git/trees/" +
+        GITHUB_BRANCH +
+        "?recursive=1";
+
+
+    /*
+     * Convert a GitHub path into a usable GitHub webpage URL.
+     */
+
+    function createGitHubFileUrl(path) {
+
+        return (
+            "https://github.com/" +
+            GITHUB_OWNER +
+            "/" +
+            GITHUB_REPOSITORY +
+            "/blob/" +
+            GITHUB_BRANCH +
+            "/" +
+            path
+        );
+
+    }
+
+
+    /*
+     * Load all CCTV PDF files.
+     */
 
     async function loadCctvFiles() {
 
@@ -1735,166 +2014,331 @@
 
 
         /*
-         * GitHub API folder location
+         * Show loading message.
          */
 
-        const githubApiUrl =
-            "https://api.github.com/repos/engrjc/engrjc.github.io/contents/files/Cctv";
+        cctvPdfList.innerHTML = `
+            <div class="pdf-loading">
+                Loading CCTV project files from GitHub...
+            </div>
+        `;
+
+
+        if (cctvPdfCount) {
+            cctvPdfCount.textContent = "";
+        }
 
 
         try {
 
-            const response = await fetch(githubApiUrl);
 
+            /*
+             * Request GitHub repository tree.
+             */
+
+            const response =
+                await fetch(GITHUB_TREE_API, {
+                    headers: {
+                        "Accept":
+                            "application/vnd.github+json"
+                    }
+                });
+
+
+            /*
+             * Check HTTP response.
+             */
 
             if (!response.ok) {
 
                 throw new Error(
-                    "GitHub returned HTTP " + response.status
+                    "GitHub API returned HTTP " +
+                    response.status
                 );
 
             }
 
 
-            const files = await response.json();
+            const data =
+                await response.json();
 
 
             /*
-             * Keep only PDF files.
+             * Make sure GitHub returned a tree.
              */
 
-            const pdfFiles = files
-                .filter(file => {
+            if (!data.tree) {
 
-                    return (
-                        file.type === "file" &&
-                        file.name.toLowerCase().endsWith(".pdf")
-                    );
+                throw new Error(
+                    "GitHub did not return a repository tree."
+                );
 
-                })
-                .sort((a, b) => {
-
-                    return a.name.localeCompare(
-                        b.name,
-                        undefined,
-                        {
-                            numeric: true,
-                            sensitivity: "base"
-                        }
-                    );
-
-                });
+            }
 
 
             /*
-             * Remove loading message.
+             * Get only files located inside:
+             *
+             * files/Cctv/
+             *
+             * and ending with .pdf
+             */
+
+            const pdfFiles =
+                data.tree
+                    .filter(item => {
+
+                        const path =
+                            item.path || "";
+
+                        return (
+                            item.type === "blob" &&
+                            path.startsWith(
+                                CCTV_FOLDER + "/"
+                            ) &&
+                            path.toLowerCase().endsWith(".pdf")
+                        );
+
+                    })
+                    .sort((a, b) => {
+
+                        return a.path.localeCompare(
+                            b.path,
+                            undefined,
+                            {
+                                numeric: true,
+                                sensitivity: "base"
+                            }
+                        );
+
+                    });
+
+
+            /*
+             * Clear loading message.
              */
 
             cctvPdfList.innerHTML = "";
 
 
             /*
-             * No PDF files found.
+             * No files found.
              */
 
             if (pdfFiles.length === 0) {
 
-                const emptyMessage =
-                    document.createElement("div");
+                cctvPdfList.innerHTML = `
+                    <div class="pdf-error">
+                        <strong>
+                            No PDF files found.
+                        </strong>
+                        <br>
+                        The GitHub folder
+                        <strong>files/Cctv/</strong>
+                        does not currently contain any PDF files,
+                        or the folder path does not match exactly.
+                    </div>
+                `;
 
-                emptyMessage.className = "pdf-loading";
+                if (cctvPdfCount) {
 
-                emptyMessage.textContent =
-                    "No PDF project files found in the Cctv folder.";
+                    cctvPdfCount.textContent =
+                        "0 PDF files detected.";
 
-                cctvPdfList.appendChild(emptyMessage);
+                }
 
                 return;
             }
 
 
             /*
-             * Create a link for every PDF.
+             * Create a button/link for every PDF.
              */
 
             pdfFiles.forEach(file => {
+
 
                 const link =
                     document.createElement("a");
 
 
-                link.className = "pdf-link";
-
-                link.href = file.html_url;
-
-                link.target = "_blank";
-
-                link.rel = "noopener noreferrer";
+                link.className =
+                    "pdf-link";
 
 
                 /*
-                 * File name
+                 * Open the GitHub file page.
+                 */
+
+                link.href =
+                    createGitHubFileUrl(file.path);
+
+
+                link.target =
+                    "_blank";
+
+
+                link.rel =
+                    "noopener noreferrer";
+
+
+                /*
+                 * Get filename only.
+                 *
+                 * Example:
+                 *
+                 * files/Cctv/CCTV RISER DIAGRAM.pdf
+                 *
+                 * becomes:
+                 *
+                 * CCTV RISER DIAGRAM.pdf
                  */
 
                 const fileName =
-                    document.createElement("span");
-
-                fileName.className =
-                    "pdf-file-name";
-
-                fileName.textContent =
-                    "PDF • " + file.name;
+                    file.path.substring(
+                        file.path.lastIndexOf("/") + 1
+                    );
 
 
                 /*
-                 * Arrow
+                 * Filename element.
+                 */
+
+                const name =
+                    document.createElement("span");
+
+
+                name.className =
+                    "pdf-file-name";
+
+
+                name.textContent =
+                    "PDF • " + fileName;
+
+
+                /*
+                 * View arrow.
                  */
 
                 const arrow =
                     document.createElement("span");
 
+
                 arrow.className =
                     "pdf-arrow";
+
 
                 arrow.textContent =
                     "VIEW →";
 
 
-                link.appendChild(fileName);
+                /*
+                 * Add elements to link.
+                 */
+
+                link.appendChild(name);
 
                 link.appendChild(arrow);
+
+
+                /*
+                 * Add link to PDF list.
+                 */
 
                 cctvPdfList.appendChild(link);
 
             });
+
+
+            /*
+             * Show number of detected files.
+             */
+
+            if (cctvPdfCount) {
+
+                cctvPdfCount.textContent =
+                    pdfFiles.length +
+                    (
+                        pdfFiles.length === 1
+                            ? " PDF file detected."
+                            : " PDF files detected."
+                    );
+
+            }
+
 
         }
 
 
         catch (error) {
 
+
+            /*
+             * Log technical error for debugging.
+             */
+
             console.error(
-                "Unable to load CCTV project files:",
+                "CCTV GitHub file loader error:",
                 error
             );
 
 
-            cctvPdfList.innerHTML = "";
+            /*
+             * Show visible error inside the popup.
+             */
+
+            cctvPdfList.innerHTML = `
+
+                <div class="pdf-error">
+
+                    <strong>
+                        Unable to load CCTV project files.
+                    </strong>
+
+                    <br><br>
+
+                    The website could not read the
+                    <strong>files/Cctv/</strong>
+                    folder from GitHub.
+
+                    <br><br>
+
+                    Please check that:
+
+                    <br>
+                    • The repository is
+                    <strong>engrjc/engrjc.github.io</strong>
+
+                    <br>
+                    • The branch is
+                    <strong>main</strong>
+
+                    <br>
+                    • The folder is exactly
+                    <strong>files/Cctv/</strong>
+
+                    <br>
+                    • The PDF files have been committed to GitHub
+
+                    <br><br>
+
+                    <strong>
+                        Technical error:
+                    </strong>
+
+                    ${error.message}
+
+                </div>
+
+            `;
 
 
-            const errorMessage =
-                document.createElement("div");
+            if (cctvPdfCount) {
 
-            errorMessage.className =
-                "pdf-error";
+                cctvPdfCount.textContent =
+                    "GitHub file loading failed.";
 
-            errorMessage.innerHTML =
-                "Unable to load the project files automatically. " +
-                "Please check that the <strong>files/Cctv/</strong> " +
-                "folder exists in the GitHub repository.";
-
-
-            cctvPdfList.appendChild(errorMessage);
+            }
 
         }
 
@@ -1902,12 +2346,13 @@
 
 
     /*
-     * Load the files when the page opens.
+     * Run the loader when the page loads.
      */
 
     loadCctvFiles();
 
 </script>
+
 
 </body>
 </html>
