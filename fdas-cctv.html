@@ -56,13 +56,12 @@
 
             overflow: hidden;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #031426 0%,
-                    #061d35 52%,
-                    #082d4d 100%
-                );
+            background-image:
+                url("images/fdas-cctv-hero.jpeg");
+
+            background-size: cover;
+
+            background-position: center;
 
             color: #ffffff;
 
@@ -71,7 +70,7 @@
         }
 
 
-        /* Technical background grid */
+        /* IMAGE OVERLAY */
 
         .fdas-hero::before {
 
@@ -81,27 +80,22 @@
 
             inset: 0;
 
-            background-image:
-
-                linear-gradient(
-                    rgba(255,255,255,0.035) 1px,
-                    transparent 1px
-                ),
-
+            background:
                 linear-gradient(
                     90deg,
-                    rgba(255,255,255,0.035) 1px,
-                    transparent 1px
+                    rgba(3,20,38,0.55) 0%,
+                    rgba(3,20,38,0.20) 50%,
+                    rgba(3,20,38,0.55) 100%
                 );
 
-            background-size: 40px 40px;
+            z-index: 1;
 
             pointer-events: none;
 
         }
 
 
-        /* Blue glow */
+        /* SUBTLE CENTER GLOW */
 
         .fdas-hero::after {
 
@@ -125,9 +119,11 @@
             background:
                 radial-gradient(
                     circle,
-                    rgba(45,157,255,0.16),
+                    rgba(45,157,255,0.10),
                     transparent 68%
                 );
+
+            z-index: 1;
 
             pointer-events: none;
 
@@ -229,6 +225,7 @@
         }
 
 
+
         /* =====================================================
            HERO TAGS
         ===================================================== */
@@ -254,7 +251,7 @@
 
             border: 1px solid rgba(98,184,255,0.35);
 
-            background: rgba(255,255,255,0.035);
+            background: rgba(3,20,38,0.30);
 
             color: #cfe8ff;
 
@@ -263,6 +260,10 @@
             font-weight: 700;
 
             letter-spacing: 1px;
+
+            backdrop-filter: blur(3px);
+
+            -webkit-backdrop-filter: blur(3px);
 
         }
 
