@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+
         /* ========================================
            FDAS & CCTV PAGE
         ======================================== */
@@ -18,6 +19,7 @@
             min-height: 100vh;
             padding-top: 64px;
         }
+
 
         /* ========================================
            HERO
@@ -133,6 +135,7 @@
             letter-spacing: 1px;
         }
 
+
         /* ========================================
            CONTENT
         ======================================== */
@@ -167,6 +170,7 @@
             font-size: 23px;
             line-height: 1.2;
         }
+
 
         /* ========================================
            CAPABILITIES
@@ -244,6 +248,7 @@
 
             border-radius: 3px;
         }
+
 
         /* ========================================
            PORTFOLIO
@@ -337,6 +342,7 @@
         .portfolio-button:hover {
             background: #eaf6ff;
         }
+
 
         /* ========================================
            MODAL
@@ -500,6 +506,7 @@
             font-weight: 700;
         }
 
+
         /* ========================================
            PDF SECTION
         ======================================== */
@@ -592,8 +599,29 @@
 
         .pdf-error {
             color: #a54c4c;
+
             border-color: #e6c8c8;
+
             background: #fff8f8;
+        }
+
+        .pdf-debug {
+            margin-top: 8px;
+
+            padding: 8px;
+
+            background: #f1f4f7;
+
+            border: 1px solid #dce5ee;
+            border-radius: 4px;
+
+            color: #52687b;
+
+            font-family: monospace;
+            font-size: 8px;
+            line-height: 1.5;
+
+            word-break: break-word;
         }
 
         .pdf-count {
@@ -603,6 +631,7 @@
 
             font-size: 8px;
         }
+
 
         /* ========================================
            CLIENT PROJECT PLACEHOLDER
@@ -628,6 +657,7 @@
             line-height: 1.6;
         }
 
+
         /* ========================================
            FOOTER STRIP
         ======================================== */
@@ -646,6 +676,7 @@
             font-size: 9px;
             letter-spacing: 0.5px;
         }
+
 
         /* ========================================
            RESPONSIVE
@@ -714,17 +745,23 @@
             }
 
         }
+
     </style>
 </head>
 
+
 <body>
 
+
 <header class="site-header">
+
     <div class="header-container">
 
         <a href="index.html" class="brand">
 
-            <div class="brand-logo" aria-label="JC Engineering Logo">
+            <div
+                class="brand-logo"
+                aria-label="JC Engineering Logo">
 
                 <span class="logo-j">J</span>
                 <span class="logo-c">C</span>
@@ -742,33 +779,65 @@
             </div>
 
             <div class="brand-text">
-                <strong>JOHN CARL P. ORTIZ</strong>
-                <small>Electronics Design Engineer</small>
+
+                <strong>
+                    JOHN CARL P. ORTIZ
+                </strong>
+
+                <small>
+                    Electronics Design Engineer
+                </small>
+
             </div>
 
         </a>
 
+
         <nav class="main-nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="skills.html">Skills</a>
-            <a href="resume.html">Resume</a>
-            <a href="contact.html">Contact</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="projects.html">
+                Projects
+            </a>
+
+            <a href="skills.html">
+                Skills
+            </a>
+
+            <a href="resume.html">
+                Resume
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
         </nav>
+
 
         <button
             class="theme-button"
             id="themeButton"
             aria-label="Toggle theme">
+
             ☾
+
         </button>
 
     </div>
+
 </header>
 
 
 <main class="fdas-page">
+
 
     <!-- ========================================
          HERO
@@ -798,11 +867,13 @@
             </p>
 
             <div class="fdas-tags">
+
                 <span>FDAS</span>
                 <span>CCTV</span>
                 <span>AUTOCAD</span>
                 <span>ELV</span>
                 <span>SYSTEM DESIGN</span>
+
             </div>
 
         </div>
@@ -811,6 +882,7 @@
 
 
     <section class="fdas-content">
+
 
         <!-- ========================================
              DESIGN CAPABILITIES
@@ -831,6 +903,7 @@
 
         <div class="capabilities-grid">
 
+
             <article class="capability-card">
 
                 <div class="capability-number">
@@ -847,9 +920,11 @@
                 </p>
 
                 <div class="capability-tags">
+
                     <span>DEVICE LAYOUT</span>
                     <span>ZONING</span>
                     <span>FACP</span>
+
                 </div>
 
             </article>
@@ -871,9 +946,11 @@
                 </p>
 
                 <div class="capability-tags">
+
                     <span>CAMERA PLAN</span>
                     <span>COVERAGE</span>
                     <span>NVR</span>
+
                 </div>
 
             </article>
@@ -895,9 +972,11 @@
                 </p>
 
                 <div class="capability-tags">
+
                     <span>AUTOCAD</span>
                     <span>LAYOUTS</span>
                     <span>DETAILS</span>
+
                 </div>
 
             </article>
@@ -919,12 +998,15 @@
                 </p>
 
                 <div class="capability-tags">
+
                     <span>NETWORKING</span>
                     <span>RISER</span>
                     <span>COORDINATION</span>
+
                 </div>
 
             </article>
+
 
         </div>
 
@@ -948,6 +1030,7 @@
 
         <div class="portfolio-grid">
 
+
             <!-- SELF-DIRECTED PROJECTS -->
 
             <article class="portfolio-card">
@@ -969,7 +1052,9 @@
                 <label
                     for="selfProjectsToggle"
                     class="portfolio-button">
+
                     See Projects →
+
                 </label>
 
             </article>
@@ -996,10 +1081,13 @@
                 <label
                     for="clientProjectsToggle"
                     class="portfolio-button">
+
                     See Projects →
+
                 </label>
 
             </article>
+
 
         </div>
 
@@ -1029,6 +1117,7 @@
 
         <div class="modal-box">
 
+
             <div class="modal-header">
 
                 <h2>
@@ -1038,7 +1127,9 @@
                 <label
                     for="selfProjectsToggle"
                     class="modal-close">
+
                     ×
+
                 </label>
 
             </div>
@@ -1069,9 +1160,11 @@
                         </p>
 
                         <div class="project-tags">
+
                             <span>FDAS</span>
                             <span>AUTOCAD</span>
                             <span>LAYOUT</span>
+
                         </div>
 
                     </article>
@@ -1079,7 +1172,8 @@
 
                     <!-- PROJECT 02 -->
 
-                    <article class="modal-project-card modal-project-card-full">
+                    <article
+                        class="modal-project-card modal-project-card-full">
 
                         <div class="project-number">
                             PROJECT 02
@@ -1097,11 +1191,13 @@
                         </p>
 
                         <div class="project-tags">
+
                             <span>CCTV</span>
                             <span>CAMERA PLAN</span>
                             <span>NVR</span>
                             <span>NETWORKING</span>
                             <span>AUTOCAD</span>
+
                         </div>
 
 
@@ -1115,19 +1211,24 @@
                                 PROJECT DOCUMENTATION
                             </p>
 
+
                             <div
                                 id="cctvPdfList"
                                 class="pdf-list">
 
                                 <div class="pdf-loading">
-                                    Loading CCTV project files...
+
+                                    Connecting to GitHub...
+
                                 </div>
 
                             </div>
 
+
                             <div
                                 id="cctvPdfCount"
                                 class="pdf-count">
+
                             </div>
 
                         </div>
@@ -1155,12 +1256,15 @@
                         </p>
 
                         <div class="project-tags">
+
                             <span>ELV</span>
                             <span>NETWORKING</span>
                             <span>RISER</span>
+
                         </div>
 
                     </article>
+
 
                 </div>
 
@@ -1179,6 +1283,7 @@
 
         <div class="modal-box">
 
+
             <div class="modal-header">
 
                 <h2>
@@ -1188,7 +1293,9 @@
                 <label
                     for="clientProjectsToggle"
                     class="modal-close">
+
                     ×
+
                 </label>
 
             </div>
@@ -1215,9 +1322,11 @@
                         </p>
 
                         <div class="project-tags">
+
                             <span>FDAS</span>
                             <span>CCTV</span>
                             <span>CAD</span>
+
                         </div>
 
                     </article>
@@ -1239,24 +1348,29 @@
                         </p>
 
                         <div class="project-tags">
+
                             <span>ELV</span>
                             <span>NETWORKING</span>
                             <span>DESIGN</span>
+
                         </div>
 
                     </article>
 
 
-                    <article class="modal-project-card modal-project-card-full">
+                    <article
+                        class="modal-project-card modal-project-card-full">
 
                         <div class="client-project-placeholder">
 
-                            More Client Projects<br>
+                            More Client Projects
+                            <br>
                             Project documentation will be added here.
 
                         </div>
 
                     </article>
+
 
                 </div>
 
@@ -1278,39 +1392,65 @@
 
     </div>
 
+
 </main>
 
 
 <script src="script.js"></script>
 
 
-<!-- ========================================
-     AUTOMATIC GITHUB PDF LOADER
-======================================== -->
+<!-- =====================================================
+     STRONG AUTOMATIC GITHUB PDF LOADER
+     
+     ACTUAL GITHUB FOLDER:
+     
+     Files/Cctv/
+     
+     NOT:
+     
+     files/Cctv/
+     
+     ===================================================== -->
 
 <script>
 
-    const GITHUB_OWNER =
-        "engrjc";
+    /* =====================================================
+       GITHUB CONFIGURATION
+       ===================================================== */
 
-    const GITHUB_REPOSITORY =
-        "engrjc.github.io";
+    const GITHUB_OWNER = "engrjc";
 
-    const GITHUB_BRANCH =
-        "main";
+    const GITHUB_REPOSITORY = "engrjc.github.io";
+
+    const GITHUB_BRANCH = "main";
 
     /*
      * IMPORTANT:
-     * GitHub folder is:
+     *
+     * GitHub folder is exactly:
      *
      * Files/Cctv/
      *
-     * Capital F is required.
+     * Capital F.
      */
 
-    const CCTV_FOLDER =
-        "Files/Cctv";
+    const CCTV_FOLDER = "Files/Cctv";
 
+
+    /* =====================================================
+       DOM ELEMENTS
+       ===================================================== */
+
+    const cctvPdfList =
+        document.getElementById("cctvPdfList");
+
+    const cctvPdfCount =
+        document.getElementById("cctvPdfCount");
+
+
+    /* =====================================================
+       GITHUB API URL
+       ===================================================== */
 
     const GITHUB_TREE_API =
         "https://api.github.com/repos/" +
@@ -1322,17 +1462,9 @@
         "?recursive=1";
 
 
-    const cctvPdfList =
-        document.getElementById(
-            "cctvPdfList"
-        );
-
-
-    const cctvPdfCount =
-        document.getElementById(
-            "cctvPdfCount"
-        );
-
+    /* =====================================================
+       GITHUB FILE URL
+       ===================================================== */
 
     function createGitHubFileUrl(path) {
 
@@ -1350,6 +1482,100 @@
     }
 
 
+    /* =====================================================
+       RAW GITHUB FILE URL
+       ===================================================== */
+
+    function createGitHubRawUrl(path) {
+
+        return (
+            "https://raw.githubusercontent.com/" +
+            GITHUB_OWNER +
+            "/" +
+            GITHUB_REPOSITORY +
+            "/" +
+            GITHUB_BRANCH +
+            "/" +
+            path
+        );
+
+    }
+
+
+    /* =====================================================
+       DISPLAY ERROR
+       ===================================================== */
+
+    function displayPdfError(
+        title,
+        message,
+        details
+    ) {
+
+        cctvPdfList.innerHTML = "";
+
+        const errorBox =
+            document.createElement("div");
+
+        errorBox.className =
+            "pdf-error";
+
+
+        const titleElement =
+            document.createElement("strong");
+
+        titleElement.textContent =
+            title;
+
+
+        const messageElement =
+            document.createElement("div");
+
+        messageElement.style.marginTop =
+            "6px";
+
+        messageElement.textContent =
+            message;
+
+
+        errorBox.appendChild(
+            titleElement
+        );
+
+        errorBox.appendChild(
+            messageElement
+        );
+
+
+        if (details) {
+
+            const debug =
+                document.createElement("div");
+
+            debug.className =
+                "pdf-debug";
+
+            debug.textContent =
+                details;
+
+            errorBox.appendChild(
+                debug
+            );
+
+        }
+
+
+        cctvPdfList.appendChild(
+            errorBox
+        );
+
+    }
+
+
+    /* =====================================================
+       LOAD CCTV PDF FILES
+       ===================================================== */
+
     async function loadCctvPdfFiles() {
 
         if (!cctvPdfList) {
@@ -1357,90 +1583,408 @@
         }
 
 
+        /* ---------------------------------------------
+           Initial loading message
+        --------------------------------------------- */
+
+        cctvPdfList.innerHTML =
+            '<div class="pdf-loading">' +
+            'Connecting to GitHub...' +
+            '<br><br>' +
+            'Checking: ' +
+            CCTV_FOLDER +
+            '/' +
+            '</div>';
+
+
+        cctvPdfCount.textContent =
+            "";
+
+
+        console.log(
+            "========================================"
+        );
+
+        console.log(
+            "CCTV PDF LOADER"
+        );
+
+        console.log(
+            "========================================"
+        );
+
+        console.log(
+            "Repository:",
+            GITHUB_OWNER +
+            "/" +
+            GITHUB_REPOSITORY
+        );
+
+        console.log(
+            "Branch:",
+            GITHUB_BRANCH
+        );
+
+        console.log(
+            "Folder:",
+            CCTV_FOLDER
+        );
+
+        console.log(
+            "API:",
+            GITHUB_TREE_API
+        );
+
+
         try {
 
-            cctvPdfList.innerHTML =
-                '<div class="pdf-loading">' +
-                'Loading CCTV project files...' +
-                '</div>';
 
+            /* =============================================
+               REQUEST GITHUB TREE
+               ============================================= */
 
             const response =
                 await fetch(
                     GITHUB_TREE_API,
                     {
-                        cache: "no-store"
+                        method: "GET",
+                        cache: "no-store",
+                        headers: {
+                            "Accept":
+                                "application/vnd.github+json"
+                        }
                     }
                 );
 
 
+            console.log(
+                "GitHub HTTP Status:",
+                response.status
+            );
+
+
+            /* =============================================
+               READ RESPONSE
+               ============================================= */
+
+            const responseText =
+                await response.text();
+
+
+            console.log(
+                "GitHub Response:",
+                responseText
+            );
+
+
+            /* =============================================
+               HTTP ERROR
+               ============================================= */
+
             if (!response.ok) {
 
-                throw new Error(
-                    "GitHub API returned " +
-                    response.status
+                let errorMessage =
+                    "GitHub API returned HTTP " +
+                    response.status +
+                    ".";
+
+
+                try {
+
+                    const errorData =
+                        JSON.parse(
+                            responseText
+                        );
+
+
+                    if (
+                        errorData &&
+                        errorData.message
+                    ) {
+
+                        errorMessage +=
+                            " " +
+                            errorData.message;
+
+                    }
+
+                }
+
+                catch (jsonError) {
+
+                    /* Response wasn't JSON. */
+
+                }
+
+
+                displayPdfError(
+
+                    "Unable to load CCTV project files.",
+
+                    errorMessage,
+
+                    "Repository: " +
+                    GITHUB_OWNER +
+                    "/" +
+                    GITHUB_REPOSITORY +
+                    "\n" +
+
+                    "Branch: " +
+                    GITHUB_BRANCH +
+                    "\n" +
+
+                    "Folder: " +
+                    CCTV_FOLDER +
+                    "/\n" +
+
+                    "API URL: " +
+                    GITHUB_TREE_API +
+                    "\n" +
+
+                    "HTTP Status: " +
+                    response.status +
+                    "\n\n" +
+
+                    "GitHub response:\n" +
+                    responseText
+
                 );
+
+
+                cctvPdfCount.textContent =
+                    "GitHub could not return the repository tree.";
+
+                return;
 
             }
 
 
-            const data =
-                await response.json();
+            /* =============================================
+               PARSE JSON
+               ============================================= */
 
+            let data;
+
+            try {
+
+                data =
+                    JSON.parse(
+                        responseText
+                    );
+
+            }
+
+            catch (jsonError) {
+
+                displayPdfError(
+
+                    "GitHub returned an invalid response.",
+
+                    "The repository tree could not be read.",
+
+                    "HTTP Status: " +
+                    response.status +
+                    "\n\n" +
+
+                    "Response:\n" +
+                    responseText
+
+                );
+
+                return;
+
+            }
+
+
+            /* =============================================
+               CHECK TREE
+               ============================================= */
 
             if (
                 !data.tree ||
                 !Array.isArray(data.tree)
             ) {
 
-                throw new Error(
-                    "GitHub repository tree was not returned."
+                displayPdfError(
+
+                    "GitHub repository tree was not returned.",
+
+                    "The API response does not contain a valid file tree.",
+
+                    JSON.stringify(
+                        data,
+                        null,
+                        2
+                    )
+
                 );
+
+                return;
 
             }
 
 
-            const pdfFiles =
-                data.tree
-                    .filter(item => {
+            console.log(
+                "Total repository tree items:",
+                data.tree.length
+            );
+
+
+            /* =============================================
+               SHOW ALL FILES IN CONSOLE
+               ============================================= */
+
+            console.log(
+                "Repository files:"
+            );
+
+            data.tree.forEach(
+                function(item) {
+
+                    console.log(
+                        item.type,
+                        item.path
+                    );
+
+                }
+            );
+
+
+            /* =============================================
+               FIND FILES INSIDE Files/Cctv/
+               ============================================= */
+
+            const folderPrefix =
+                CCTV_FOLDER + "/";
+
+
+            const folderFiles =
+                data.tree.filter(
+                    function(item) {
 
                         const path =
                             item.path || "";
 
+
                         return (
                             item.type === "blob" &&
                             path.startsWith(
-                                CCTV_FOLDER + "/"
-                            ) &&
-                            path
+                                folderPrefix
+                            )
+                        );
+
+                    }
+                );
+
+
+            console.log(
+                "Files found inside:",
+                CCTV_FOLDER
+            );
+
+            console.log(
+                folderFiles
+            );
+
+
+            /* =============================================
+               FIND PDF FILES
+               ============================================= */
+
+            const pdfFiles =
+                folderFiles
+                    .filter(
+                        function(item) {
+
+                            const path =
+                                item.path || "";
+
+
+                            return path
                                 .toLowerCase()
-                                .endsWith(".pdf")
-                        );
+                                .endsWith(".pdf");
 
-                    })
-                    .sort((a, b) => {
+                        }
+                    )
+                    .sort(
+                        function(a, b) {
 
-                        return a.path.localeCompare(
-                            b.path,
-                            undefined,
-                            {
-                                numeric: true,
-                                sensitivity: "base"
-                            }
-                        );
+                            return a.path.localeCompare(
+                                b.path,
+                                undefined,
+                                {
+                                    numeric: true,
+                                    sensitivity: "base"
+                                }
+                            );
 
-                    });
+                        }
+                    );
 
 
-            if (pdfFiles.length === 0) {
+            console.log(
+                "PDF files found:",
+                pdfFiles.length
+            );
 
-                cctvPdfList.innerHTML =
-                    '<div class="pdf-empty">' +
-                    'No PDF files were found in ' +
-                    '<strong>' +
+
+            console.log(
+                pdfFiles
+            );
+
+
+            /* =============================================
+               NO PDF FILES
+               ============================================= */
+
+            if (
+                pdfFiles.length === 0
+            ) {
+
+
+                let returnedPaths = "";
+
+
+                if (
+                    folderFiles.length > 0
+                ) {
+
+                    returnedPaths =
+                        folderFiles
+                            .map(
+                                function(file) {
+                                    return file.path;
+                                }
+                            )
+                            .join("\n");
+
+                }
+
+                else {
+
+                    returnedPaths =
+                        "No files were returned inside " +
+                        CCTV_FOLDER +
+                        "/";
+
+                }
+
+
+                displayPdfError(
+
+                    "The GitHub folder was reached, but no PDF files were found.",
+
+                    "The loader successfully read the repository tree but could not find any .pdf files under Files/Cctv/.",
+
+                    "Expected folder:\n" +
                     CCTV_FOLDER +
-                    '/</strong>.' +
-                    '</div>';
+                    "/\n\n" +
+
+                    "Files returned from that folder:\n" +
+                    returnedPaths
+
+                );
+
 
                 cctvPdfCount.textContent =
                     "0 PDF files found.";
@@ -1450,73 +1994,113 @@
             }
 
 
-            cctvPdfList.innerHTML = "";
+            /* =============================================
+               CLEAR LOADING MESSAGE
+               ============================================= */
+
+            cctvPdfList.innerHTML =
+                "";
 
 
-            pdfFiles.forEach(file => {
+            /* =============================================
+               CREATE PDF ITEMS
+               ============================================= */
 
-                const fileName =
-                    file.path.split("/").pop();
+            pdfFiles.forEach(
+                function(file) {
 
-
-                const item =
-                    document.createElement("div");
-
-                item.className =
-                    "pdf-item";
-
-
-                const name =
-                    document.createElement("span");
-
-                name.className =
-                    "pdf-name";
-
-                name.textContent =
-                    fileName;
-
-
-                const link =
-                    document.createElement("a");
-
-                link.className =
-                    "pdf-link";
-
-                link.href =
-                    createGitHubFileUrl(
+                    const fileName =
                         file.path
+                            .split("/")
+                            .pop();
+
+
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+                    item.className =
+                        "pdf-item";
+
+
+                    const name =
+                        document.createElement(
+                            "span"
+                        );
+
+                    name.className =
+                        "pdf-name";
+
+                    name.title =
+                        file.path;
+
+                    name.textContent =
+                        fileName;
+
+
+                    const link =
+                        document.createElement(
+                            "a"
+                        );
+
+                    link.className =
+                        "pdf-link";
+
+                    link.href =
+                        createGitHubFileUrl(
+                            file.path
+                        );
+
+                    link.target =
+                        "_blank";
+
+                    link.rel =
+                        "noopener noreferrer";
+
+                    link.textContent =
+                        "OPEN PDF →";
+
+
+                    item.appendChild(
+                        name
                     );
 
-                link.target =
-                    "_blank";
-
-                link.rel =
-                    "noopener noreferrer";
-
-                link.textContent =
-                    "OPEN PDF →";
+                    item.appendChild(
+                        link
+                    );
 
 
-                item.appendChild(name);
+                    cctvPdfList.appendChild(
+                        item
+                    );
 
-                item.appendChild(link);
+                }
+            );
 
-                cctvPdfList.appendChild(item);
 
-            });
-
+            /* =============================================
+               UPDATE COUNT
+               ============================================= */
 
             cctvPdfCount.textContent =
                 pdfFiles.length +
                 (
                     pdfFiles.length === 1
-                        ? " PDF file found."
-                        : " PDF files found."
+                        ? " PDF file found automatically."
+                        : " PDF files found automatically."
                 );
+
+
+            console.log(
+                "CCTV PDF loading completed successfully."
+            );
 
         }
 
+
         catch (error) {
+
 
             console.error(
                 "CCTV PDF loader error:",
@@ -1524,18 +2108,34 @@
             );
 
 
-            cctvPdfList.innerHTML =
-                '<div class="pdf-error">' +
-                '<strong>Unable to load the project files automatically.</strong><br>' +
-                'Please check that the ' +
-                '<strong>' +
+            displayPdfError(
+
+                "Unable to connect to GitHub.",
+
+                "The website could not read the GitHub repository tree.",
+
+                "Repository: " +
+                GITHUB_OWNER +
+                "/" +
+                GITHUB_REPOSITORY +
+                "\n" +
+
+                "Branch: " +
+                GITHUB_BRANCH +
+                "\n" +
+
+                "Folder: " +
                 CCTV_FOLDER +
-                '/</strong> folder exists in the GitHub repository ' +
-                'and that the repository is publicly accessible.' +
-                '<br><br>' +
-                'Error: ' +
-                error.message +
-                '</div>';
+                "/\n\n" +
+
+                "API URL:\n" +
+                GITHUB_TREE_API +
+                "\n\n" +
+
+                "Technical error:\n" +
+                error.message
+
+            );
 
 
             cctvPdfCount.textContent =
@@ -1546,9 +2146,14 @@
     }
 
 
+    /* =====================================================
+       START LOADER
+       ===================================================== */
+
     loadCctvPdfFiles();
 
 </script>
+
 
 </body>
 </html>
