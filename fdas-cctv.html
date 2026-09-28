@@ -67,8 +67,6 @@
         }
 
 
-        /* Technical grid */
-
         .fdas-hero::before {
 
             content: "";
@@ -96,8 +94,6 @@
 
         }
 
-
-        /* Blue glow */
 
         .fdas-hero::after {
 
@@ -332,6 +328,7 @@
         }
 
 
+
         /* =====================================================
            TECHNICAL DIAGRAM
         ===================================================== */
@@ -446,7 +443,8 @@
 
             top: 47%;
 
-            transform: translate(-50%, -50%);
+            transform:
+                translate(-50%, -50%);
 
             width: 62px;
 
@@ -508,7 +506,7 @@
 
 
         /* =====================================================
-           CAPABILITIES
+           DESIGN CAPABILITIES
         ===================================================== */
 
         .fdas-capabilities {
@@ -526,7 +524,7 @@
 
             text-align: center;
 
-            margin-bottom: 28px;
+            margin-bottom: 24px;
 
         }
 
@@ -576,7 +574,7 @@
 
 
         /* =====================================================
-           CAPABILITY GRID
+           COMPACT CAPABILITY GRID
         ===================================================== */
 
         .capability-grid {
@@ -586,7 +584,7 @@
             grid-template-columns:
                 repeat(4, 1fr);
 
-            gap: 14px;
+            gap: 12px;
 
         }
 
@@ -595,9 +593,9 @@
 
             position: relative;
 
-            min-height: 175px;
+            min-height: 125px;
 
-            padding: 20px;
+            padding: 15px 16px;
 
             background: #ffffff;
 
@@ -614,7 +612,7 @@
 
         .capability-card:hover {
 
-            transform: translateY(-3px);
+            transform: translateY(-2px);
 
             border-color: #8dbde7;
 
@@ -625,15 +623,15 @@
 
             position: absolute;
 
-            top: 15px;
+            top: 12px;
 
-            right: 16px;
+            right: 13px;
 
-            font-size: 10px;
+            font-size: 9px;
 
             font-weight: 700;
 
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
 
             color: #9ab2c8;
 
@@ -642,9 +640,9 @@
 
         .capability-icon {
 
-            width: 46px;
+            width: 34px;
 
-            height: 46px;
+            height: 34px;
 
             display: flex;
 
@@ -652,7 +650,7 @@
 
             justify-content: center;
 
-            margin-bottom: 18px;
+            margin-bottom: 10px;
 
             border: 1px solid #b8d8f2;
 
@@ -660,18 +658,20 @@
 
             color: #1976d2;
 
-            font-size: 21px;
+            font-size: 16px;
 
         }
 
 
         .capability-card h3 {
 
-            margin: 0 0 7px;
+            margin: 0 0 5px;
 
             color: #031426;
 
-            font-size: 16px;
+            font-size: 14px;
+
+            line-height: 1.2;
 
         }
 
@@ -682,9 +682,9 @@
 
             color: #6b7c8e;
 
-            font-size: 10px;
+            font-size: 9px;
 
-            line-height: 1.55;
+            line-height: 1.4;
 
         }
 
@@ -697,9 +697,9 @@
 
             left: 0;
 
-            width: 42px;
+            width: 36px;
 
-            height: 3px;
+            height: 2px;
 
             background: #1976d2;
 
@@ -1068,7 +1068,7 @@
 
 
         /* =====================================================
-           SMALL TECHNICAL FOOTER
+           FOOTER STRIP
         ===================================================== */
 
         .fdas-page-footer {
@@ -1105,11 +1105,13 @@
 
             .fdas-hero-inner {
 
-                grid-template-columns: 1fr 0.8fr;
+                grid-template-columns:
+                    1fr 0.8fr;
 
                 gap: 30px;
 
-                padding: 45px 30px;
+                padding:
+                    45px 30px;
 
             }
 
@@ -1133,7 +1135,33 @@
             .capability-grid {
 
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(4, 1fr);
+
+                gap: 10px;
+
+            }
+
+
+            .capability-card {
+
+                padding:
+                    13px 12px;
+
+                min-height: 120px;
+
+            }
+
+
+            .capability-card h3 {
+
+                font-size: 13px;
+
+            }
+
+
+            .capability-card p {
+
+                font-size: 8.5px;
 
             }
 
@@ -1163,7 +1191,8 @@
 
                 grid-template-columns: 1fr;
 
-                padding: 42px 22px 38px;
+                padding:
+                    42px 22px 38px;
 
             }
 
@@ -1199,7 +1228,8 @@
 
             .project-type-grid {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
 
             }
 
@@ -1211,7 +1241,8 @@
 
             .fdas-hero-inner {
 
-                padding: 35px 18px;
+                padding:
+                    35px 18px;
 
             }
 
@@ -1233,7 +1264,8 @@
 
             .capability-grid {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
 
             }
 
@@ -1257,7 +1289,8 @@
 
             .project-features {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
 
             }
 
@@ -1279,6 +1312,7 @@
 
 
 <body>
+
 
 
 <!-- =====================================================
@@ -1573,7 +1607,7 @@
         <div class="capability-grid">
 
 
-            <!-- 01 -->
+            <!-- FDAS -->
 
             <article class="capability-card">
 
@@ -1600,7 +1634,7 @@
 
 
 
-            <!-- 02 -->
+            <!-- CCTV -->
 
             <article class="capability-card">
 
@@ -1627,7 +1661,7 @@
 
 
 
-            <!-- 03 -->
+            <!-- CAD -->
 
             <article class="capability-card">
 
@@ -1654,7 +1688,7 @@
 
 
 
-            <!-- 04 -->
+            <!-- ELV -->
 
             <article class="capability-card">
 
@@ -1720,7 +1754,7 @@
 
 
                 <!-- =====================================
-                     SELF-DIRECTED
+                     SELF-DIRECTED PROJECTS
                 ====================================== -->
 
                 <article class="project-type-card">
@@ -1800,7 +1834,7 @@
 
 
                 <!-- =====================================
-                     CLIENT
+                     CLIENT PROJECTS
                 ====================================== -->
 
                 <article class="project-type-card">
