@@ -30,20 +30,19 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
+        const cleanFolder = folder.replace(/\/+$/, "");
+
         /*
-         * The GitHub Actions workflow automatically creates
-         * files.json inside every project folder.
+         * GitHub Actions automatically creates:
          *
-         * Example:
-         *
-         * Files/Cctv/files.json
          * Files/FDAS/files.json
+         * Files/Cctv/files.json
          * Files/ELV/files.json
          *
-         * No GitHub API is used here.
+         * This script reads those files directly.
+         *
+         * NO GITHUB API IS USED.
          */
-
-        const cleanFolder = folder.replace(/\/+$/, "");
 
         const manifestUrl =
             cleanFolder + "/files.json";
@@ -52,8 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
 
             const response = await fetch(
-                manifestUrl + "?v=" + Date.now(),
+                manifestUrl + "?cache=" + Date.now(),
                 {
+                    method: "GET",
                     cache: "no-store"
                 }
             );
@@ -77,16 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
             let files = [];
 
 
-            /*
-             * Supported format:
-             *
-             * {
-             *     "files": [
-             *         "example.pdf"
-             *     ]
-             * }
-             */
-
             if (Array.isArray(data)) {
 
                 files = data;
@@ -105,10 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             }
 
-
-            /*
-             * Convert filenames into objects.
-             */
 
             files = files
                 .map(function (file) {
@@ -143,10 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 .filter(Boolean);
 
 
-            /*
-             * Sort files alphabetically.
-             */
-
             files.sort(function (a, b) {
 
                 return a.name.localeCompare(
@@ -161,10 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
 
-            /*
-             * No files yet.
-             */
-
             if (!files.length) {
 
                 container.innerHTML = `
@@ -176,10 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-
-            /*
-             * Create the file list.
-             */
 
             const list =
                 document.createElement("div");
@@ -200,21 +174,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 link.target = "_blank";
 
-
                 link.rel =
                     "noopener noreferrer";
 
-
-                /*
-                 * Encode each path section separately
-                 * so spaces in filenames work correctly.
-                 */
 
                 const encodedPath =
                     file.path
                         .split("/")
                         .map(function (part) {
+
                             return encodeURIComponent(part);
+
                         })
                         .join("/");
 
@@ -244,10 +214,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             });
 
-
-            /*
-             * Display the files.
-             */
 
             container.innerHTML = "";
 
@@ -282,11 +248,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /*
-     * Prevent HTML injection when displaying
-     * filenames.
-     */
 
     function escapeHTML(value) {
 
