@@ -24,13 +24,19 @@ jobs:
         run: |
           set -e
 
+          echo "========================================"
           echo "Scanning Files directory..."
+          echo "========================================"
 
-          find Files -mindepth 1 -maxdepth 1 -type d | while read folder
+          if [ ! -d "Files" ]; then
+            echo "ERROR: Files directory not found."
+            exit 1
+          fi
+
+          find Files -mindepth 1 -maxdepth 1 -type d | sort | while read -r folder
           do
+              echo ""
               echo "Processing: $folder"
-
-              mkdir -p "$folder"
 
               json_file="$folder/files.json"
 
@@ -39,15 +45,13 @@ jobs:
 
               first=true
 
-              find "$folder" -maxdepth 1 -type f \
-                ! -name "files.json" \
-                | sort -f \
-                | while read file
+              while IFS= read -r file
               do
                   filename=$(basename "$file")
 
                   case "$filename" in
                       *.pdf|*.PDF)
+
                           if [ "$first" = true ]; then
                               first=false
                           else
@@ -57,27 +61,52 @@ jobs:
                           escaped=$(printf '%s' "$filename" | sed 's/\\/\\\\/g; s/"/\\"/g')
 
                           printf '        "%s"' "$escaped" >> "$json_file"
+
+                          echo ""
+                          echo "  Found PDF: $filename"
+
                           ;;
                   esac
-              done
+
+              done < <(
+                  find "$folder" -maxdepth 1 -type f \
+                  ! -name "files.json" \
+                  | sort -f
+              )
 
               echo "" >> "$json_file"
               echo "    ]" >> "$json_file"
               echo "}" >> "$json_file"
 
               echo "Generated: $json_file"
+
           done
 
+          echo ""
+          echo "========================================"
           echo "File scanning complete."
+          echo "========================================"
+
+      - name: Show generated files
+        shell: bash
+        run: |
+          echo "Generated files:"
+          find Files -name "files.json" -print
+
+          echo ""
+          echo "Git status:"
+          git status --short
 
       - name: Check for changes
         id: changes
         shell: bash
         run: |
-          if git diff --quiet; then
-              echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
+          if [ -n "$(git status --porcelain)" ]; then
               echo "changed=true" >> "$GITHUB_OUTPUT"
+              echo "Changes detected."
+          else
+              echo "changed=false" >> "$GITHUB_OUTPUT"
+              echo "No changes detected."
           fi
 
       - name: Commit generated file lists
