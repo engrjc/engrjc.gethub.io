@@ -1,262 +1,543 @@
 name: Update Project Files
 
 on:
+
   push:
     branches:
       - main
 
   workflow_dispatch:
 
+
 permissions:
   contents: write
 
+
 jobs:
+
   update-project-files:
+
     runs-on: ubuntu-latest
+
 
     steps:
 
-      # ==========================================
-      # CHECKOUT REPOSITORY
-      # ==========================================
+      # ======================================================
+      # CHECKOUT
+      # ======================================================
+
       - name: Checkout repository
+
         uses: actions/checkout@v4
 
 
-      # ==========================================
-      # GENERATE PROJECT INDEX
-      # ==========================================
+
+      # ======================================================
+      # GENERATE AUTOMATIC PROJECT INDEX
+      # ======================================================
+
       - name: Generate automatic project index
+
         shell: bash
+
         run: |
+
           python3 <<'PY'
+
           import os
           import json
           import re
+
           from pathlib import Path
 
+
           ROOT = Path("Files")
+
           OUTPUT = Path("project-index.json")
+
 
           print("==========================================")
           print(" AUTOMATIC PROJECT FILE SCANNER")
           print("==========================================")
 
+
           if not ROOT.exists():
+
               print("Files directory does not exist.")
+
               raise SystemExit(0)
 
+
+
+          # ==================================================
+          # SLUGIFY
+          # ==================================================
+
           def slugify(text):
+
               text = text.lower().strip()
-              text = re.sub(r'[^a-z0-9]+', '-', text)
-              text = re.sub(r'-+', '-', text)
+
+              text = re.sub(
+                  r'[^a-z0-9]+',
+                  '-',
+                  text
+              )
+
+              text = re.sub(
+                  r'-+',
+                  '-',
+                  text
+              )
+
               return text.strip('-')
 
-          def parse_project_folder(folder_name):
-              """
-              Expected format:
 
-              [CCTV Layout] BatStateU CIT Building
 
-              Result:
+          # ==================================================
+          # PARSE PROJECT FOLDER NAME
+          #
+          # Example:
+          #
+          # [CCTV Layout] BatStateU CIT Building
+          #
+          # becomes:
+          #
+          # Type:
+          # CCTV Layout
+          #
+          # Name:
+          # BatStateU CIT Building
+          # ==================================================
 
-              type = CCTV Layout
-              name = BatStateU CIT Building
-              """
+          def parse_project_folder(
+              folder_name
+          ):
 
               match = re.match(
                   r'^\[([^\]]+)\]\s*(.+)$',
                   folder_name.strip()
               )
 
+
               if match:
-                  project_type = match.group(1).strip()
-                  project_name = match.group(2).strip()
+
+                  project_type = (
+                      match.group(1).strip()
+                  )
+
+                  project_name = (
+                      match.group(2).strip()
+                  )
+
               else:
-                  project_type = "Engineering Project"
-                  project_name = folder_name.strip()
 
-              return project_type, project_name
+                  project_type = (
+                      "Engineering Project"
+                  )
 
-          def find_pdf_files(project_folder):
+                  project_name = (
+                      folder_name.strip()
+                  )
+
+
+              return (
+                  project_type,
+                  project_name
+              )
+
+
+
+          # ==================================================
+          # FIND PDF FILES
+          #
+          # Searches recursively.
+          #
+          # Therefore this works:
+          #
+          # Project/
+          #   File.pdf
+          #
+          # and:
+          #
+          # Project/
+          #   Drawings/
+          #       Floor Plan.pdf
+          # ==================================================
+
+          def find_pdf_files(
+              project_folder
+          ):
+
               files = []
 
+
               for file in project_folder.rglob("*"):
+
                   if not file.is_file():
                       continue
+
 
                   if file.name.lower() == "files.json":
                       continue
 
+
                   if file.suffix.lower() != ".pdf":
                       continue
 
-                  relative_path = file.relative_to(ROOT).as_posix()
-                  files.append(relative_path)
 
-              return sorted(files, key=lambda x: x.lower())
+                  relative_path = (
+                      file.relative_to(ROOT)
+                      .as_posix()
+                  )
+
+
+                  files.append(
+                      relative_path
+                  )
+
+
+              return sorted(
+                  files,
+                  key=lambda x: x.lower()
+              )
+
+
+
+          # ==================================================
+          # SCAN ALL CATEGORIES
+          # ==================================================
 
           categories = {}
 
-          # ==========================================
-          # SCAN EVERY CATEGORY
-          # ==========================================
 
-          for category_folder in sorted(ROOT.iterdir(), key=lambda p: p.name.lower()):
+          for category_folder in sorted(
+              ROOT.iterdir(),
+              key=lambda p: p.name.lower()
+          ):
+
 
               if not category_folder.is_dir():
                   continue
 
-              category_name = category_folder.name
+
+              category_name = (
+                  category_folder.name
+              )
+
 
               print("")
               print("------------------------------------------")
-              print(f"Category: {category_name}")
+              print(
+                  f"Category: {category_name}"
+              )
               print("------------------------------------------")
 
+
               category_data = {
+
                   "name": category_name,
+
                   "clientProjects": []
+
               }
 
-              client_root = category_folder / "Client Projects"
 
-              # Client Projects folder does not exist yet
+              client_root = (
+                  category_folder /
+                  "Client Projects"
+              )
+
+
               if not client_root.exists():
-                  categories[category_name] = category_data
-                  print("No Client Projects folder.")
+
+                  categories[
+                      category_name
+                  ] = category_data
+
+
+                  print(
+                      "No Client Projects folder."
+                  )
+
+
                   continue
 
-              # ==========================================
-              # SCAN EVERY PROJECT FOLDER
-              # ==========================================
+
+
+              # =================================================
+              # SCAN PROJECT FOLDERS
+              # =================================================
 
               for project_folder in sorted(
+
                   client_root.iterdir(),
+
                   key=lambda p: p.name.lower()
+
               ):
+
 
                   if not project_folder.is_dir():
                       continue
 
-                  folder_name = project_folder.name
 
-                  # Ignore hidden folders
+                  folder_name = (
+                      project_folder.name
+                  )
+
+
                   if folder_name.startswith("."):
                       continue
 
-                  project_type, project_name = parse_project_folder(
+
+                  (
+                      project_type,
+                      project_name
+                  ) = parse_project_folder(
                       folder_name
                   )
 
-                  pdf_files = find_pdf_files(project_folder)
 
-                  project_id = (
-                      slugify(category_name)
-                      + "-"
-                      + slugify(project_name)
+                  pdf_files = find_pdf_files(
+                      project_folder
                   )
 
+
+                  project_id = (
+
+                      slugify(category_name)
+
+                      + "-"
+
+                      + slugify(project_name)
+
+                  )
+
+
                   project_data = {
+
                       "id": project_id,
+
                       "category": category_name,
+
                       "type": project_type,
+
                       "name": project_name,
-                      "folder": project_folder.relative_to(ROOT).as_posix(),
+
+                      "folder":
+                          project_folder
+                          .relative_to(ROOT)
+                          .as_posix(),
+
                       "files": pdf_files
+
                   }
 
-                  category_data["clientProjects"].append(project_data)
+
+                  category_data[
+                      "clientProjects"
+                  ].append(
+                      project_data
+                  )
+
 
                   print("")
-                  print(f"Project: {project_name}")
-                  print(f"Type: {project_type}")
-                  print(f"PDF files: {len(pdf_files)}")
+
+                  print(
+                      f"Project: {project_name}"
+                  )
+
+                  print(
+                      f"Type: {project_type}"
+                  )
+
+                  print(
+                      f"PDF files: {len(pdf_files)}"
+                  )
+
 
                   for pdf in pdf_files:
-                      print(f"  - {pdf}")
 
-              categories[category_name] = category_data
+                      print(
+                          f"  - {pdf}"
+                      )
 
-          # ==========================================
+
+
+              categories[
+                  category_name
+              ] = category_data
+
+
+
+          # ==================================================
           # CREATE FINAL INDEX
-          # ==========================================
+          # ==================================================
 
           project_index = {
+
               "version": 1,
-              "generatedBy": "GitHub Actions",
-              "categories": categories
+
+              "generatedBy":
+                  "GitHub Actions",
+
+              "categories":
+                  categories
+
           }
 
-          with open(OUTPUT, "w", encoding="utf-8") as f:
+
+
+          with open(
+              OUTPUT,
+              "w",
+              encoding="utf-8"
+          ) as f:
+
               json.dump(
+
                   project_index,
+
                   f,
+
                   indent=4,
+
                   ensure_ascii=False
+
               )
 
               f.write("\n")
 
+
+
+          # ==================================================
+          # SUMMARY
+          # ==================================================
+
           print("")
+
           print("==========================================")
-          print(" PROJECT INDEX GENERATED")
+
+          print(
+              " PROJECT INDEX GENERATED"
+          )
+
           print("==========================================")
-          print(f"Output: {OUTPUT}")
+
+          print(
+              f"Output: {OUTPUT}"
+          )
+
 
           total_projects = 0
 
-          for category in categories.values():
-              total_projects += len(category["clientProjects"])
 
-          print(f"Total projects: {total_projects}")
+          for category in categories.values():
+
+              total_projects += len(
+                  category[
+                      "clientProjects"
+                  ]
+              )
+
+
+          print(
+              f"Total projects: {total_projects}"
+          )
+
+
           print("==========================================")
+
           PY
 
 
-      # ==========================================
-      # GENERATE EXISTING CATEGORY FILE LISTS
-      # ==========================================
+
+      # ======================================================
+      # GENERATE CATEGORY PDF FILE LISTS
+      #
+      # Keeps your existing FDAS / CCTV / ELV
+      # self-directed system working.
+      # ======================================================
+
       - name: Generate category PDF file lists
+
         shell: bash
+
         run: |
+
           set -e
+
 
           echo "Scanning category PDF files..."
 
-          find Files -mindepth 1 -maxdepth 1 -type d | while read folder
+
+          find Files \
+            -mindepth 1 \
+            -maxdepth 1 \
+            -type d |
+          while read folder
+
           do
 
               echo "Processing: $folder"
 
+
               json_file="$folder/files.json"
 
+
               echo "{" > "$json_file"
-              echo '    "files": [' >> "$json_file"
+
+              echo '    "files": [' \
+                >> "$json_file"
+
 
               first=true
 
-              find "$folder" -maxdepth 1 -type f \
-                ! -name "files.json" \
-                | sort -f \
-                | while read file
+
+              find "$folder" \
+                -maxdepth 1 \
+                -type f \
+                ! -name "files.json" |
+              sort -f |
+              while read file
+
               do
 
                   filename=$(basename "$file")
 
+
                   case "$filename" in
+
 
                       *.pdf|*.PDF)
 
-                          if [ "$first" = true ]; then
+
+                          if [
+                              "$first" = true
+                          ]; then
+
                               first=false
+
                           else
-                              echo "," >> "$json_file"
+
+                              echo "," \
+                                >> "$json_file"
+
                           fi
 
-                          escaped=$(printf '%s' "$filename" | sed 's/\\/\\\\/g; s/"/\\"/g')
 
-                          printf '        "%s"' "$escaped" >> "$json_file"
+                          escaped=$(
+                              printf '%s' "$filename" |
+                              sed \
+                                's/\\/\\\\/g; s/"/\\"/g'
+                          )
+
+
+                          printf \
+                              '        "%s"' \
+                              "$escaped" \
+                              >> "$json_file"
+
 
                           ;;
 
@@ -264,49 +545,96 @@ jobs:
 
               done
 
-              echo "" >> "$json_file"
-              echo "    ]" >> "$json_file"
-              echo "}" >> "$json_file"
+
+              echo "" \
+                >> "$json_file"
+
+
+              echo "    ]" \
+                >> "$json_file"
+
+
+              echo "}" \
+                >> "$json_file"
+
 
               echo "Generated: $json_file"
 
+
           done
+
 
           echo "Category scanning complete."
 
 
-      # ==========================================
-      # CHECK FOR CHANGES
-      # ==========================================
+
+      # ======================================================
+      # CHECK WHETHER GENERATED FILES CHANGED
+      #
+      # Uses git status instead of git diff so that
+      # newly-created project-index.json is detected too.
+      # ======================================================
+
       - name: Check for changes
+
         id: changes
+
         shell: bash
+
         run: |
 
-          if git diff --quiet; then
-              echo "changed=false" >> "$GITHUB_OUTPUT"
+          if [ -z "$(git status --porcelain)" ]; then
+
+              echo "changed=false" \
+                >> "$GITHUB_OUTPUT"
+
               echo "No generated files changed."
+
           else
-              echo "changed=true" >> "$GITHUB_OUTPUT"
+
+              echo "changed=true" \
+                >> "$GITHUB_OUTPUT"
+
               echo "Generated files changed."
+
               git status --short
+
           fi
 
 
-      # ==========================================
-      # COMMIT AUTOMATICALLY GENERATED FILES
-      # ==========================================
+
+      # ======================================================
+      # COMMIT GENERATED FILES
+      # ======================================================
+
       - name: Commit generated files
-        if: steps.changes.outputs.changed == 'true'
+
+        if:
+          steps.changes.outputs.changed == 'true'
+
         shell: bash
+
         run: |
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config \
+            user.name \
+            "github-actions[bot]"
+
+
+          git config \
+            user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
 
           git add project-index.json
+
+
           git add Files/*/files.json
 
-          git commit -m "Automatically update project files"
+
+          git commit \
+            -m "Automatically update project files"
+
 
           git push
+        
