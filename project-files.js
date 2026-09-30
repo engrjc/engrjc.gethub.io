@@ -29,27 +29,95 @@
 
     function createFileURL(relativePath) {
 
-        return relativePath
-            .split("/")
-            .map(function (part) {
+        const cleanPath =
+            String(relativePath)
+                .replace(/\\/g, "/")
+                .replace(/^\/+/, "")
+                .trim();
 
-                return encodeURIComponent(part);
 
-            })
-            .join("/");
+        const parts =
+            cleanPath
+                .split("/")
+                .filter(function (part) {
+                    return part.length > 0;
+                })
+                .map(function (part) {
+
+                    return encodeURIComponent(part);
+
+                });
+
+
+        return parts.join("/");
 
     }
 
 
 
     /* =========================================================
-       CREATE FILE ITEM
+       CREATE OLD PROJECT FILE ITEM
     ========================================================= */
 
-    function createFileItem(filePath) {
+    function createOldFileItem(filePath) {
 
         const fileName =
             filePath.split("/").pop();
+
+
+        const link =
+            document.createElement("a");
+
+
+        link.className =
+            "project-file-item";
+
+
+        link.href =
+            createFileURL(filePath);
+
+
+        link.target =
+            "_blank";
+
+
+        link.rel =
+            "noopener noreferrer";
+
+
+        link.innerHTML = `
+
+            <span class="project-file-icon">
+                PDF
+            </span>
+
+            <span class="project-file-name">
+                ${escapeHTML(fileName)}
+            </span>
+
+            <span class="project-file-arrow">
+                ↗
+            </span>
+
+        `;
+
+
+        return link;
+
+    }
+
+
+
+    /* =========================================================
+       CREATE AUTOMATIC CLIENT FILE ITEM
+    ========================================================= */
+
+    function createAutomaticFileItem(filePath) {
+
+        const fileName =
+            String(filePath)
+                .split("/")
+                .pop();
 
 
         const link =
@@ -133,11 +201,6 @@
             "Engineering Project";
 
 
-
-        /* =====================================================
-           CARD HTML
-        ===================================================== */
-
         card.innerHTML = `
 
             <div class="modal-project-number">
@@ -186,17 +249,11 @@
         `;
 
 
-
         const content =
             card.querySelector(
                 ".modal-project-content"
             );
 
-
-
-        /* =====================================================
-           FILE CONTAINER
-        ===================================================== */
 
         if (files.length > 0) {
 
@@ -210,8 +267,17 @@
 
             files.forEach(function (filePath) {
 
+                if (
+                    typeof filePath !== "string"
+                ) {
+                    return;
+                }
+
+
                 filesContainer.appendChild(
-                    createFileItem(filePath)
+                    createAutomaticFileItem(
+                        filePath
+                    )
                 );
 
             });
@@ -284,7 +350,6 @@
         }
 
 
-
         container.innerHTML = `
 
             <div class="files-loading">
@@ -292,7 +357,6 @@
             </div>
 
         `;
-
 
 
         try {
@@ -317,13 +381,15 @@
             }
 
 
-
             const data =
                 await response.json();
 
 
-
-            if (!data.categories) {
+            if (
+                !data ||
+                typeof data !== "object" ||
+                !data.categories
+            ) {
 
                 throw new Error(
                     "Project index does not contain categories."
@@ -332,19 +398,12 @@
             }
 
 
-
             const categoryData =
                 data.categories[category];
 
 
-
             container.innerHTML = "";
 
-
-
-            /* =================================================
-               CATEGORY DOES NOT EXIST
-            ================================================= */
 
             if (!categoryData) {
 
@@ -365,7 +424,6 @@
             }
 
 
-
             const projects =
                 Array.isArray(
                     categoryData.clientProjects
@@ -373,11 +431,6 @@
                     ? categoryData.clientProjects
                     : [];
 
-
-
-            /* =================================================
-               NO CLIENT PROJECTS
-            ================================================= */
 
             if (projects.length === 0) {
 
@@ -398,11 +451,6 @@
 
             }
 
-
-
-            /* =================================================
-               CREATE CARDS
-            ================================================= */
 
             projects.forEach(
                 function (project, index) {
@@ -451,33 +499,7 @@
 
 
     /* =========================================================
-       INITIALIZE CLIENT PROJECT SYSTEM
-    ========================================================= */
-
-    function initializeAutomaticProjects() {
-
-        const containers =
-            document.querySelectorAll(
-                "[data-project-category]"
-            );
-
-
-        containers.forEach(
-            function (container) {
-
-                loadClientProjects(
-                    container
-                );
-
-            }
-        );
-
-    }
-
-
-
-    /* =========================================================
-       LOAD OLD SELF-DIRECTED FILE SYSTEM
+       LOAD SELF-DIRECTED PROJECT FILES
     ========================================================= */
 
     async function loadProjectFiles(
@@ -493,7 +515,6 @@
         }
 
 
-
         container.innerHTML = `
 
             <div class="files-loading">
@@ -503,14 +524,24 @@
         `;
 
 
-
         try {
+
+            const cleanFolder =
+                String(folder)
+                    .replace(/\\/g, "/")
+                    .replace(/^\/+/, "")
+                    .replace(/\/+$/, "");
+
+
+            const manifestURL =
+                cleanFolder +
+                "/files.json?v=" +
+                Date.now();
+
 
             const response =
                 await fetch(
-                    folder +
-                    "/files.json?v=" +
-                    Date.now(),
+                    manifestURL,
                     {
                         cache: "no-store"
                     }
@@ -526,7 +557,6 @@
             }
 
 
-
             const data =
                 await response.json();
 
@@ -534,12 +564,12 @@
             let files = [];
 
 
-
             if (Array.isArray(data)) {
 
                 files = data;
 
             } else if (
+                data &&
                 Array.isArray(data.files)
             ) {
 
@@ -548,9 +578,7 @@
             }
 
 
-
             container.innerHTML = "";
-
 
 
             if (files.length === 0) {
@@ -571,7 +599,6 @@
             }
 
 
-
             const filesContainer =
                 document.createElement("div");
 
@@ -580,90 +607,28 @@
                 "project-file-list";
 
 
-
             files.forEach(function (file) {
 
-                let path;
-
-
                 if (
-                    typeof file ===
-                    "string"
+                    typeof file !== "string"
                 ) {
-
-                    path =
-                        folder +
-                        "/" +
-                        file;
-
-                } else if (
-                    file &&
-                    typeof file.path ===
-                    "string"
-                ) {
-
-                    path =
-                        folder +
-                        "/" +
-                        file.path;
-
-                } else {
-
                     return;
-
                 }
 
 
-
-                const fileName =
-                    path.split("/").pop();
-
-
-                const link =
-                    document.createElement("a");
-
-
-                link.className =
-                    "project-file-item";
-
-
-                link.href =
-                    createFileURL(path);
-
-
-                link.target =
-                    "_blank";
-
-
-                link.rel =
-                    "noopener noreferrer";
-
-
-                link.innerHTML = `
-
-                    <span class="project-file-icon">
-                        PDF
-                    </span>
-
-                    <span class="project-file-name">
-                        ${escapeHTML(
-                            fileName
-                        )}
-                    </span>
-
-                    <span class="project-file-arrow">
-                        ↗
-                    </span>
-
-                `;
+                const fullPath =
+                    cleanFolder +
+                    "/" +
+                    file;
 
 
                 filesContainer.appendChild(
-                    link
+                    createOldFileItem(
+                        fullPath
+                    )
                 );
 
             });
-
 
 
             container.appendChild(
@@ -704,18 +669,35 @@
 
 
     /* =========================================================
-       INITIALIZE SELF-DIRECTED FILE SYSTEM
+       INITIALIZE
     ========================================================= */
 
-    function initializeProjectFiles() {
+    function initialize() {
 
-        const containers =
+        const clientContainers =
+            document.querySelectorAll(
+                "[data-project-category]"
+            );
+
+
+        clientContainers.forEach(
+            function (container) {
+
+                loadClientProjects(
+                    container
+                );
+
+            }
+        );
+
+
+        const fileContainers =
             document.querySelectorAll(
                 "[data-project-files]"
             );
 
 
-        containers.forEach(
+        fileContainers.forEach(
             function (container) {
 
                 loadProjectFiles(
@@ -724,20 +706,6 @@
 
             }
         );
-
-    }
-
-
-
-    /* =========================================================
-       INITIALIZE EVERYTHING
-    ========================================================= */
-
-    function initialize() {
-
-        initializeAutomaticProjects();
-
-        initializeProjectFiles();
 
     }
 
@@ -758,6 +726,5 @@
         initialize();
 
     }
-
 
 })();
