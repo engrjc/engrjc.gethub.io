@@ -3,12 +3,17 @@
     "use strict";
 
 
+    /* =========================================================
+       PROJECT INDEX
+       Used ONLY for automatic Client Projects
+       ========================================================= */
+
     const PROJECT_INDEX_FILE = "project-index.json";
 
 
     /* =========================================================
        HTML ESCAPE
-    ========================================================= */
+       ========================================================= */
 
     function escapeHTML(value) {
 
@@ -22,48 +27,73 @@
     }
 
 
-
     /* =========================================================
-       CREATE SAFE FILE URL
-    ========================================================= */
+       SELF-DIRECTED PROJECT FILE URL
+       
+       Important:
+       - Uses the actual page URL as the base
+       - Does NOT use encodeURIComponent()
+       - Keeps GitHub Pages paths simple
+       ========================================================= */
 
-    function createFileURL(relativePath) {
+    function createSelfDirectedFileURL(
+        folder,
+        filename
+    ) {
 
-        const cleanPath =
-            String(relativePath)
+        const cleanFolder =
+            String(folder)
+                .replace(/\\/g, "/")
+                .replace(/^\/+/, "")
+                .replace(/\/+$/, "")
+                .trim();
+
+
+        const cleanFilename =
+            String(filename)
                 .replace(/\\/g, "/")
                 .replace(/^\/+/, "")
                 .trim();
 
 
-        const parts =
-            cleanPath
-                .split("/")
-                .filter(function (part) {
-                    return part.length > 0;
-                })
-                .map(function (part) {
-
-                    return encodeURIComponent(part);
-
-                });
+        const relativePath =
+            cleanFolder +
+            "/" +
+            cleanFilename;
 
 
-        return parts.join("/");
+        try {
+
+            return new URL(
+                relativePath,
+                document.baseURI
+            ).href;
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Unable to create PDF URL:",
+                relativePath,
+                error
+            );
+
+            return relativePath;
+
+        }
 
     }
 
 
-
     /* =========================================================
-       CREATE OLD PROJECT FILE ITEM
-    ========================================================= */
+       CREATE SELF-DIRECTED FILE CARD
+       ========================================================= */
 
-    function createOldFileItem(filePath) {
-
-        const fileName =
-            filePath.split("/").pop();
-
+    function createSelfDirectedFileItem(
+        folder,
+        filename
+    ) {
 
         const link =
             document.createElement("a");
@@ -74,7 +104,10 @@
 
 
         link.href =
-            createFileURL(filePath);
+            createSelfDirectedFileURL(
+                folder,
+                filename
+            );
 
 
         link.target =
@@ -92,7 +125,7 @@
             </span>
 
             <span class="project-file-name">
-                ${escapeHTML(fileName)}
+                ${escapeHTML(filename)}
             </span>
 
             <span class="project-file-arrow">
@@ -107,15 +140,282 @@
     }
 
 
+    /* =========================================================
+       SELF-DIRECTED PROJECT FILE LOADER
+       
+       This handles:
+       
+       Files/FDAS/files.json
+       Files/Cctv/files.json
+       Files/ELV/files.json
+       
+       Nothing else.
+       ========================================================= */
+
+    async function loadSelfDirectedFiles(
+        container
+    ) {
+
+        const folder =
+            container.dataset.projectFiles;
+
+
+        if (!folder) {
+            return;
+        }
+
+
+        const cleanFolder =
+            String(folder)
+                .replace(/\\/g, "/")
+                .replace(/^\/+/, "")
+                .replace(/\/+$/, "")
+                .trim();
+
+
+        container.innerHTML = `
+
+            <div class="files-loading">
+                Loading project files...
+            </div>
+
+        `;
+
+
+        try {
+
+            /* =================================================
+               CREATE MANIFEST URL
+               
+               Example:
+               Files/Cctv/files.json
+               ================================================= */
+
+            const manifestURL =
+                new URL(
+                    cleanFolder +
+                    "/files.json",
+                    document.baseURI
+                );
+
+
+            /* Prevent browser caching */
+
+            manifestURL.searchParams.set(
+                "v",
+                Date.now().toString()
+            );
+
+
+            console.log(
+                "Loading self-directed manifest:",
+                manifestURL.href
+            );
+
+
+            /* =================================================
+               LOAD files.json
+               ================================================= */
+
+            const response =
+                await fetch(
+                    manifestURL.href,
+                    {
+                        cache: "no-store"
+                    }
+                );
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    "Unable to load " +
+                    cleanFolder +
+                    "/files.json " +
+                    "(HTTP " +
+                    response.status +
+                    ")."
+                );
+
+            }
+
+
+            /* =================================================
+               READ JSON
+               ================================================= */
+
+            const data =
+                await response.json();
+
+
+            let files = [];
+
+
+            /*
+             Supports:
+
+             {
+                 "files": [
+                     "example.pdf"
+                 ]
+             }
+
+             and also:
+
+             [
+                 "example.pdf"
+             ]
+            */
+
+            if (
+                Array.isArray(data)
+            ) {
+
+                files = data;
+
+            }
+
+            else if (
+                data &&
+                Array.isArray(data.files)
+            ) {
+
+                files = data.files;
+
+            }
+
+
+            /* =================================================
+               REMOVE INVALID VALUES
+               ================================================= */
+
+            files =
+                files.filter(
+                    function (file) {
+
+                        return (
+                            typeof file ===
+                            "string" &&
+                            file.trim() !== ""
+                        );
+
+                    }
+                );
+
+
+            container.innerHTML = "";
+
+
+            /* =================================================
+               NO FILES
+               ================================================= */
+
+            if (files.length === 0) {
+
+                container.innerHTML = `
+
+                    <div class="files-empty">
+                        No project documentation
+                        has been added yet.
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            /* =================================================
+               CREATE FILE LIST
+               ================================================= */
+
+            const filesContainer =
+                document.createElement("div");
+
+
+            filesContainer.className =
+                "project-file-list";
+
+
+            files.forEach(
+                function (filename) {
+
+                    const fileItem =
+                        createSelfDirectedFileItem(
+                            cleanFolder,
+                            filename
+                        );
+
+
+                    filesContainer.appendChild(
+                        fileItem
+                    );
+
+                }
+            );
+
+
+            container.appendChild(
+                filesContainer
+            );
+
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Self-directed project file error:",
+                error
+            );
+
+
+            container.innerHTML = `
+
+                <div class="files-error">
+
+                    <strong>
+                        Unable to load project files.
+                    </strong>
+
+                    <span>
+                        ${escapeHTML(
+                            error.message
+                        )}
+                    </span>
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
 
     /* =========================================================
-       CREATE AUTOMATIC CLIENT FILE ITEM
-    ========================================================= */
+       AUTOMATIC CLIENT PROJECT SYSTEM
+       
+       IMPORTANT:
+       This section is preserved separately.
+       It does NOT affect Self-Directed Projects.
+       ========================================================= */
 
-    function createAutomaticFileItem(filePath) {
+
+    function createAutomaticFileItem(
+        filePath
+    ) {
+
+        const cleanPath =
+            String(filePath)
+                .replace(/\\/g, "/")
+                .replace(/^\/+/, "")
+                .trim();
+
 
         const fileName =
-            String(filePath)
+            cleanPath
                 .split("/")
                 .pop();
 
@@ -129,7 +429,7 @@
 
 
         link.href =
-            createFileURL(filePath);
+            cleanPath;
 
 
         link.target =
@@ -161,11 +461,6 @@
 
     }
 
-
-
-    /* =========================================================
-       CREATE AUTOMATIC CLIENT PROJECT CARD
-    ========================================================= */
 
     function createClientProjectCard(
         project,
@@ -207,20 +502,17 @@
                 ${String(number).padStart(2, "0")}
             </div>
 
-
             <div class="modal-project-content">
 
                 <h3>
                     ${escapeHTML(name)}
                 </h3>
 
-
                 <p>
                     ${escapeHTML(type)}
                     project documentation and engineering
                     design files.
                 </p>
-
 
                 <div class="modal-project-tags">
 
@@ -238,7 +530,6 @@
                     </span>
 
                 </div>
-
 
                 <div class="automatic-files-title">
                     PROJECT DOCUMENTATION
@@ -265,29 +556,34 @@
                 "automatic-project-files";
 
 
-            files.forEach(function (filePath) {
+            files.forEach(
+                function (filePath) {
 
-                if (
-                    typeof filePath !== "string"
-                ) {
-                    return;
+                    if (
+                        typeof filePath !==
+                        "string"
+                    ) {
+                        return;
+                    }
+
+
+                    filesContainer.appendChild(
+                        createAutomaticFileItem(
+                            filePath
+                        )
+                    );
+
                 }
-
-
-                filesContainer.appendChild(
-                    createAutomaticFileItem(
-                        filePath
-                    )
-                );
-
-            });
+            );
 
 
             content.appendChild(
                 filesContainer
             );
 
-        } else {
+        }
+
+        else {
 
             const empty =
                 document.createElement("div");
@@ -313,11 +609,6 @@
     }
 
 
-
-    /* =========================================================
-       LOAD CLIENT PROJECTS
-    ========================================================= */
-
     async function loadClientProjects(
         container
     ) {
@@ -337,7 +628,8 @@
                     </strong>
 
                     <p>
-                        Add a data-project-category
+                        Add a
+                        data-project-category
                         attribute to this container.
                     </p>
 
@@ -453,7 +745,10 @@
 
 
             projects.forEach(
-                function (project, index) {
+                function (
+                    project,
+                    index
+                ) {
 
                     container.appendChild(
                         createClientProjectCard(
@@ -465,8 +760,9 @@
                 }
             );
 
+        }
 
-        } catch (error) {
+        catch (error) {
 
             console.error(
                 "Automatic project system error:",
@@ -497,190 +793,45 @@
     }
 
 
-
-    /* =========================================================
-       LOAD SELF-DIRECTED PROJECT FILES
-    ========================================================= */
-
-    async function loadProjectFiles(
-        container
-    ) {
-
-        const folder =
-            container.dataset.projectFiles;
-
-
-        if (!folder) {
-            return;
-        }
-
-
-        container.innerHTML = `
-
-            <div class="files-loading">
-                Loading project files...
-            </div>
-
-        `;
-
-
-        try {
-
-            const cleanFolder =
-                String(folder)
-                    .replace(/\\/g, "/")
-                    .replace(/^\/+/, "")
-                    .replace(/\/+$/, "");
-
-
-            const manifestURL =
-                cleanFolder +
-                "/files.json?v=" +
-                Date.now();
-
-
-            const response =
-                await fetch(
-                    manifestURL,
-                    {
-                        cache: "no-store"
-                    }
-                );
-
-
-            if (!response.ok) {
-
-                throw new Error(
-                    "Unable to load project files."
-                );
-
-            }
-
-
-            const data =
-                await response.json();
-
-
-            let files = [];
-
-
-            if (Array.isArray(data)) {
-
-                files = data;
-
-            } else if (
-                data &&
-                Array.isArray(data.files)
-            ) {
-
-                files = data.files;
-
-            }
-
-
-            container.innerHTML = "";
-
-
-            if (files.length === 0) {
-
-                container.innerHTML = `
-
-                    <div class="files-empty">
-
-                        No project documentation
-                        has been added yet.
-
-                    </div>
-
-                `;
-
-                return;
-
-            }
-
-
-            const filesContainer =
-                document.createElement("div");
-
-
-            filesContainer.className =
-                "project-file-list";
-
-
-            files.forEach(function (file) {
-
-                if (
-                    typeof file !== "string"
-                ) {
-                    return;
-                }
-
-
-                const fullPath =
-                    cleanFolder +
-                    "/" +
-                    file;
-
-
-                filesContainer.appendChild(
-                    createOldFileItem(
-                        fullPath
-                    )
-                );
-
-            });
-
-
-            container.appendChild(
-                filesContainer
-            );
-
-
-        } catch (error) {
-
-            console.error(
-                "Project file loading error:",
-                error
-            );
-
-
-            container.innerHTML = `
-
-                <div class="files-error">
-
-                    <strong>
-                        Unable to load project files.
-                    </strong>
-
-                    <span>
-                        ${escapeHTML(
-                            error.message
-                        )}
-                    </span>
-
-                </div>
-
-            `;
-
-        }
-
-    }
-
-
-
     /* =========================================================
        INITIALIZE
-    ========================================================= */
+       ========================================================= */
 
     function initialize() {
 
-        const clientContainers =
+
+        /* =====================================================
+           SELF-DIRECTED PROJECTS
+           ===================================================== */
+
+        const selfDirectedContainers =
+            document.querySelectorAll(
+                "[data-project-files]"
+            );
+
+
+        selfDirectedContainers.forEach(
+            function (container) {
+
+                loadSelfDirectedFiles(
+                    container
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           CLIENT PROJECTS
+           ===================================================== */
+
+        const clientProjectContainers =
             document.querySelectorAll(
                 "[data-project-category]"
             );
 
 
-        clientContainers.forEach(
+        clientProjectContainers.forEach(
             function (container) {
 
                 loadClientProjects(
@@ -690,26 +841,12 @@
             }
         );
 
-
-        const fileContainers =
-            document.querySelectorAll(
-                "[data-project-files]"
-            );
-
-
-        fileContainers.forEach(
-            function (container) {
-
-                loadProjectFiles(
-                    container
-                );
-
-            }
-        );
-
     }
 
 
+    /* =========================================================
+       START
+       ========================================================= */
 
     if (
         document.readyState ===
@@ -721,7 +858,9 @@
             initialize
         );
 
-    } else {
+    }
+
+    else {
 
         initialize();
 
