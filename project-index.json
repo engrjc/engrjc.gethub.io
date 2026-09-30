@@ -1,0 +1,30 @@
+{
+    "version": 1,
+    "generatedBy": "GitHub Actions",
+    "categories": {
+        "Cctv": {
+            "name": "Cctv",
+            "clientProjects": []
+        },
+        "Electronics": {
+            "name": "Electronics",
+            "clientProjects": []
+        },
+        "ELV": {
+            "name": "ELV",
+            "clientProjects": []
+        },
+        "FDAS": {
+            "name": "FDAS",
+            "clientProjects": []
+        },
+        "Microwave": {
+            "name": "Microwave",
+            "clientProjects": []
+        },
+        "PCB": {
+            "name": "PCB",
+            "clientProjects": []
+        }
+    }
+}
